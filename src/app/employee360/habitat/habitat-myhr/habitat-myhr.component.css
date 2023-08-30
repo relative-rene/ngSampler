@@ -1,0 +1,236 @@
+﻿	.boxborder{
+	border: 1px solid #57AFEA; border-radius: 5px
+	}
+	
+	.circle-dir{border-style: solid; border-width: 1px;border: 1px solid #2c2c2c; border-radius: 50%; font-size:3em; padding-right: 5px; padding-left: 5px;}
+	.transaction p {
+		font-family: "Gotham Thin";
+		color: #464646;
+		font-size: 41px;
+		font-weight: bold;
+		line-height: 40px;
+	}
+	.mt30{
+	margin-top:30px
+}
+.fa-stack {
+    position: relative;
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    line-height: 2em;
+    vertical-align: middle;
+    color:#2c2c2c;
+}
+.fa-angle-left{
+	font-size:66px;
+	 padding-left: 13px;
+	 border: 0;
+}
+div.col-md-11 h1{
+	color:#0cca61; 
+	text-align: center;
+	font-family: 'Gotham thin'; 
+	margin-top:8px;
+	font-size:46px;
+}
+div.col-md-11 p{
+	color:#636363; 
+	text-align: center;
+	font-family: 'Gotham thin'; 
+	margin-top:8px;
+	font-size:26px;
+}
+.page{
+	border: 1px solid #fff;
+    width: 40%;
+        margin-left: 280px;
+    margin-bottom: -47px;}
+td{
+    padding: 100px;
+    border-right: 1px solid #13ca61;
+    text-align: center;
+        width: 50%;
+    padding: 40px 0 57px 0;
+}
+.heading{
+	border: 1px solid #13ca61;width: 68%;
+	height: 85px;margin-left: 76px;
+}
+.btn-style{
+	margin-top: -128px;width: 61%;
+    margin-left: 4px;
+    height: 66px;
+    background: #fff;
+    border-radius: 0px;
+    border:1px solid #13ca61;
+    font-family:Gotham Book;
+    font-size:24px;color:#13ca61
+}
+.btn-style1{
+	margin-top: -128px;width: 61%;
+    margin-left: 4px;
+    height: 66px;
+    background: #fff;
+    border-radius: 0px;border:1px solid #13ca61;font-family:Gotham Book;
+    font-size:24px;color:#13ca61;line-height: 25px;
+}
+.mt45{
+	margin-top:45px;
+}
+.pull-right{
+	margin: -30px 40px 0 0px;
+}
+.bordered{
+	width:100%;
+	border:1px solid #13ca61
+}
+.bordered1{
+	width:100%;border-left:1px solid #13ca61;
+}
+.bordered2{
+	width:100%;border:1px solid #13ca61;
+	margin-bottom:50px
+}
+.modal-header {
+    padding: 15px;
+    border-bottom: none;
+}
+.modal-footer {
+    border-top: none;
+}
+.modal-dialog{
+	    width: 88%;
+}
+.close {
+       font-size: 36px;
+    font-weight: 100;
+       }
+       .top370{
+	top:370px
+}
+/*holiday*/
+           .modal-content1 {
+    position: relative;
+       width: 60%;
+    margin: 0 auto;
+    background:#fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #999;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 6px;
+    outline: 0;
+    -webkit-box-shadow: 0 3px 9px rgba(0,0,0,.5);
+    box-shadow: 0 3px 9px rgba(0,0,0,.5);
+
+}
+    .head{
+	font-family:'Gotham Thin';
+	font-size:26px;
+	color:#000;
+	text-align:center
+}
+.logo1{
+	margin:-30px auto 0;
+}
+.head1{
+	font-family:'Gotham Book';
+	font-size:29px;
+	color:#898989;
+	    margin-top: 45px;
+}
+.text{
+	color:#000;
+}
+.mt-15{
+	margin-top:-15px;
+}
+.mt-30{
+	margin-top:-30px;
+}
+.box{
+	border:1px solid #75757b;
+	    padding: 0 2px 0 3px;
+}
+.modal-content2 {
+    position: relative;
+       width: 60%;
+    margin: 0 auto;
+    background:#fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #999;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 6px;
+    outline: 0;
+    -webkit-box-shadow: 0 3px 9px rgba(0,0,0,.5);
+    box-shadow: 0 3px 9px rgba(0,0,0,.5);
+
+}
+.head2{
+	font-family:'Gotham Book';
+	font-size:15px;
+	color:#000;
+	text-align:center;
+	font-weight:bold;
+    margin-left:70px;
+}
+.head3{
+	font-family:'Gotham Book';
+	font-size:13px;
+	color:#000;
+	text-align:center;
+	font-weight:bold;
+	text-align:left;
+	margin-top:20px
+   }
+
+.para{
+	font-family:'Gotham Book';
+	font-size:12px;
+	color:#000;
+	text-align:left;
+	
+}
+.mb40{
+	margin-bottom:40px
+}
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
+    outline: none;
+    outline-offset: -2px;
+}
+.modal-content3 {
+    position: relative;
+       width: 78%;
+    margin: 0 auto;
+    background:#fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #999;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 6px;
+    outline: 0;
+    -webkit-box-shadow: 0 3px 9px rgba(0,0,0,.5);
+    box-shadow: 0 3px 9px rgba(0,0,0,.5);
+
+}
+.mtop-62{
+	margin-top:-62px
+}
+
+	.modal-content4 {
+    position: relative;
+       width: 58%;
+    margin: 0 auto;
+    background:#fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #999;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 6px;
+    outline: 0;
+    -webkit-box-shadow: 0 3px 9px rgba(0,0,0,.5);
+    box-shadow: 0 3px 9px rgba(0,0,0,.5);
+
+}

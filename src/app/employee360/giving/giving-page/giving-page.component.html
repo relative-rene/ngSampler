@@ -1,0 +1,10 @@
+<app-giving-navbar></app-giving-navbar>
+<div id="wrapper">
+  <div class="container" id="main-wrapper" style="margin-top: 30px;">
+    <giving-fundraiser [profile]="profile" [points]="points" [opportunity]="opportunity"
+        [userId]="userId" (reloadData)="reloadData()" [fileList]="fileList" [hidden]="opportunity.type === 'volunteerOpportunity'"
+        [donations]="donations"></giving-fundraiser>
+    <giving-volunteer [profile]="profile" [points]="points" [opportunity]="opportunity"
+        [userId]="userId" (reloadData)="reloadData()" [fileList]="fileList" [hidden]="opportunity.type !== 'volunteerOpportunity'"></giving-volunteer>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+﻿button.modal-introduce-btn {
+  border-radius: 20px;
+  background-color: #0cca61;
+  color: #FFFFFF;
+  width: 220px;
+  margin-right: 22px;
+  padding-right: 10px;
+  padding-left: 10px;
+  font-family: 'Gotham Light';
+  font-size: 19px;
+}
+
+button.modal-exit-btn {
+  border-radius: 20px;
+  background-color: #7b0046;
+  color: #FFFFFF;
+  width: 110px;
+  font-family: 'Gotham Light';
+  font-size: 19px;
+
+}

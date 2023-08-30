@@ -1,0 +1,253 @@
+﻿* {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.imgthumbsize {
+  width: 75px;
+  height: 75px
+}
+
+a {
+  cursor: pointer;
+  outline: none;
+  color: #000;
+  text-decoration: none !important;
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+a:hover, a:active, a:focus {
+  color: #c1d3e0;
+  text-decoration: none;
+  outline: none;
+}
+
+button:focus {
+  outline: 0;
+}
+
+#main-wrapper {
+  background-color: #f3f8fb;
+}
+
+#wrapper {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.features-boxed {
+  color: #313437;
+}
+
+.features-boxed p {
+  color: #7d8285;
+}
+
+.features-boxed h2 {
+  font-weight: bold;
+  margin-bottom: 40px;
+  padding-top: 40px;
+  color: inherit;
+}
+
+@media (max-width:767px) {
+  .features-boxed h2 {
+    margin-bottom: 25px;
+    padding-top: 25px;
+    font-size: 24px;
+  }
+}
+
+.features-boxed .intro {
+  font-size: 16px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.features-boxed .intro p {
+  margin-bottom: 0;
+}
+
+.features-boxed .features {
+  padding: 50px 0;
+}
+
+.features-boxed .item {
+  text-align: center;
+}
+
+.features-boxed .item .box {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px 30px 40px 30px;
+
+}
+.features-boxed .item .box1 {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px 30px 40px 30px;
+
+}
+
+.features-boxed .item .box img {
+  height: 203px;
+  width: 261;
+}
+
+.features-boxed .item .icon {
+  font-size: 150px;
+  color: #1485ee;
+  margin-top: 20px;
+  margin-bottom: 35px;
+}
+
+.features-boxed .item .name {
+  font-weight: bold;
+  font-size: 40px;
+  margin-bottom: 8px;
+  margin-top: 30px;
+  color: #7b0046;
+  font-family: "gotham Bold";
+}
+
+.features-boxed .item .description {
+  font-size: 26px;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  color: #555555;
+  font-family: "Gotham Light";
+}
+
+@font-face {
+  font-family: ufonts.com_gotham-thin;
+  src: url(FONTS/ufonts.com_gotham-thin.ttf);
+}
+.box{
+	box-shadow: 0px 13px 18px 0px rgba(0, 0, 0, 0.1); 
+	border-radius:8px;
+}
+
+.box1{
+	box-shadow: 0px 13px 18px 0px rgba(0, 0, 0, 0.1); 
+	border-radius:8px;
+
+}
+.features-boxed .item .box1 {
+  text-align: center;
+  margin-bottom: 30px;
+     padding: 12px;
+
+}
+.name1{
+	font-weight: bold;
+  font-size: 28px;
+  margin-bottom: 8px;
+  margin-top: 10px;
+  color: #7b0046;
+  font-family: "gotham Bold";
+
+}
+.description1{
+	  font-size: 20px;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  color: #555555;
+  font-family: "Gotham Light";
+
+}
+.features-boxed .item .box1 img {
+  height: 196px;
+  width: 241;
+}
+
+.features-boxed .item .box2 {
+  text-align: center;
+  margin-bottom: 30px;
+     padding: 12px;
+
+}
+.name2{
+	font-weight: bold;
+  font-size: 28px;
+  margin-bottom: 8px;
+  margin-top: 30px;
+  color: #7b0046;
+  font-family: "gotham Bold";
+
+}
+.description2{
+	  font-size: 20px;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  color: #555555;
+  font-family: "Gotham Light";
+
+}
+.features-boxed .item .box2 img {
+  height: 176px;
+  width: 241;
+}
+.box2{
+	box-shadow: 0px 13px 18px 0px rgba(0, 0, 0, 0.1); 
+	border-radius:8px;
+
+}
+.features-boxed .box3 {
+  text-align: center;
+  margin-bottom: 30px;
+     padding: 10px 8px 15px 6px;
+
+}
+.box3 img{
+	margin:0 auto;
+}
+.box3{
+	box-shadow: 0px 13px 18px 0px rgba(0, 0, 0, 0.1); 
+	border-radius:8px;
+}
+.name3{
+	font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 8px;
+  margin-top: 30px;
+  color: #959595;
+  font-family: "gotham Bold";
+
+}
+.name3-1{
+	font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 8px;
+  margin-top: 44px;
+  color: #959595;
+  font-family: "gotham Bold";
+
+}
+
+.description3{
+	  font-size: 12px;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  color: #959595;
+  font-family: "Gotham Light";
+
+}
+.mt-110 {
+    margin-top: -74px;
+}
+.features-boxed .box4 {
+  text-align: center;
+  margin-bottom: 30px;
+     padding: 10px 8px 30px 6px;
+margin-top:-185px;
+}
+.box4{
+	box-shadow: 0px 13px 18px 0px rgba(0, 0, 0, 0.1); 
+	border-radius:8px;
+}

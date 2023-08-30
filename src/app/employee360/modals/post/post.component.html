@@ -1,0 +1,79 @@
+<div class="modal fade" id="myuserquickModal" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content addcontent">
+      <div class="modal-header shareheader">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="font-size:4em; font-family: 'Gotham Book'; margin-top: -15px; margin-right: -10px; font-weight: normal;">&times;</button>
+        <h4 class="modal-title sharetitle">What would you like to post?</h4>
+        <p class="shareitem">Select one of the items to post</p>
+      </div>
+      <div class="modal-body" style="padding:0 50px 0 50px;">
+        <div class="col-md-6">
+          <h3 class="opport-head">Opportunities that you are currently participating in</h3>
+          <div>
+            <img src="/assets/img/feed/img.png" alt="img">
+            <p class="opport-name">MARCH OF DIMES - CLEAN UP CREW</p>
+            <img src="/assets/img/feed/attach.png" alt="attach" style="margin-left:2px">
+          </div>
+          <div style="margin-top:10px;">
+            <img src="/assets/img/feed/img1.png" alt="img">
+            <p class="opport-name">ELEPHANTS OF MALAWI</p>
+            <img src="/assets/img/feed/attach.png" alt="attach" style="margin-left:2px">
+          </div>
+          <div style="margin-top:10px;">
+            <img src="/assets/img/feed/img2.png" alt="img">
+            <p class="opport-name">BREAST CANCER AWARENESS - WALK</p>
+            <img src="/assets/img/feed/attach.png" alt="attach" style="margin-left:2px">
+          </div>
+          <div style="margin-top:10px;">
+            <img src="/assets/img/feed/img3.png" alt="img">
+            <p class="opport-name">ST. JUDE�S - BLOOD DRIVE</p>
+            <img src="/assets/img/feed/attach.png" alt="attach" style="margin-left:2px">
+          </div>
+        </div>
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-5">
+          <h3 style="font-family:'Gotham Light';font-size: 13px; color: #707070;margin-bottom: 25px;">Something you simply find interesting!</h3>
+          <form>
+            <input type="radio" name="userposttype" checked id="userposttypetext"><label for="userposttypetext" style="font-family:'Gotham Light';font-size: 13px; color: #707070;margin-left: 10px;">
+               Text Only Post</label>
+               <br>
+            <input type="radio" name="userposttype" id="userposttypelink"><label for="userposttypelink" style="font-family:'Gotham Light';font-size: 13px; color: #707070;margin-left: 10px;">
+               Attach a link</label>
+            <input type="text" style="border-radius: 10px;border: 1px solid #1899ef;padding: 5px 0 5px 128px;margin-left: 22px;margin-top: 3px;">
+<br>
+            <input type="radio" name="userposttype" id="userposttypefile">
+            <label for="userposttypefile" style="font-family:'Gotham Light';font-size: 13px; color: #707070;margin-left: 10px;"> Upload a file</label>
+            <br>
+            <img src="/assets/img/feed/attach1.png" alt="attach1" style="float: left;border-radius: 50%; padding: 10px 10px 10px 15px;
+    box-shadow: 2px 0px 7px #ccc;margin-left: 22px;margin-top: 10px;">
+              <p style="font-family:'Gotham Light';font-size: 13px; color: #959595;padding: 19px;
+    text-align: center;
+    font-style: italic;">Nothing has been attached yet!</p>
+    <input type="file" id="postuploadfile">
+
+                <input type="radio" name="userposttype" id="userposttypeyoutube">
+                <label for="userposttypeyoutube" style="font-family:'Gotham Light';font-size: 13px; color: #707070;margin-left: 10px;">
+   Attach a embedded youtube video link</label>
+                <input type="text" id="userpostyoutube" style="border-radius: 10px;border: 1px solid #1899ef;padding: 5px 0 5px 128px;margin-left: 22px;margin-top: 3px;">
+
+          </form>
+
+        </div>
+        <div class="col-md-12">
+          <h6 style="font-family:'Gotham light';font-size:19px;color:#189bf2;margin-top: 38px;">Say something with your post!<span style="color:#acacac"> (optional)</span></h6>
+          <textarea rows="3" id="postComponentTextArea" cols="110" style="border-radius:6px;border-color:#189bf2;font-family:'Gotham Thin';font-size:14px;color:rgb(0,0,100);padding: 10px;" placeholder="Enter text here"></textarea>
+          <p style="font-family:'Gotham Thin';font-size:11px;color:#b7b7b7;text-align:right;">0/140 Character Limit</p>
+        </div>
+      </div>
+      <div class="modal-footer sharefooter">
+        <div class="col-md-12">
+          <button type="button" class="btn btn-primary" (click)="postSocialPost()" style="margin-right:75px;padding: 8px 60px 8px 60px;
+    border-radius: 0px;font-family:Gotham Book;font-size:20px;background:#1899ef;border:1px solid #189bf2">POST</button>
+            <button type="button" id="addPostModalDismissButton" class="btn btn-primary" data-dismiss="modal" style="padding: 8px 60px 8px 60px;
+    border-radius: 0px;font-family:Gotham Book;font-size:20px;background:#7b0046;border:1px solid #7b0046">EXIT</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

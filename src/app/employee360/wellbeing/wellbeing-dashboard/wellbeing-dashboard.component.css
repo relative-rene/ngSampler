@@ -1,0 +1,758 @@
+﻿blockquote {
+  padding: 0px!important;
+  margin: 0 0 20px !important;
+  font-size: 17.5px !important;
+  border-left: 0!important;
+}
+
+.imgthumbsize {
+  width: 75px;
+  height: 75px
+}
+
+a {
+  cursor: pointer;
+  outline: none;
+  color: #000;
+  text-decoration: none !important;
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+a:hover, a:active, a:focus {
+  color: #c1d3e0;
+  text-decoration: none;
+  outline: none;
+}
+
+button:focus {
+  outline: 0;
+}
+
+#wrapper {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.most {
+  text-align: center;
+  font-size: 3rem;
+  padding-top: 20px;
+  color: #137ec4
+}
+
+.social {
+  font-size: large;
+  font-size: 5rem;
+  margin-top: -30px;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#189bf2+0,555555+100 */
+  background: rgb(24, 155, 242);
+  /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(24, 155, 242, 1) 0%, rgba(85, 85, 85, 1) 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(24, 155, 242, 1) 0%, rgba(85, 85, 85, 1) 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(24, 155, 242, 1) 0%, rgba(85, 85, 85, 1) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#189bf2', endColorstr='#555555', GradientType=0);
+  /* IE6-9 */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  overflow: hidden
+}
+
+.sharing {
+  color: #959595;
+  text-align: center;
+  margin-top: -20px;
+  text-transform: uppercase;
+  vertical-align: super;
+  font-size: 1.5rem;
+}
+
+ul.mostshared li {
+  list-style-type: none;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+ol.colspan {
+  list-style-type: decimal;
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+  margin-left: -20px;
+  list-style-position: inside;
+}
+
+ol.colspan {
+  ol.colspan {
+    -webkit-column-count: 3;
+    /* Chrome, Safari, Opera */
+    -moz-column-count: 3;
+    /* Firefox */
+    column-count: 3;
+  }
+  ol.colspan li {
+    margin-left: 9px;
+    list-style-position: inside;
+    width: 33, 333333%;
+    margin-bottom: 30px;
+  }
+}
+
+.spanned ol {
+  counter-reset: item;
+  font-size: 1.7em;
+  color: #000000;
+  list-style-type: none;
+}
+
+.spanned ol li {
+  display: block;
+}
+
+.spanned ol li:before {
+  content: counter(item) "  ";
+  font-size: 2em;
+  counter-increment: item
+}
+
+.white-border-content {
+  border: 2px solid #FFFFFF;
+  color: #c1d3e0;
+  padding: 1.5rem 0rem 1.3rem 0rem;
+  padding: 15px -5px 15px -5px;
+  text-align: center;
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: #FFFFFF;
+  background-color: #189bf3;
+}
+
+.span4big {
+  font-size: 5em;
+  font-weight: lighter
+}
+
+.span2big {
+  font-size: 1em;
+  text-transform: uppercase;
+}
+
+.colspan-name {
+  display: inline-block;
+  vertical-align: top;
+  padding-left: 8px;
+  font-weight: 800;
+  font-size: .8em;
+  padding-top: 15px;
+  color: #353535;
+  line-height: 1em;
+}
+
+.colspan-number {
+  color: #808080;
+  font-size: .8em;
+  text-align: left;
+  font-weight: 200;
+  padding-top: -15px;
+  padding-bottom: 15px;
+  margin-top: -10px;
+}
+
+i {
+  background-color: white;
+  border-radius: 50%;
+  border: 1px solid #666666;
+  padding: 5px;
+  color: #000000;
+}
+
+
+/* Style relevant to this page*/
+
+.fa-chevron-left {
+  color: #666666;
+}
+
+.mostshared li {
+  margin-right: 8px;
+  margin-left: 8px;
+}
+
+.margin-top30 {
+  margin-top: 30px
+}
+
+.mostshared .thumb-text-center {
+  display: inline-block;
+  padding-left: 20px;
+  color: #189bf2;
+  font-family: 'Gotham Light';
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.mostshared .thumb-shared-no {
+  text-align: center;
+  margin-top: -10px;
+  color: #169cf1;
+}
+
+
+/*Page Related */
+
+ul.mostshared li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 0px;
+  opacity: 5 !important;
+}
+
+.white-border-content {
+  border: 2px solid #FFFFFF;
+  color: #c1d3e0;
+  padding: 1.5rem 0rem 1.3rem 0rem;
+  padding: 15px -10px 15px -50px;
+  text-align: center;
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+
+.white-border-content a {
+  color: #F7F7F7;
+}
+
+.margin-top15 {
+  margin-top: 15px
+}
+
+.box-shadow-most {
+  padding: 15px 10px 15px 10px;
+  box-shadow: -2px 0px 19px 2px rgba(0, 0, 0, 0.35);
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  color: #000000;
+  vertical-align: middle;
+  margin-top: 25px
+}
+
+.most {
+  text-align: center;
+  font-size: 20px;
+  padding-top: 20px;
+  color: #189bf2;
+  font-family: "Gotham Book";
+}
+
+.social {
+  font-size: large;
+  font-size: 34px;
+  margin-top: -10px;
+  background: -webkit-linear-gradient(#137ec4, #393939);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  overflow: hidden;
+  font-family: "Gotham Light";
+  font-weight: bold;
+}
+
+.sharing {
+  color: #959595;
+  text-align: center;
+  margin-top: -20px;
+  text-transform: uppercase;
+  vertical-align: super;
+  font-size: 1.5rem;
+}
+
+.md9thumbs {
+  text-align: left;
+  margin-left: -70px;
+}
+
+.imgthumbsize {
+  width: 65px;
+  height: 65px
+}
+
+.imgthumbsizeparticipants {
+  margin-top: 0px;
+  margin-right: 5px;
+  width: 40px;
+  height: 40px;
+}
+
+.thumb-text-center {
+  text-align: center;
+  color: #656565
+}
+
+.thumb-shared-no {
+  text-align: center;
+  margin-top: -10px;
+  color: #169cf1;
+}
+
+#view-more {
+  float: right;
+  background-color: #00aeef;
+  margin-top: -30px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+}
+
+.custom-btn-blue {
+  background-color: transparent;
+  color: #189bf2;
+  border: 2px solid #189bf2;
+  display: block;
+  width: 90%;
+  margin: 15px auto 15px auto;
+  text-transform: uppercase;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: 500;
+  font-family: 'Gotham Light';
+  font-size: 13.89px;
+  font-weight: bold;
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  border-radius: 0 !important;
+}
+
+.participantsbg {
+  width: 50%;
+  height: 18%;
+  -webkit-border-radius: 0px 0px 0px 99px;
+  -moz-border-radius: 0px 0px 0px 99px;
+  border-radius: 0px 0px 0px 99px;
+  background: black;
+  color: #FFFFFF;
+  text-align: right;
+  float: right;
+  width: 100%;
+  background-color: rgba(155, 55, 55, 0.7);
+  background-image: none;
+  background-repeat: repeat;
+  background-attachment: scroll;
+  background-clip: border-box;
+  background-origin: padding-box;
+  background-size: auto auto;
+  padding-top: 1.5rem;
+  padding-right: 0px;
+  padding-bottom: 1.5rem;
+  padding-left: 0px;
+  margin-left: 15px;
+  margin-top: -385px;
+  overflow-x: hidden;
+}
+
+
+/*.content:before {
+		content: "";
+		left: 0;
+		right: 0;
+		z-index: -1;
+		width: 100%;
+		height: 50px;
+		display: block;
+		background-image: linear-gradient(45deg, rgb(212,121,0), rgb(204,204,204));
+		-webkit-filter: blur(5px);
+		-moz-filter: blur(5px);
+		-o-filter: blur(5px);
+		-ms-filter: blur(5px);
+		filter: blur(5px);
+		position: relative;
+	}
+	.content {
+		left: 0;
+		right: 0;
+		z-index: 0;
+		/*margin-left: 20px;
+		margin-right: 20px;
+		color: #fff;
+		position: relative;
+	}*/
+
+#viewmore {
+  color: #FFFFFF;
+  background-color: #00adef;
+  float: right;
+  margin-top: -25px;
+}
+
+.animated-progress-striped {
+  background: repeating-linear-gradient( to right, #0cccf9, #0cccf9 15px, #FFFFFF 15px, #FFFFFF 20px);
+}
+
+.repeat-gradient-bottom {
+  background-position: center top;
+  width: 100%;
+  height: 100px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  vertical-align: baseline;
+  position: absolute;
+  padding-bottom: 10px;
+  bottom: 0px;
+  margin-bottom: 0px;
+  background-image: url('file:///C:/Users/Home/Desktop/blurr.jpg');
+}
+
+.circletext {
+  color: #6c6c6c;
+  font-family: 'Gotham Book';
+  font-size: 11.27px;
+  text-transform: uppercase;
+}
+
+.btngrade {
+  width: 100%;
+  background: linear-gradient(to bottom, #ec135b, #bd085c, #b0045d, #aa035d, #a5025e, #9f005d);
+  min-height: 41px;
+  color: #fff;
+  font-size: 16px;
+  line-height: 20px;
+  font-family: "GothamBook";
+  padding: 8px 21px 8px 21px;
+  background: linear-gradient(to bottom, #ec135b, #bd085c, #b0045d, #aa035d, #a5025e, #9f005d);
+  color: #FFFFFF;
+  border-radius: 20px;
+  margin-right: -27px;
+}
+
+.btngrade1 {
+  padding: 8px 40px 8px 40px;
+  background: linear-gradient(to bottom, #f18d1d, #d57317, #b65611, #ad4e0f);
+  color: #FFFFFF;
+  border-radius: 20px;
+  margin-right: 15px;
+}
+
+
+/*middle content*/
+
+.eachcontent {
+  /*  max-width: 685px; */
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.textcontent {
+  /*  background: rgba(0,0,0,.5);
+          position: absolute;
+          bottom: 0px;
+          width: 96%;
+          color: #fff;*/
+}
+
+.titlelist {
+  padding: 10px 0px;
+  margin: 0px;
+}
+
+ul.titlelist li {
+  display: inline-block;
+  padding: 0px 20px;
+  border-right: 1px solid #fff;
+}
+
+ul.titlelist li:last-child {
+  border-right: 0px none;
+}
+
+ul.titlelist li a {
+  color: #fff;
+  font-size: 25px;
+  line-height: 32px;
+  font-family: "HelveticaNeueLight";
+  text-decoration: none;
+}
+
+ul.titlelist li.title a {
+  font-family: "HelveticaNeueBold";
+}
+
+.btn.btn-learnmore {
+  float: right;
+  background: #ce0c5c;
+  border: 1px solid #ce0c5c;
+  border-radius: 26px !important;
+  max-width: 160px;
+  width: 100%;
+  background: linear-gradient(to bottom, #ec135b, #bd085c, #b0045d, #aa035d, #a5025e, #9f005d);
+  min-height: 41px;
+  color: #fff;
+  font-size: 16px;
+  line-height: 20px;
+  font-family: "GothamBook";
+  margin-bottom: 16px;
+  padding: 10px 0px;
+  margin-right: 20px;
+}
+
+.btn-group {
+  float: right;
+  max-width: 450px;
+  width: 100%;
+}
+
+.btn.btn-volunteer {
+  background: #e9861b;
+  border: 1px solid #e9861b;
+  border-radius: 26px !important;
+  max-width: 254px;
+  width: 100%;
+  min-height: 41px;
+  color: #fff;
+  font-size: 16px;
+  background: linear-gradient(to bottom, #f18d1d, #d57317, #b65611, #ad4e0f);
+  line-height: 20px;
+  font-family: "GothamBook";
+  margin-bottom: 16px;
+  padding: 10px 0px;
+}
+
+.eachcontent .image2bg {
+  max-width: 985px;
+  width: 100%;
+  height: 479px;
+  background-position: center center;
+  overflow: hidden;
+  position: relative;
+  background-size: contain;
+  background-image: url('/assets/img/wellbeing/1st.jpg');
+  box-shadow: 0px 3px 18px 0px rgba(0, 0, 0, 0.2);
+  background-repeat: no-repeat;
+}
+
+.eachcontent .image3bg {
+  max-width: 985px;
+  width: 100%;
+  height: 479px;
+  background-position: center;
+  overflow: hidden;
+  position: relative;
+  background-image: url('/assets/img/wellbeing/bgwell.png');
+  box-shadow: 0px 3px 18px 0px rgba(0, 0, 0, 0.2);
+}
+
+.eachcontent .blurbg {
+  background-image: inherit;
+  background-position: inherit;
+  left: 0;
+  right: 0;
+  top: -16px;
+  position: absolute;
+}
+
+.eachcontent .blurbg:before {
+  background-position: top center;
+  filter: blur(6px);
+  content: " ";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-image: inherit;
+}
+
+.eachcontent .blurbg .textcontent {
+  -webkit-filter: blur(0);
+  -moz-filter: blur(0);
+  -o-filter: blur(0);
+  -ms-filter: blur(0);
+  filter: blur(0);
+  color: white;
+  padding: 10px;
+  background-color: rgba(253, 139, 56, 0.5);
+  min-height: 120px;
+  box-shadow: 0px 3px 18px 0px rgba(0, 0, 0, 0.28);
+}
+
+.eachcontent .blurbg1 {
+  background-image: url('');
+  background-position: center top;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+}
+
+.launchbtn {
+  border-radius: 30px;
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+  background-color: #189bf2;
+  color: #FFFFFF;
+  font-family: "Gotham Book";
+  font-size: 27px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.comments-bottom {
+  color: #FFFFFF;
+  background: rgba(204, 204, 204, 0.5);
+  border-radius: 40px 0px 0px 0px;
+  float: right;
+  margin-bottom: -1px;
+  padding-top: 15px;
+  padding-bottom: 5px;
+  filter: blur(6px);
+  border-radius: 40px 0px 0px 0px;
+  content: " ";
+  padding-left: 5px;
+  font-size: 19.4px;
+  width: 220px;
+  padding-right: 10px;
+  text-align: right;
+  margin-right: -28px;
+  bottom: 0px;
+  position: absolute;
+  right: 28px;
+  font-family: "Gotham Bold";
+  font-weight: bold;
+}
+
+.para1 {
+  background-color: #959595;
+  box-shadow: -6px -9px 22.32px 1.68px rgba(0, 0, 0, 0.28);
+  color: #FFFFFF;
+  background: rgba(204, 204, 204, 0.7);
+  padding-top: 0px;
+  margin-top: 0px;
+}
+
+.eachcontent .blurbg {
+  background-image: inherit;
+  background-position: inherit;
+  left: 0;
+  right: 0;
+  top: -16px;
+  position: absolute;
+}
+
+ul.mostshared li {
+  margin-bottom: 47px;
+}
+
+ul.mostshared li:first-child {
+  margin-top: 30px
+}
+
+.eachcontent .blurbgcredit {
+  background-image: inherit;
+  background-position: inherit;
+  right: 0;
+  width: 240px;
+  bottom: 0px;
+  border-radius: 120px 0px 0px 0px;
+  position: absolute;
+}
+
+.eachcontent .blurbgcredit:before {
+  background-position: center center;
+  filter: blur(6px);
+  content: " ";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 120px 0px 0px 0px;
+  left: 0;
+  top: 0;
+  background-image: inherit;
+}
+
+.eachcontent .blurbgcredit .textcontent {
+  -webkit-filter: blur(0);
+  -moz-filter: blur(0);
+  -o-filter: blur(0);
+  -ms-filter: blur(0);
+  filter: blur(0);
+  color: white;
+  padding: 10px;
+  background-color: rgba(24, 155, 242, 0.5);
+  border-radius: 120px 0px 0px 0px;
+  min-height: 120px;
+  text-align: center;
+  box-shadow: 0px 3px 18px 0px rgba(0, 0, 0, 0.28);
+}
+
+.sprite1 {
+  filter: grayscale(100%);
+  -webkit-transition: .3s ease-in-out;
+}
+
+.sprite2 {
+  filter: grayscale(100%);
+  -webkit-transition: .3s ease-in-out;
+}
+
+.sprite3 {
+  filter: grayscale(100%);
+  -webkit-transition: .3s ease-in-out;
+}
+
+.sprite1:hover {
+  filter: grayscale(10%);
+  -webkit-transition: .3s ease-in-out;
+}
+
+.sprite2:hover {
+  filter: grayscale(10%);
+  -webkit-transition: .3s ease-in-out;
+}
+
+.sprite3:hover {
+  filter: grayscale(10%);
+  -webkit-transition: .3s ease-in-out;
+}
+
+.flyout {
+position: absolute; 
+  overflow: hidden;
+  z-index: 10000;
+  font-family: 'Gotham Book';
+  font-size: 25px;left: 258px;
+}
+
+.flyout2 {
+  position: absolute; 
+left: 258px;
+
+  overflow: hidden;
+  font-family: 'Gotham Book';
+  font-size:25px;
+  z-index: 10000;
+ 
+}
+
+.flyout3 {
+  position: absolute;
+  overflow: hidden;
+  font-family: 'Gotham Book';
+  font-size: 25px;
+  z-index: 10000;left: 258px;
+  
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.hidden2 {
+  visibility: hidden;
+}
+
+.hidden3 {
+  visibility: hidden;
+}

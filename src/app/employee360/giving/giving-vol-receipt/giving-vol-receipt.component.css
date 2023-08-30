@@ -1,0 +1,175 @@
+﻿    
+.imgthumbsize{
+width: 75px; height: 75px
+}
+.thumb-text-center{text-align: center;color:#656565}
+.thumb-shared-no{text-align: center; margin-top: -10px; color: #169cf1;}
+
+a {
+    cursor: pointer;
+    outline: none;
+    color: #000;
+    text-decoration: none !important;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+a:hover, a:active, a:focus {
+    color: #c1d3e0;
+    text-decoration: none;
+    outline: none;
+}
+button:focus {
+    outline:0;
+}
+#wrapper{
+margin-left: 10%; 
+margin-right: 10%;
+}
+.most{
+text-align: center;font-size:3rem; padding-top: 20px; color:#137ec4
+}
+.social{
+font-size: large; font-size:5rem; margin-top: -30px; background: -webkit-linear-gradient(#137ec4, #393939);  -webkit-background-clip: text;-webkit-text-fill-color: transparent;overflow:hidden
+}
+.sharing
+{color: #959595; text-align: center; margin-top: -20px; text-transform: uppercase; vertical-align: super;font-size:1.5rem;
+
+}
+
+ ul.mostshared li{
+	list-style-type: none; display: inline-block;padding-right:5px;
+	}
+ol.colspan{
+list-style-type: decimal; 
+ -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;margin-left:-20px; 
+   list-style-position: inside;}
+  ol.colspan{
+            
+   
+    -webkit-column-count: 3; /* Chrome, Safari, Opera */
+    -moz-column-count: 3; /* Firefox */
+    column-count: 3;
+    
+}
+ol.colspan li{
+    margin-left:9px; list-style-position: inside;width:33,333333%;}
+	
+
+.spanned ol { 
+    counter-reset: item;font-size: x-large;
+		color: #000000;
+    list-style-type: none;
+}
+.spanned ol li { display: block; }
+.spanned ol li:before { 
+    content: counter(item) "  "; font-size: 2em;
+
+    counter-increment: item 
+}
+	.white-border-vol{
+		border: 2px solid #FFFFFF;
+		color: #c1d3e0;
+		
+		text-align: center;
+		font-size: 1em;
+		text-transform: uppercase;
+		letter-spacing: .1em;
+	}
+    
+    .span4big
+{font-size: 5em;font-weight: lighter
+}
+.span2big
+{
+font-size: 1em; text-transform: uppercase;
+}
+.colspan-name{
+display: inline-block; vertical-align: top; padding-left: 8px; font-weight: 800; font-size: .8em; padding-top: 15px; color: #353535; line-height: 1em;
+}
+.colspan-number
+{
+color: #808080;font-size:.8em; text-align: left; font-weight: 200; padding-top: -15px; padding-bottom: 15px; margin-top: -10px;
+}
+.textgradient{
+margin-top: 30px; background: -webkit-linear-gradient(#189bf3, #346488);  -webkit-background-clip: text;-webkit-text-fill-color: transparent;overflow:hidden
+}
+.spritetweet, .spriteig, .spritefacebook, .sprite360
+{
+	display: inline-block;
+	background: url('social-media-sprite-medium2.png') no-repeat;
+	overflow: hidden;
+	text-indent: -9999px;
+	text-align: left;
+}
+.spritetweet {
+	background-position: -0px -1px;
+	width: 40px;
+	height: 46px;
+}
+.spriteig { background-position:  -40px -1px; width: 44px; height:46px; }
+.spritefacebook { background-position:  -85px -0px; width: 40px; height: 46px; }
+.sprite360 { background-position:  -130px -0px; width: 40px; height:46px; }
+.skew {    
+   background-color: #189bf3; color: #FFFFFF;
+      -webkit-transform: perspective(100px) rotateX(-4deg);
+    -webkit-transform-origin: left center;
+}
+
+.progress{
+	background-repeat: repeat-x;width:73%;
+	height: 50px;
+	background-color: #FFFFFF;
+}
+.progress-bar{
+	background-repeat: repeat-x;
+	background-color: #00CCFF!important;
+}
+.boxborder{
+	border: 1px solid #57AFEA; border-radius: 5px
+	}
+	.direction
+{
+		background-color: white;
+		border-radius: 50%;
+		border: 1px solid #666666;
+		padding: 5px;
+		color: #000000;font-size:3rem;
+	}
+	.fa-stack {
+    position: relative;
+    display: inline-block;
+    width: 95px;
+    line-height: 2em;
+    vertical-align: middle;
+}
+.mleft30{
+	margin-left: 30px
+}
+
+	.button1  {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    background:#fff;
+    border-radius:20px;
+    color:#189bf2;
+    font-family: gotham book;
+font-size: 19px;
+
+}
+	.button1 b {
+				font-size: 19px;
+	}
+	.circle-dir {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 50%;
+    font-size: 2.5em;
+    height: 65px;
+    width: 100%;
+    margin-top: 15px;}
+    .note-btn{
+background: none ; /* padding: 20px; border-radius: 50%; background: none;box-shadow: -2px 8px 9px 3px rgba(237,237,237,1); */
+}
+

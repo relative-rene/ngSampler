@@ -1,0 +1,51 @@
+
+<div id="wrapper">
+  <div class="container mt30" id="main-wrapper">
+    <div class="container">
+      <div class="row">
+        <app-toast [message]="toast.message"></app-toast>
+        <div class="col-md-2">
+          <a routerLink="/habitat">
+            <span class="fa-stack fa-3x  circle-dir"><i class="fa fa-angle-left" style="font-size:46px; padding-right: 10px; padding-left: 10px;border: 0;"></i></span>
+          </a>
+        </div>
+        <div class="col-md-7">
+          <h2 class="head1">Mentorship</h2>
+        </div>
+        <div class="col-md-3 pull-right">
+          <button type="button" data-toggle="modal" data-target="#becomeMentor" class="btn button-mentor">BECOME A MENTOR</button>
+        </div>
+      </div>
+      <div class="row mt30">
+        <div class="col-md-2">
+
+          <div class="dropdown">
+            <button class="btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">SORT BY
+              <span class="caret" style="margin-left: 25px;color:#0cca61"></span></button>
+            <ul class="dropdown-menu dropdownPanel" role="menu" aria-labelledby="menu1">
+              <li class="sortbyitem1" role="presentation">
+                <a role="menuitem" tabindex="-1">NAME: A-Z</a></li>
+              <li class="sortbyitem2" role="presentation"><a role="menuitem" tabindex="-1">NAME: Z-A</a></li>
+              <li class="sortbyitem2" role="presentation"><a role="menuitem" tabindex="-1">DEPARTMENT</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-9 box">
+        <h2 style="font-family:'Gotham Book';font-size:40px;color:#898989;text-align: center;
+    margin-top: 100px;">There are currently no mentors <br>
+available at this time.
+</h2>
+<h3 style="font-family:'RockSalt';font-size:40px;color:#189bf2;text-align: center;
+    margin-top: 70px; ">Interested in becoming one?</h3>
+    <img src="../../../assets/img/habitat/MENTORSHIP/arrow.png" alt="" class="img-responsive pull-right" style="margin-top: -315px;
+    margin-right: -18px;
+    width: 90px;
+    height: 293px;margin-bottom: 150px;">
+        </div>
+        
+        
+      </div>
+    </div>
+    <!-- /Pagination -->
+  </div>
+</div>

@@ -1,0 +1,172 @@
+<app-giving-navbar>
+</app-giving-navbar>
+
+<div id="wrapper">
+  <div class="container" id="main-wrapper" style="margin-top: 30px">
+    <div class="row">
+      <div class="col-xs-12 col-md-12" style="margin-bottom:15px">
+        <div class="row">
+          <div class="col-md-3" style="margin-top:-15px;">
+            <!--Second tooltip-->
+            <!--<button routerLink="/giving-find-npo" type="button" class="btn findnpo">FIND NPOs</button> -->
+            <h1 style="font-family: 'Gotham Light'; font-size: 27px; color: #ce058a; text-align:center;margin-right:80px; font-weight: bold;">Filter By</h1>
+          </div>
+          <div class="col-md-9">
+            <div class="col-md-3">
+              <button routerLink="/giving-find-npo" type="button" class="btn button1" style="float:right; padding-top: 2px; padding-bottom: 2px; margin-top: 8px"><b style="color:#189bf3">Find NPO</b></button>
+
+            </div>
+            <div class="col-md-4">
+              <form #form="ngForm" (ngSubmit)="search(form.value)">
+                <div class="form-group input-group col-xs-12">
+                  <input type="text" class="form-control" style="border: 1px solid #ce058a!important;"
+                      placeholder="SEARCH BY EIN" name="search" ngModel required>
+                    <span class="input-group-btn input-group-btn-sm">
+                    <button class="btn btn-default" type="submit">
+                      <i class="fa fa-search" style="position: relative;right: 14px;color:#ce058a!important"></i>
+                    </button>
+                </span>
+                </div>
+              </form>
+            </div>
+            <div class="col-md-5">
+              <form #form="ngForm" (ngSubmit)="search(form.value)">
+                <div class="form-group input-group col-xs-12 pull-right">
+                  <input type="text" class="form-control" style="border: 1px solid #ce058a!important;"
+                      placeholder="SEARCH OPPORTUNITIES" name="search" ngModel required>
+                    <span class="input-group-btn input-group-btn-lg">
+                    <button class="btn btn-default" type="submit">
+                      <i class="fa fa-search" style="position: relative;right: 42px;color:#ce058a!important"></i>
+                    </button>
+                </span> </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!---sidebar--->
+        <div class="col-xs-12 col-md-2" style="text-align: center;padding: 0px; padding-right: 15px;">
+          <div class="row">
+            <div class="col-xs-12 col-md-12">
+              <div class="dropdown">
+                <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+                <span #sortByFilterMenu>SORT BY</span>
+               <p>  <span class="caret"></span></p>
+             </button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                  <li class="sortbyitem1" role="presentation"><a (click)="setSortByFilter('SORT BY')" role="menuitem" tabindex="-1">Clear
+                   </a>
+                  </li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setSortByFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">Date</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setSortByFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">Title</a></li>
+                </ul>
+              </div>
+              <br>
+              <div class="dropdown">
+                <button class="btn  dropdown-toggle" type="button" data-toggle="dropdown">
+                   <span #stateFilterMenu>STATE</span>
+                 <p>  <span class="caret"></span></p>
+               </button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                  <li class="sortbyitem1" role="presentation"><a (click)="setStateFilter('STATE')" role="menuitem" tabindex="-1">Clear
+                   </a>
+                  </li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">AL</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">AK</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">AZ</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">AR</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">CA</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">CO</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">CT</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">DE</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">DC</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">FL</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">GA</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">HI</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">ID</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">IL</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">IN</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">IA</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">KS</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">KY</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">LA</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">ME</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">MD</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">MA</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">MI</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">MN</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">MS</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">MO</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">MT</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">NE</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">NV</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">NH</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">NJ</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">NM</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">NY</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">NC</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">ND</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">OH</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">OK</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">OR</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">PA</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">RI</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">SC</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">SD</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">TN</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">TX</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">UT</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">VT</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">VA</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">WA</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">WV</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">WI</a></li>
+                  <li class="sortbyitem2" role="presentation"><a (click)="setStateFilter($event.target.innerHTML)" role="menuitem" tabindex="-1">WY</a></li>
+                </ul>
+              </div><br>
+              <div class="dropdown">
+                <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+                <span #categoryFilterMenu>CATEGORY</span>
+                     <p>  <span class="caret"></span></p>
+                   </button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                  <li class="sortbyitem1" role="presentation"><a (click)="setCategoryFilter('CATEGORY')" role="menuitem" tabindex="-1">Clear
+                   </a>
+                  </li>
+                  <li *ngFor="let cat of categories" class="sortbyitem2" role="presentation">
+                    <a (click)="setCategoryFilter(cat)" role="menuitem" tabindex="-1">{{ cat }}
+                   </a>
+                  </li>
+                </ul>
+              </div>
+              <br>
+            </div>
+            <div class="clearfix"></div>
+            <div class="col-md-12">
+              <h4 style="font-family: 'Gotham Thin'; font-size: 25px; color: #ce058a; text-transform: lowercase;">powered By</h4>
+              <img src="/assets/img/giving/charity-logo.jpg" alt="" class="img-responsive" />
+            </div>
+          </div>
+          <br> &nbsp;
+          <br>
+        </div>
+        <!---thumbnails-->
+        <div class="col-xs-12 col-md-10">
+          <div class="row">
+            <giving-search-result *ngFor="let event of events" [event]="event" (deleteEvent)="delete(event)"></giving-search-result>
+          </div>
+
+          <div class="col-md-12 text-center">
+            <div class="dotstyle dotstyle-fillup">
+              <ul class="pagination">
+                <li><a class="active">Home</a></li>
+                <li><a>Link 1</a></li>
+                <li><a>Link 2</a></li>
+                
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button id="givingGetInvolvedreloadDataButton" style="display:none" (click)="reloadData()"></button>

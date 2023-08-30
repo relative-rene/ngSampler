@@ -1,0 +1,564 @@
+﻿  #wrapper{
+margin-left: 10%; 
+margin-right: 10%;
+}
+div.col-md-12 h1{
+	font-family:'Gotham Thin';
+	font-size:50px;
+	color:#189bf2;
+}
+.dropdown button {
+width: 100%;text-align:left;border:1px solid #189bf3;background-color: #fff; 
+	color: #189bf3 !important; padding-top: 10px; padding-bottom: 10px; font-size: 22px;font-family:'Gotham Light';border-radius:0px
+}
+.dropdown button p{
+margin: 0px; padding: 0px; display: inline-block; float: right
+	
+}
+.caret {
+margin-top:-5px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 15px solid #189bf3;
+}
+.input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group {
+    z-index: 2;
+    margin-left: -1px;
+    background: #fff;
+    border: 1px solid #0b80b1;
+}
+div.col-md-11 h2{
+	font-family:'Gotham Book';
+	font-size:27px;
+	color:#189bf2;
+	    margin-left: 20px;
+}
+.mt30{
+	margin-top:30px;
+}
+div.col-md-9 h2{
+	font-family:'Gotham Book';
+	font-size:33px;
+	color:#fd8b38;
+   font-weight:bold
+}
+.well{
+	box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.13); 
+	background:#fff;
+	margin-top:30px;
+	    border-radius: 10px;
+}
+.well h3{
+font-family:'Gotham Thin';
+font-size:50px;
+color:#189bf2;
+margin: -12px 31px 0 -10px;
+float:left
+}
+.well h2{
+font-family:'Gotham Book';
+font-size:16px !important;color:#7b0046 !important;
+margin-top:-8px
+}
+.well p{
+text-align:right;
+font-family:'Gotham Book';
+font-size:18px;color:#189bf2;
+margin-top: -10px;
+}
+.well h4{
+	font-family:'Gotham Book';
+	font-size:17px;
+	color:#189bf2;
+	text-align:left
+}
+.btn-warning{
+	box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.13); 
+	background:#fff;
+    border:none !important;
+    color:#189bf2 !important;
+    font-family:'Gotham Book' !important;
+    font-size:16px !important;
+    border-radius:50px !important;
+    padding: 20px;
+    }
+    ul{
+       margin-left: -32px;
+	list-style-image:url('/assets/img/wellbeing/mental/bullets.png');
+}
+ul li{
+	margin-bottom:10px
+}
+ul li a{
+	color:#a1a1a1;
+    font-family:'Gotham Book';
+    font-size:12px;
+
+}	  
+.nav ul{
+       margin-left: 40px;
+	list-style-image:url('/assets/img/wellbeing/mental/bullets.png');
+}
+.nav ul li{
+	margin-bottom:20px
+}
+.nav ul li a{
+	color:#a1a1a1;
+    font-family:'Gotham Book';
+    font-size:22px;
+
+}	  
+.accordion-toggle:hover {
+      text-decoration: none;
+    }
+.panel-title {
+    margin-top: 0px !important;
+    font-size:14px !important;
+    color:#000 !important;
+    font-weight:bold;
+       }
+.panel-group .panel {
+    margin-bottom: 0;
+    border-radius: 0px;
+    border-left: none;
+    border-right: none;
+}
+.glyphicon-plus:before {
+    content: "\002b";
+    font-size: 12px;
+    color:#189bf2;
+
+}
+.glyphicon-minus:before {
+    content: "\2212";
+    font-size: 12px;
+    color:#189bf2;
+
+}
+.fa-plus:before {
+    content: "\f067";
+    color:red;
+}
+.fa-minus:before {
+    content: "\f067";
+    color:red;
+}
+
+.fa-play-circle:before {
+    content: "\f144";
+    color: #bbd6f1;
+        margin-left: 16px;
+         margin-right: 10px;
+
+}
+.skew {
+		background-color: #189bf2!important;
+		color: #FFFFFF;background-image: linear-gradient(to bottom,#189bf2 0,#189bf2 100%);
+
+
+		-webkit-transform: perspective(100px) rotateX(-6deg);
+		-webkit-transform-origin: left center;
+	}
+
+.progress{
+	background-repeat: repeat-x;width:64%;
+	height: 35px;
+	background: #cccccc;
+		    border-radius: 0px;
+float: left;
+    margin-right: 8px;
+ border:none;
+ margin-bottom:10px;
+}
+.progress-bar{
+	background-repeat: repeat-x;
+}
+	.control-label {
+		color: #959595;
+		font-family: "Gotham Book";
+		font-size: 19px;
+	}
+	.progress p {
+		font-family: "Gotham Thin";
+		font-size: 50px;
+		color: #189bf2;font-weight:500;
+		 margin-top: -8px; text-align: right; margin-right: 10px;
+	}
+	.back-to-top {
+cursor: pointer;
+bottom: 0;
+background: #fd8b38;
+    border-radius: 20px;
+    padding: 20px 12px 20px 12px;
+    border: none;
+}
+.back-to-top:hover {
+    /* color: #fff; */
+    background-color: #fd8b38;
+    border-color: #fd8b38;
+}
+.btn-info{
+	text-align:center;
+	font-family:'Gotham Book';
+	color:#7b0046;
+	font-size:25px;
+	background: #fff;
+    border: none;
+     margin-top: -7px;
+    position: relative;
+    margin-left: 300px;
+    }
+    .btn-info:hover {
+    color: #7b0046;
+    background-color: #fff;
+    border-color: #fff !important;
+}
+.dropdown-menu{
+	position:relative;
+}
+.btn-info.focus, .btn-info:focus {
+    color: #7b0046;
+     background-color: #fff;
+     outline:none;
+     }
+.btn-info.active.focus, .btn-info.active:focus, .btn-info.active:hover,
+ .btn-info:active.focus, .btn-info:active:focus, .btn-info:active:hover,
+  .open>.dropdown-toggle.btn-info.focus,
+ .open>.dropdown-toggle.btn-info:focus,
+  .open>.dropdown-toggle.btn-info:hover {
+     color: #7b0046;
+     background-color: #fff;
+      outline:none;
+
+   }
+button.accordion:after {
+    content: '\002B';
+    color: #7b0046;
+    font-weight: bold;
+    float: left;
+    margin-left: 5px;
+}
+
+button.accordion.active:after {
+    content: "\2212";
+}
+
+div.panel1 {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    border: 2px solid #189bf2;
+    border-top: none;
+    margin-top: -12px;
+}
+.mt10{
+	margin-top:10px
+}
+.fleft{
+	float: left;
+    margin-top: 28px;
+    margin-right: 16px;
+}
+div.col-md-9 h2{
+font-family:'Gotham Book'; 
+font-size:19px;color:#b7b7b7;
+}
+.caption{
+	color:#189bf2;
+}
+div.col-md-9 h3{
+font-family:'Gotham Light';
+font-size:25px;color:#189bf2; 
+   margin-top: 40px;
+}
+.caption1{
+	margin-bottom: 40px; 
+	margin-left: 40px;
+	font-family:'Gotham Book';
+	font-size:27px;color:#189bf2;
+}
+.mb10{
+	margin-top:20px;
+	margin-bottom:10px
+}
+.caption2{
+	margin-bottom: 40px; 
+	margin-left: 40px;font-family:'Gotham Book';
+	font-size:27px;color:#189bf2;
+}
+.paragraph{
+	margin-left: 40px;
+	font-family:'Gotham Book';
+	font-size:22px;
+	color:#a1a1a1;
+}
+.caption3{
+	margin-left: 40px;margin-top:20px;font-family:'Gotham Book';font-size:22px;color:#555555;
+}
+.mf20{
+	margin-left:20px !important;
+	margin-top:10px
+}
+.caption4{
+	font-family:'Gotham Book';font-size:27px;color:#189bf2;
+}
+.mtop20{
+	margin-top:20px;
+}
+.mt20{
+	margin-top:20px;
+	float:left
+}
+.ml-16{
+	margin-top:20px;
+	float:left;
+    margin-left:-16px;
+}
+.paragraph1{
+font-family:'Gotham Book';
+font-size:13px;color:#959595;
+margin: 18px 0 0 30px;
+}
+.paragraph2{
+	font-family:'Gotham Book';
+	font-size:16px;color:#a1a1a1;
+	margin: -310px 0 0 178px;
+}
+.feedback{
+	border:2px solid #189bf2;
+	margin-top:15px;
+	margin-bottom:-18px
+}
+.feedback h4{
+	font-family:'Gotham Light';
+	font-size:24px;color:#189bf2;
+	padding:8px;margin-bottom:0px;
+	margin-left: -10px;
+}
+div.col-md-3 h1{
+	font-family:'Gotham Thin';
+	font-size:116px;
+	color:#189bf2;text-align:center;
+	margin-top:20px;margin-bottom:0px
+}
+.para2{
+	font-family:'Gotham Book';
+	color:#a1a1a1;font-size:18px;
+	text-align: center;margin-top:10px;
+	margin-bottom:50px
+}
+.pro{
+	width: 70%; background-color: #189bf2!important;
+	 color: #FFFFFF;
+}
+.pro1{
+	width: 20%; background-color: #189bf2!important;
+	 color: #FFFFFF;
+}
+
+.pro2{
+	width: 9%; background-color: #189bf2!important;
+	 color: #FFFFFF;
+}
+
+.pro3{
+	width: 1%; background-color: #189bf2!important;
+	 color: #FFFFFF;
+}
+
+
+.im1{
+	margin-top:5px;margin-right:18px;
+	margin-left:5px;float:left;
+}
+.para{
+	font-family:'Gotham Book';color:#189bf2;
+	font-size:16px;margin-top:6px
+}
+.para1{
+	font-family:'Gotham Book';color:#189bf2;
+	font-size:16px;margin-top:24px
+}
+.top{
+	margin-top: -90px;
+    margin-left: 216px;
+}
+div.col-md-4 img{
+	float:left;
+	margin-right:10px;
+}
+.im2{
+	float: right !important;
+    margin: -18px 0px 0 0px;
+}
+
+div.col-md-4 p{
+	font-family:'Gotham Book';
+	font-size:16px;
+	color:#999999;
+	margin-top:15px;
+}
+div.col-md-8 p{
+	font-family:'Gotham Book';
+	font-size:17px;
+	color:#999999;
+	
+}
+.im3{
+	margin:auto;
+	padding: 16px 0 12px 0;
+}
+.tab-pane{
+	padding: 30px;
+    border: 2px solid #189bf2;
+}
+td{
+	width: 20%;font-family:'Gotham Book';font-size:18px;color:#189fb2 !important
+}
+td:first-child {
+	width: 80%;font-family:'Gotham Book';font-size:18px;color:#189fb2 !important
+}
+.head-td{
+font-family:'Gotham Book'!important
+;font-size:18px!important
+;color:#a1a1a1!important
+;
+}
+th{
+font-family:'Gotham Light';font-size:18px;color:#a1a1a1;width:20%
+}
+th:first-child {
+	width:70%;font-family:'Gotham Light';font-size:18px;color:#a1a1a1;
+}
+.eachcontent .image1bg{
+	 
+	  width: 100%;
+	  height: 394px;
+	  background-position: center;
+	  overflow: hidden;
+	  position: relative;
+	  background-image: url('/assets/img/wellbeing/mental/rating.png');background-size:contain;
+  }
+  .eachcontent .blurbg {
+          background-image:inherit;
+          background-position: inherit;
+         /* left:0; */
+          right:0;
+          bottom:0;border-radius: 120px 0px 0px 0px;
+          position:absolute;width:470px;min-height:160px;height: 160px;
+      }
+
+      .eachcontent .blurbg:before{
+	  background-position: right center;border-radius: 120px 0px 0px 0px;
+	  -webkit-filter: blur(6px);
+	  -moz-filter: blur(6px);
+	  -o-filter: blur(6px);
+	  -ms-filter: blur(6px);
+	  filter: blur(6px);
+	  content: " ";
+	  width: 100%;
+	  height: 100%;
+	  position: absolute;
+	  left: 0;
+	  top: 0;
+	  background-image: inherit;
+  }
+
+      .eachcontent .blurbg .textcontent{
+          -webkit-filter: blur(0);
+          -moz-filter: blur(0);
+          -o-filter: blur(0);
+          -ms-filter: blur(0);
+          filter: blur(0);
+          color: white;
+          padding: 10px;
+          background-color: rgba(0, 0, 0, 0.1);border-radius: 120px 0px 0px 0px;
+
+          min-height: 120px;
+      }
+    .textcontent h3 {
+	font-family: 'gotham Bold'!important;
+    font-size: 15.4px!important;
+    padding-top: 0px!important;
+    padding-left: 45px!important;
+    margin-top: 16px!important;
+    color: white!important;
+    font-weight: 600!important;
+}
+  .textcontent h5{
+	  padding-left: 45px;
+	  padding-top: 0px;
+	  padding-bottom: 0px;
+	  margin-top: 2px;
+	  margin-bottom: 0px;
+	  font-family: "Gotham Book";
+	  font-size: 13px;
+	  font-weight: bold;
+	  color: #FFFFFF;
+  }
+  .textcontent h4 {
+	padding-left: 45px;
+	  padding-top: 0px;
+	  padding-bottom: 0px;
+	  margin-top: 5px;
+	  margin-bottom: 0px;
+	  font-family: "Gotham Book";
+	  font-size: 13px;
+	  font-weight: bold;
+	  color: #FFFFFF;
+
+}
+.textcontent p {
+font-family: 'Gotham Thin'; font-size: 69px; font-weight: bold; color: #FFFFFF; position: absolute; right: 7px;
+    bottom: -10px;}
+.textcontent p span {
+	vertical-align: text-top; font-family:  Gotham Thin; font-size: 24px; font-weight: bold; text-decoration: line-through;
+}
+.dotstyle ul {
+	position: relative;
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	cursor: default;
+}
+
+.dotstyle li {
+	position: relative;
+	display: block;
+	float: left;
+	margin: 0 16px;
+	width: 7px;
+	height: 7px;
+	cursor: pointer;
+}
+
+.dotstyle li a {
+	top: 0;
+	left: 0;
+	width: 100%;
+/*	height: 100%;*/
+	outline: none;
+	border-radius: 50%;
+	background-color: #fff;
+	background-color: rgba(254,197,155,0.5);
+	text-indent: -999em;
+	cursor: pointer; /* make the text accessible to screen readers */
+	position: absolute;border:none;
+}
+.dotstyle li a.active {
+	top: 0;
+	left: 0;
+	width: 100%;
+/*	height: 100%;*/
+	outline: none;
+	border-radius: 50%;
+	background-color: #fff;
+	background-color: rgba(253,139,56,0.9);
+	text-indent: -999em;
+	cursor: pointer; /* make the text accessible to screen readers */
+	position: absolute;border:none;
+
+}

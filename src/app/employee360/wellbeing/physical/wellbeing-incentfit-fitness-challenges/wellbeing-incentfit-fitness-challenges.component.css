@@ -1,0 +1,41 @@
+﻿    div.col-md-11 h1{
+		color: #189bf2;
+		text-align: center;
+		font-family: 'Gotham Book';
+		margin-top: 8px;
+		font-size: 46px;
+		font-weight: 600;
+	}
+
+	.circle-dir{border-style: solid; border-width: 1px;border: 1px solid #209ff2; border-radius: 50%; font-size:3em; padding-right: 5px; padding-left: 5px;}
+	.transaction p {
+		font-family: "Gotham Thin";
+		color: #464646;
+		font-size: 41px;
+		font-weight: bold;
+		line-height: 40px;
+	}
+.fa-stack {
+    position: relative;
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    line-height: 2em;
+    vertical-align: middle;
+    color:#209ff2;
+}
+.fa-angle-left{
+	font-size:66px;
+	 padding-left: 16px;
+	 border: 0;
+}
+
+div.col-md-8 a {
+	position: relative;
+	top: -150px;
+	font-family: 'Gotham Book';
+	font-size: 47px;
+	color: #FFFFFF;
+	font-weight: bold;
+	text-decoration: none;
+}

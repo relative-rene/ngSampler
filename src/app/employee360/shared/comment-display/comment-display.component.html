@@ -1,0 +1,55 @@
+﻿<comment-add id="{{id}}" (comments)="rootComment.reloadData()" collname="{{collname}}" [cParentId]="rootCommentId"></comment-add>
+<button style="display:none;" [attr.id]="buttonId()" (click)="reloadData()"></button>
+
+<div *ngFor="let comment of comments" class="comment-box">
+  <div class="row">
+    <!--<p class="comments-bottom para1 commentHeader" style="position:relative;top:-20px;">Comment</p> -->
+    <div class="col-xs-2  mt20" style="float:left;">
+      <img src="https://s3.amazonaws.com/imminent/oahu/{{ comment.createUser }}/picture.png" class="img-circle imgthumb">
+    </div>
+   <!-- <div style="position:relative;top:-25px;left:-20px;color:blue;font-weight:bold">{{ comment.firstName }} gundeep</div> -->
+
+<div class="col-xs-10 mt20" style="padding-left: 30px;">
+
+<textarea cols="47" rows="2" class="commented">{{ comment.commentText }}</textarea>
+<img alt="" src="/assets/img/shape.png" style="margin: -54px -1px 1px -8px;">
+
+
+
+				<p class="pull-right" style="font-family: 'Gotham Book'; font-size: 11px; color: #fff; margin: 5px 18px 0 0px;">
+					REPLY<i aria-hidden="true" class="fa fa-share"></i></p>
+				</div>
+
+    
+    <div [innerHTML]="getCommentImage(comment) | rawHTML">
+    </div>
+    <div style="float:right;">
+      <a style=" /*color: #707070;*/ color: #fff; font-size: 16px;" (click)="deleteComment(comment)"
+       [hidden]="! isCurrentUser(comment.createUser)"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+       &nbsp; &nbsp;
+      <a (click)=" rootComment.replyShown[comment.id] = (rootComment.replyShown[comment.id]) ? false : true;"
+       style=" /*color: #707070; */color: #fff; font-size: 16px;">({{ getAllChildCount(comment.children).toString() }})<i class="fa fa-commenting" aria-hidden="true"></i></a>
+
+      <a style=" /*color: #707070; */color: #fff;  font-size: 16px;"><i class="fa fa-heart" aria-hidden="true"></i></a> &nbsp;
+    </div>
+    <div style="clear:both;"></div>
+    
+
+    <comment-display id="{{ id }}" [rootComment]="rootComment"  [childComments]="comment.children" [rootCommentId]="comment.id" collname="{{ collname }}"
+        [hidden]="! rootComment.replyShown[comment.id]"></comment-display>
+        
+   <ol class="carousel-indicators">
+					<li class="active" data-slide-to="0" data-target="#carousel-example-generic">
+					</li>
+					<li class="" data-slide-to="1" data-target="#carousel-example-generic">
+					</li>
+					<li class="" data-slide-to="2" data-target="#carousel-example-generic">
+					</li>
+				</ol>
+       
+  </div>
+  
+       
+  </div>
+   
+

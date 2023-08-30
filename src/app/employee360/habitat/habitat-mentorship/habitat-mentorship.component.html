@@ -1,0 +1,110 @@
+<div id="wrapper">
+  <div class="container mt30" id="main-wrapper">
+    <div class="container">
+      <div class="row">
+        <app-toast [message]="toast.message"></app-toast>
+        <div class="col-md-2">
+          <a routerLink="/habitat">
+            <span class="fa-stack fa-3x  circle-dir"><i class="fa fa-angle-left" style="font-size:46px; padding-right: 10px; padding-left: 10px;border: 0;"></i></span>
+          </a>
+        </div>
+        <div class="col-md-7">
+          <h2 class="head1">Mentorship</h2>
+        </div>
+        <div class="col-md-3 pull-right">
+          <button type="button" data-toggle="modal" data-target="#become-mentor" class="btn button-mentor">BECOME A MENTOR</button>
+        </div>
+      </div>
+      <div class="row mt30">
+        <div class="col-md-2">
+
+          <div class="dropdown">
+            <button class="btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">SORT BY
+              <span class="" style="margin-left: 25px;color:#0cca61">X</span></button>
+            <ul class="dropdown-menu dropdownPanel" role="menu" aria-labelledby="menu1">
+              <li (click)="sortMentors('firstName','1')" class="sortbyitem1" role="presentation"><a role="menuitem" tabindex="-1">NAME: A-Z</a></li>
+              <li (click)="sortMentors('firstName','-1')" class="sortbyitem2" role="presentation"><a role="menuitem" tabindex="-1">NAME: Z-A</a></li>
+              <!--<li (click)="sortMentors('{deparment:1}')" class="sortbyitem3" role="presentation"><a role="menuitem" tabindex="-1">DEPARTMENT</a></li>-->
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-10">
+
+          <section *ngFor="let pager of pagedItems; let i = index;">
+            <div class="row" style="margin-top: 30px">
+              <div class="col-md-2">
+                <img src="/assets/img/sylivalarge.png" alt="" class="img img-circle">
+              </div>
+              <div class="col-md-7">
+                <h3>{{pager.firstName}} {{pager.lastName}}</h3>
+                <h4>{{pager.title}}</h4>
+                <button *ngFor="let skill of pager.skills" class="btn btn-md margin-button-blue btnwide">{{skill}}</button>
+                <button *ngFor="let interest of pager.interest" class="btn btn-md margin-button-maroon btnwide">{{interest}}</button>
+              </div>
+
+              <div style="margin-top: 15px" class="col-md-3 text-right">
+                <button (click)="enableComment(pager)" data-toggle="modal" data-target="#myModalintro"
+                    class="btn btn-lg introbtn">INTRODUCE ME</button> <br>
+                  <br>
+                  <a style="font-family: 'Gotham Thin'; color: #189bf2; font-size: 56px; font-weight: 600;position: relative;top: 30px;"
+                      (click)="toggleInfo(pager)">+</a>
+              </div>
+              <div class="col-md-10" style="background-image: url('assets/img/hr-shadow.png'); background-repeat: no-repeat; background-position: center top; padding-top: 50px; padding-bottom: 20px;"></div>
+              <article *ngIf="pager.extendInfo" class="row profile">
+                <div class="col-md-1"></div>
+                <div class="col-md-5">
+                  <h4 class="detail-title">Background</h4>
+                  <p class="detail-desc">{{pager.background}}</p>
+                </div>
+                <div class="col-md-5">
+                  <h4 class="detail-title">Why Choose Me</h4>
+                  <p class="detail-desc">{{pager.whyMe}}</p>
+                </div>
+              </article>
+            </div>
+          </section>
+        </div>
+
+        <!-- PAGINATION -->
+        <div class="col-md-9 text-center" style="margin-top: 30px">
+          <nav aria-label="Page navigation">
+            <!-- pager -->
+            <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+              <li [ngClass]="{disabled:pager.currentPage === 1}">
+                <a (click)="setPage(1)">First</a>
+              </li>
+              <li [ngClass]="{disabled:pager.currentPage === 1}">
+                <a (click)="setPage(pager.currentPage - 1)"><span aria-hidden="true" style="color: #FFFFFF">&#8722;</span></a>
+              </li>
+              <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                <a (click)="setPage(page)">{{page}}</a>
+              </li>
+              <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                <a aria-label="Next" (click)="setPage(pager.currentPage + 1)">
+                  <span aria-hidden="true" style="color: #FFFFFF">&#43;</span>
+                </a>
+              </li>
+              <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                <a (click)="setPage(pager.totalPages)">Last</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+  <!-- /Pagination -->
+</div>
+</div>
+</div>
+<!-- modals -->
+<app-become-mentor></app-become-mentor>
+
+<app-introduce-me [pager]="pager"></app-introduce-me>
+<!-- modals -->
+
+<script>
+  var textAreas = document.getElementsByTagName('textarea');
+  Array.prototype.forEach.call(textAreas, function(elem) {
+    elem.placeholder = elem.placeholder.replace(/\\n/g, '\n');
+  });
+</script>

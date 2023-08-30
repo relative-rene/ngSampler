@@ -1,0 +1,64 @@
+<div id="wrapper">
+  <div class="container">
+    <div class="row mt30">
+      <div class="col-md-4">
+      </div>
+      <div id="search" class='col-md-6 col-md-offset-2'>
+      </div>
+    </div>
+    <div class="row mt30">
+      <div class="col-md-12 global-box-shadow pb30 ">
+        <app-toast [message]="toast.message"></app-toast>
+        <table class=" table-responsive">
+          <thead>
+            <tr>
+              <th>MENTORS</th>
+              <th>ACTION</th>
+            </tr>
+            <tr class="divider">
+              <td colspan="4"></td>
+            </tr>
+          </thead>
+          <tbody *ngFor="let pager of pagedItems">
+            <tr id="{{pager._id}}">
+              <td class=col-md-3><img src="http://placehold.it/50" alt="" class="img-responsive img-circle">  {{pager.username}}</td>
+              <td class="col-md-7 col-md-offset-1 align-center">
+                <button type="button" class="btn btnset" (click)="approveMentor(pager)">Approve</button>
+                <button type="button" class="btn btnset" (click)="declineMentor(pager)">Remove</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+    <!-- PAGINATION -->
+    <div class="col-md-9 text-center" style="margin-top: 30px">
+
+      <nav aria-label="Page navigation">
+        <!-- pager -->
+
+        <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+
+          <li [ngClass]="{disabled:pager.currentPage === 1}">
+            <a class="page-no" (click)="setPage(pager.currentPage - 1)"><span aria-hidden="true" style="color: #FFFFFF">&lt; </span></a>
+          </li>
+
+          <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+            <a class="page-no" (click)="setPage(page)">{{page}}</a>
+          </li>
+
+          <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+
+            <a class="arrows" aria-label="Next" (click)="setPage(pager.currentPage + 1)">
+              <span aria-hidden="true" style="color: #FFFFFF">&gt; </span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <!-- Pagination -->
+
+  </div>
+</div>

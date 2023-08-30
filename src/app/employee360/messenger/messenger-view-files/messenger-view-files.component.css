@@ -1,0 +1,175 @@
+﻿  .mt30{
+	margin-top:30px
+}
+  
+  body{
+font-family: "Gotham Book";
+}
+
+    #wrapper{
+margin-left:1%;margin-right: 1%
+}
+div.col-md-12 h1{
+	font-family:'Gotham Light';
+	font-size:55px;
+	color:#189bf2;
+	text-align:center;
+}
+div.col-md-12 p{
+	font-family:'Gotham Light';
+	font-size:27px;
+	color:#959595;
+	text-align:center;
+	margin-bottom:0px;
+}
+div.col-md-12 h3{
+	font-family:'Gotham Book';
+	font-size:33px;
+	color:#189bf2;
+	text-align:right;
+	margin-top:-28px
+	}
+div.col-md-3 h2{
+	font-family:'Gotham Book';
+	font-size:33px;
+	color:#189bf2;
+	
+}
+/*checkbox start*/
+label {
+  display: block;
+  position: relative;
+  padding: 5px;
+  line-height: 28px;
+  font-weight: normal;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+label:last-of-type { margin-right: 1rem; }
+label i {
+  display: inline-block;
+  height: 25px;
+    top: 6px;
+  font-style: normal;
+  color: #189bf2;
+}
+label span {
+  margin-left: 5px;
+font-size:24px;
+font-family:'Gotham Book';
+  color: #189bf2;
+
+}
+input[type=radio], input[type=checkbox] { display: none; }
+input[type=radio] + i:before, input[type=checkbox] + i:before {
+  font-family: 'FontAwesome';
+  font-size: 28px;
+  height: 25px;
+  width: 25px;
+  display: inline-block;
+}
+ 
+ .mt20{
+	margin-top:20px
+}
+.mygroup{
+	font-size:27px;
+font-family:'Gotham Book';
+  color: #189bf2;
+}
+.btn-info {
+    background-repeat: repeat-x;
+    border-color: #189bf2;
+    border-radius: 0px;
+    margin: 25px 0px 0px 30px;
+    background: #189bf2;
+    padding: 4px 40px 4px 40px;
+    	font-size:25px;
+font-family:'Gotham Book';
+}
+/*center thumbnail start*/
+.thumbnail {
+    position: relative;
+    padding: 0px;
+    margin-bottom: 20px;
+      border:none;
+        margin-top: 30px;
+        background-image: url('/assets/img/messenger/screen-mobile.png'); background-repeat: no-repeat;
+  background-position: center center;
+   background-size: cover;
+border-radius:0px;
+  height:355px;
+  border-bottom: 2px solid #189bf2;
+}
+.thumbnail-squaad {
+    position: relative;
+    padding: 0px;
+    margin-bottom: 20px;
+      border:none;
+        margin-top: 30px;
+        background-image: url('/assets/img/messenger/screen-short.png'); background-repeat: no-repeat;
+  border-radius:0px;
+  height:438px;
+  border-bottom: 2px solid #189bf2;
+}
+.thumbnail-screen {
+    position: relative;
+    padding: 0px;
+    margin-bottom: 20px;
+      border:none;
+        margin-top: 30px;
+        background-image: url('/assets/img/messenger/screen-empty.png'); background-repeat: no-repeat;
+ border-radius:0px;
+  height:355px;
+ }
+
+.caption{
+	padding: 0 15px 15px 15px;
+}
+.caption h4{
+	font-size:22px;
+font-family:'Gotham Book';
+  color: #189bf2;
+}
+.caption h5{
+	font-size:27px;
+font-family:'Gotham Book';
+  color: #959595;
+  text-align:right
+}
+.box{
+	box-shadow: 0px 0px 19.44px 7.56px rgba(0, 0, 0, 0.09);
+}
+/*rightsidebar*/
+.thumbnail-design {
+    position: relative;
+    padding: 0px;
+    margin-bottom: 20px;
+      border:none;
+        margin-top: 30px;
+        background-image: url('/assets/img/messenger/screen-design.png'); background-repeat: no-repeat;
+  border-radius:0px;
+  height:355px;
+  border-bottom: 2px solid #189bf2;
+}
+.thumbnail-team {
+    position: relative;
+    padding: 0px;
+    margin-bottom: 20px;
+      border:none;
+        margin-top: 30px;
+        background-image: url('/assets/img/messenger/creative-team.png'); background-repeat: no-repeat;
+  border-radius:0px;
+  height:438px;
+  border-bottom: 2px solid #189bf2;
+}
+.thumbnail-rectangle {
+    position: relative;
+    padding: 0px;
+    margin-bottom: 20px;
+      border:none;
+        margin-top: 30px;
+        background-image: url('/assets/img/messenger/rectangle.png'); background-repeat: no-repeat;
+ border-radius:0px;
+  height:355px;
+ }

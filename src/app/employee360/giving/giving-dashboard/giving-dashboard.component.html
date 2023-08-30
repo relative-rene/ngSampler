@@ -1,0 +1,90 @@
+<section>
+  <app-giving-navbar></app-giving-navbar>
+  <div id="wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9" style="margin-top: 25px;">
+          <div class="row">
+            <div class="col-md-12" style="margin-bottom: -30px; margin-top: 10px;">
+              <app-toast [message]="toast.message"></app-toast>
+              <form #form="ngForm" (ngSubmit)="search(form.value)">
+                <div class="form-group input-group col-xs-9 " style="background:transparent;border: 0;">
+                  <span class="input-group-btn">
+                    <button class="btn " type="submit" style="background:transparent;border: 0;top:-8px;">
+                      <i class="fa fa-search" style="color: #189BF2 !important;font-size: 45px;position: relative;top: -20px;border: 0px;left: 15px"></i>
+                    </button>
+                  </span>
+                  <input type="text" class="form-control" placeholder="Search for Opportunity" name="search" (input)="updateSearchFilter($event)"> </div>
+              </form>
+            </div>
+          </div>
+          <div class="content">
+
+            <div class="container1">
+              <giving-dashboard-result [event]="featureEvent" [hidden]="featureEvent.hide"
+                 [donationTotal]="eventTotals[featureEvent._id]"></giving-dashboard-result>
+              <giving-dashboard-result-small *ngFor="let event of events"
+              [event]="event" [donationTotal]="eventTotals[event._id]"></giving-dashboard-result-small>
+            </div>
+          </div>
+        </div>
+        <aside>
+          <div class="col-md-3">
+            <div class="row" [hidden]="hideTotals">
+              <div class="col-md-12  box-shadow-most">
+                <h1>Your Impact</h1>
+                <div class="row mt30mb30">
+                  <div class="col-md-6">
+                    <div id="bluecircle" [attr.data-text]="getUserDonations()" [attr.data-percent]="getUserDonationPercentage()">
+                    </div>
+                    <p class="text-center circletext">Donations</p>
+                  </div>
+                  <div class="col-md-6">
+                    <div id="bluecircle" [attr.data-text]="getUserHours()" [attr.data-percent]="getUserVolunteerPercentage()">
+                    </div>
+                    <p class="text-center circletext">Volunteer Hours</p>
+                  </div>
+                  <div class="col-md-6 mt10mb10">
+                    <div id="bluecircle" [attr.data-text]="getUserMatched()" [attr.data-percent]="getUserMatchedPercentage()">
+                    </div>
+                    <p class="text-center circletext">Amount Matched</p>
+                  </div>
+                  <div class="col-md-6 mt10mb10">
+                    <div id="bluecircle" [attr.data-text]="getUserRemainingMatch()" [attr.data-percent]="getUserRemainingMatchPercentage()">
+                    </div>
+                    <p class="text-center circletext">Remaining Amount to Match</p>
+                  </div>
+                  <button routerLink="/giving-dashboard-manage-your-donations" type="button" class="btn custom-btn-blue">Manage Donations</button>
+                  <button routerLink="/giving-dashboard-manage-volunteering" type="button" class="btn custom-btn-blue">Manage volunteering</button>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 box-shadow-most caption">
+                <p class="most1" style="">Your Company's</p>
+                <br>
+                <p class="social impact"> Impact</p>
+                <div class="margin-top30 text">
+                  <img src="/assets/img/giving/company-donated-icon.png" alt="" class="text-center" />
+                  <h1 class="heading">${{ totals.allDonations.toFixed(0) }}</h1>
+                  <h5 class="heading1">DONATED</h5>
+                </div>
+                <div class="margin-top30 text">
+                  <img src="/assets/img/giving/company-vol-hours.png" alt="" class="text-center" />
+                  <h1 class="heading">{{ totals.allVolunteerHours.toFixed(0) }}</h1>
+                  <h5 class="heading1">VOLUNTEERED
+                    <br>HOURS</h5>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <button (click)="earnGivingPts()" style="display:none;" class='custom-btn-blue'>Earn Points for Giving</button>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>

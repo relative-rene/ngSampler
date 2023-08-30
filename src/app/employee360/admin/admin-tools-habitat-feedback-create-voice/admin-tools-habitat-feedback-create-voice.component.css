@@ -1,0 +1,298 @@
+﻿           /* .content {
+                padding: 200px 0px;
+            } */
+
+            .tab-content{
+                display: block;
+                margin: 0 auto;
+                max-width: 980px;
+                width: 100%;
+            }
+
+            .nav.nav-tabs {
+                border: 0px none;
+                text-align: center;
+            }
+
+            .nav-tabs li {
+                text-align: center;
+                display: inline-block;
+                float: none !important;
+                margin-right: 50px
+            }
+
+            .nav-tabs li a {
+                width: 100% !important;
+                border: 2px solid #0cca61!important;
+                border-radius: 0px;
+                max-width: 285px !important;
+                padding: 8px 90px;
+                color: #0cca61;
+                font-size: 28px;
+                line-height: 34px;
+                font-family: "Gotham Light";
+                text-transform: uppercase;
+            }
+
+            .nav-tabs li a:hover, 
+            .nav-tabs li.active a{
+                background: #0cca61 !important;
+                color: #fff !important;
+                font-family: "Gotham Bold";
+            }
+
+            .tab-content {
+                padding: 70px 0px;
+            }
+
+            .content h2 {
+                color: #0cca61;
+                font-size: 33px;
+                line-height: 36px;
+                font-family: "Gotham Bold";
+                text-align: center;
+                margin: 0px;
+            }
+
+            .choices {
+                padding: 35px 0px 75px;
+                text-align: center;
+            }
+
+            .choices > label {
+                color: #0cca61;
+                font-size: 28px;
+                line-height: 32px;
+                font-family: "Gotham Light";
+                padding-right: 65px;
+            }
+
+            .qacontent {
+                padding: 45px 0px 85px;
+            }
+
+            .inputcontent{
+                display: inline-block;
+                width: 95%;
+                margin-left: 10px;
+            }
+
+            .qacontent h1 {
+                float: left;
+                margin-top: 0px !important;
+                color: #0cca61;
+                font-size: 55px;
+                line-height: 45px;
+                font-family: "Gotham Bold";
+            }
+
+            .inputcontent .form-control {
+                margin-bottom: 30px;
+            }
+
+            .inputcontent .form-control {
+                margin-bottom: 30px;
+                min-height: 50px;
+                border-radius: 12px;
+                color: #fff;
+                font-size: 26px;
+                line-height: 32px;
+                font-family: "Gotham Book";
+            }
+
+            .form-control.question {
+                background: #cccccc;
+                padding: 10px 15px;
+            }
+
+            .form-control.answer{
+                background: #bababa;
+            }
+
+            .btn.btn-choice {
+                max-width: 329px;
+                width: 100%;
+                min-height: 65px;
+                border-bottom: 1px solid #0cca61;
+                border-radius: 26px;
+                background: transparent;
+                color: #0cca61;
+                font-size: 28px;
+                line-height: 34px;
+                font-family: "Gotham Book";
+                box-shadow: 4px 9px 10px 0px #d8d8d8;
+                margin-left: 42px;
+            }
+
+            .btn.btn-question{
+                max-width: 329px;
+                width: 100%;
+                min-height: 65px;
+                display: block;
+               
+                border-radius: 26px;
+                background: transparent;
+                color: #0cca61;
+                font-size: 28px;
+                line-height: 34px;
+                font-family: "Gotham Book";
+                box-shadow: 4px 9px 10px 0px #d8d8d8;
+            }
+
+            .btn.btn-create{
+                max-width: 250px;
+                width: 100%;
+                min-height: 55px;
+                display: block;
+                margin: 55px auto 0px;
+                background: #b7b7b7 !important;
+              
+                border-radius: 0px;
+                background: transparent;
+                color: #fff;
+                font-size: 28px;
+                line-height: 34px;
+                font-family: "Gotham Book";
+                box-shadow: 4px 9px 10px 0px #d8d8d8;
+            }
+
+            input::-webkit-input-placeholder {
+	color: #959595 !important;
+	font-family: "Gotham Book";
+	font-size: 27px;
+}
+
+         
+
+            /* Base for label styling */
+            [type="checkbox"]:not(:checked),
+            [type="checkbox"]:checked {
+            position: absolute;
+            left: -9999px;
+            }
+            [type="checkbox"]:not(:checked) + span,
+            [type="checkbox"]:checked + span {
+            position: relative;
+            padding-left: 25px;
+            cursor: pointer;
+            }
+
+            /* checkbox aspect */
+            [type="checkbox"]:not(:checked) + span:before,
+            [type="checkbox"]:checked + span:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 10px;
+                width: 20px;
+                height: 20px;
+                border: 1px solid #0b80b1;
+                background: #f5f5f5;
+                border-radius: 4px;
+            }
+            /* checked mark aspect */
+            [type="checkbox"]:not(:checked) + span:after,
+            [type="checkbox"]:checked + span:after {
+                content: 'âœ”';
+                position: absolute;
+                top: 7px;
+                left: 0px;
+                font-size: 30px;
+                line-height: 0.8;
+                color: #7b0046;
+                transition: all .2s;
+            }
+            /* checked mark aspect changes */
+            [type="checkbox"]:not(:checked) + span:after {
+            opacity: 0;
+            transform: scale(0);
+            }
+            [type=checkbox]:checked + span:after {
+            opacity: 1;
+            transform: scale(1);
+            }
+
+            /* accessibility */
+            [type="checkbox"]:checked:focus + span:before,
+            [type="checkbox"]:not(:checked):focus + span:before {
+            border: 1px dotted blue;
+            }
+
+            /* hover style just for information */
+            span:hover:before {
+            border: 1px solid #4778d9!important;
+            }
+
+            @media(max-width: 992px){
+                .inputcontent {
+                    display: inline-block;
+                    width: 90%;
+                    margin-left: 10px;
+                }
+            }
+
+            @media(max-width: 767px){
+                .nav-tabs li {
+                    text-align: center;
+                    display: inline-block;
+                    width: 45%;
+                    margin-right: 0px;
+                }}
+
+                .nav-tabs li a {
+                    width: 100% !important;
+                    border: 2px solid #0b80b1;
+                    border-radius: 0px;
+                  /*  padding: 5px 10px !important; */
+                    margin-right: 0px;
+                    max-width: 100% !important;
+                    font-size: 24px;
+                }
+
+                [type="checkbox"]:not(:checked) + span::before, [type="checkbox"]:checked + span::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0px;
+                }
+
+                [type="checkbox"]:not(:checked) + span::after, [type="checkbox"]:checked + span::after {
+                    content: '✔';
+                    position: absolute;
+                    top: -5px;
+                    left: 0px;
+                    font-size: 30px;
+                    line-height: 0.8;
+                    color: #7b0046;
+                    transition: all .2s;
+                }
+
+                .choices > label {
+                    color: #0cca61;
+                    font-size: 27px;
+                    line-height: 32px;
+                    font-family: "Gotham Light";
+                    padding-right: 65px;
+                }
+
+                .inputcontent {
+                    display: inline-block;
+                    width: 85%;
+                    margin-left: 0px;
+                }
+
+                .inputcontent .form-control {
+                    margin-bottom: 30px;
+                    min-height: 50px;
+                    border-radius: 12px;
+                    color: #fff;
+                    font-size: 14px;
+                    line-height: 32px;
+                    font-weight: 400;
+                }
+
+                .btn.btn-choice {
+                    max-width: 245px !important;
+                    width: 100%;
+                    margin-left: 22px;
+                }

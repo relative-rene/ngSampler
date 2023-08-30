@@ -1,0 +1,129 @@
+﻿/*pagre related styles */
+
+	.white-border-contentmoney{
+		border: 2px solid #FFFFFF;
+		color: #c1d3e0;
+		padding: 1rem 0rem 1rem 0rem;
+		padding: 1px -5px 1px -5px;
+		text-align: center;
+		font-size: 1em;
+		width: 40%;
+		text-transform: uppercase;
+		letter-spacing: .1em;
+		color: #FFFFFF;
+		background-color: #189bf3;
+		margin-right: auto;
+		margin-left: auto;
+	}
+table{border:0px}
+th{
+color:#189bf3;
+font-size:26px;
+}
+.blue{
+background-color: #85c9f6; color: #FFFFFF
+
+}
+ table {
+    border-top-style: none;
+    border-left-style: none;
+    border-right-style: none;
+    border-bottom-style: none;
+}
+.custom-btn-blue{
+		padding: 10px 15px 10px 11px;
+		background-color: transparent;
+		color: #189bf2;
+		border: 2px solid #189bf2;
+		display: inline-block;
+		width: 100%;
+		text-transform: uppercase;
+		font-weight: 500;
+		word-wrap: break-word;
+	}
+.tr{
+	background-color: aqua;
+}
+.btn1{
+background-color: #02d202;color: #FFFFFF; border-radius: 0px;  
+text-align: right; padding-right: 35px; padding-left: 35px;
+border:1px solid #02d202;font-size:16px;}
+.btn2{
+background-color: #cccccc;color: #FFFFFF; border-radius: 0px; 
+ text-align: right; padding-right: 25px; 
+ padding-left: 25px;border:1px solid #cccccc;
+ font-size:16px;}
+
+/*Page Related CSS*/
+.textgradient{
+margin-top: 30px; background: -webkit-linear-gradient(#189bf2, #346488); 
+ -webkit-background-clip: text;-webkit-text-fill-color: transparent;overflow:hidden;text-align:left;font-size:40px;
+}
+tr{
+	background-color:inherit;
+}
+tr.hov1{
+	background-color:#189bf2;}
+	
+	div.col-md-4 button.btn{
+	font-family: Gotham Book; font-size: 27px; color: #189bf2;
+	border:1px solid #189bf2; background-color: #fff; border-radius: 0px; padding: 12px 85px 10px 85px
+	}
+	div.col-md-4 button.btn1{
+	font-family:Gotham Book; font-size: 27px; color: #189bf2;
+	border:1px solid #189bf2; background-color: #fff !important; border-radius: 0px; padding: 12px 60px 10px 60px
+	}
+   .hov1 td{
+      color:#fff;}
+   div.col-md-8{padding: 15px;height:300px;overflow: overlay;
+   box-shadow: 3px 3px 12px 2px #e7e5e5;}
+   .mt30{margin-top:30px;}
+   .pd{
+   padding: 15px 45px 15px 15px;
+   box-shadow: 3px 3px 12px 2px #e7e5e5;}
+
+   
+   .fsize{
+  color: #189bf2; line-height: 3em; 
+  font-weight: 100; 
+  font-size: 22px;   }
+  tr:hover {
+		color: #FFffff;
+		background-color: #50b3f4;
+	}
+
+/* Chrome and Safari */
+.welly::-webkit-scrollbar {
+    width: 12px;height:10px;
+}
+/* Track */
+
+.welly::-webkit-scrollbar-track {
+    
+    background: ;
+border-radius: 10px; width: 8px;min-height:10px;
+
+}
+/* Handle */
+
+	.welly::-webkit-scrollbar-thumb {
+		background: #66FF66; background-color: darkgrey;
+  outline: 1px solid slategrey;
+		-webkit-box-shadow: inset 0 0 6px rgba(25, 149, 155, 0.66);border-radius: 10px; width: 3em;height:10px;
+
+	}
+::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(25, 0, 0, 0.4);
+}
+
+/*IE 8 plus*/
+body{
+scrollbar-base-color: #FE505A;
+scrollbar-base-color: #FE505A;
+scrollbar-3dlight-color: #FE505A;
+scrollbar-highlight-color: #292121;
+scrollbar-track-color: #292121;
+scrollbar-arrow-color: black;
+scrollbar-shadow-color: #FE505A;
+scrollbar-dark-shadow-color: #FE505A;
+}

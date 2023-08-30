@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ngSampler';
+
+  applicationsList = ['Hobbies', 'Stocks', 'Infamous', 'FireBase Chat', 'Google Maps'];
 }

@@ -1,0 +1,142 @@
+﻿.heading-message {
+  font-family: GothamLight;
+  color: #545454;
+  font-size: 27.78px;
+  /* Approximation due to font substitution */
+  font-weight: 400;
+  line-height: 27.778px;
+  /* Approximation due to font substitution */
+  text-align: center;
+}
+.modal-send-btn {
+	background-color: #189bf2;
+	width: 154px;
+	height: 35px;
+	background-image: linear-gradient(to bottom, #1799f0, #118ee2,#1290e5,#0c86d7,#0377c2);
+	font-family: "Gotham Light";
+	color: rgba(255, 255, 255, 0.95);
+	font-size: 16.78px; /* Approximation due to font substitution */;
+	font-weight: 600;
+	line-height: 18.778px; /* Approximation due to font substitution */;
+	text-align: center;
+	text-transform: uppercase;
+	margin: 20px;
+	border-radius: 20px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.modal-exit-btn {
+	background-color: #189bf2;
+	width: 154px;
+	height: 35px;
+	font-family: "Gotham Light";
+	background-image: linear-gradient(to bottom, #9c005c,#8f0054,#88004f,#7e0048);
+	color: rgba(255, 255, 255, 0.95);
+	font-size: 16.78px; /* Approximation due to font substitution */;
+	font-weight: 600;
+	line-height: 18.778px; /* Approximation due to font substitution */;
+	text-align: center;
+	text-transform: uppercase;
+	margin: 20px;
+	border-radius: 20px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.textarea-label{
+color: #189BF2; font-family: 'Gotham Light'; font-size: 16px;
+}
+.textarea-label  span {
+color: #acacac; font-family: 'Gotham Light'; font-size: 16px;
+}
+
+a:hover {
+	color: inherit;
+}
+.record-button {
+  border-radius: 50%;
+  border-width: 2.7777777777777777px;
+  border-color: #ffffff;
+  border-style: solid;
+  background-color: #ff0000;
+  width: 77px;
+  height: 77px;
+}
+/*Color Codes*/
+.sendgertie h2{
+font-family: 'Gotham Thin'; font-size: 34px; color: #189bf2;font-weight:600;
+}
+.sendgertie h4{
+color: #a1a1a1; font-family:'Gotham Light'; font-size: 16px;
+}
+.sendgertie h5{
+color:#111111; font-family:'Gotham Light'; font-size: 12px;
+    font-weight: 600;}
+
+
+.empname{
+font-family: 'Gotham Book'; font-size: 17px; color: #111111
+}
+
+.job{
+	color: #959595;
+	font-family: "Gotham Book";
+	font-size: 13px;
+}
+.job-dept{
+	color: #189BF2!important;
+	font-family: "Gotham Book";
+	font-size: 13.89px;
+	font-weight: bold;
+}
+
+
+.bgcolor-global{
+background-color:#189BF2!important;
+}
+.border-color-global{
+border: 2px solid #189BF2!important;}
+.font-maroon{
+color: #7b0046!important;
+}
+.bg-maroon{
+background-color:#7b0046!important;
+}
+.onhovered{
+padding: 15px; text-align: left; margin-left: -30px;
+
+	}
+
+.onhovered:hover{
+	 border: 1px solid #189BF2; 
+	}
+	
+	::-webkit-input-placeholder {
+	color: #111111;
+	font-weight: 400;
+	font-family: "Gotham Light";
+	font-size: 13px;
+}
+ 
+:-moz-placeholder { /* Firefox 18- */
+color: #111111;
+	font-weight: 400;
+	font-family: "Gotham Light";
+	font-size: 13px;
+
+}
+ 
+::-moz-placeholder {  /* Firefox 19+ */
+color: #111111;
+	font-weight: 400;
+	font-family: "Gotham Light";
+	font-size: 13px;
+ 
+}
+ 
+:-ms-input-placeholder {
+color: #111111;
+	font-weight: 400;
+	font-family: "Gotham Light";
+	font-size: 13px;
+
+}

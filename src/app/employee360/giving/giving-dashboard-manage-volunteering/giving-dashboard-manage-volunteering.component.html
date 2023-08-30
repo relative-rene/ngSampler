@@ -1,0 +1,100 @@
+   <app-giving-navbar></app-giving-navbar>
+<div id="wrapper" style="margin-top:40px">
+  <div class="container">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-1"> </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+        <a routerLink="/giving">
+        <span class="fa-stack fa-3x  circle-dir">
+  <i class="fa fa-angle-left" style="font-size:46px; padding-right: 10px; padding-left: 10px;border: 0;"></i>
+</span>
+        </a>
+
+          <!-- <p> <span class="fa-stack fa-2x">
+  <i class="fa fa-circle fa-stack-2x" ></i>
+  <i class="fa fa-chevron-left fa-stack-1x fa-inverse" style=""></i>
+</span></p> -->
+        </div>
+        <div class="col-md-7">
+          <div class="white-border-contentmoney" style="">
+            <h6 class="text-center pr5" style="font-family: 'Gotham Light'; font-size: 22px; color: #FFFFFF">You have Volunteered a total of</h6>
+            <h2 style="text-transform: lowercase; font-family: 'Gotham Thin'; font-size: 83px; color: #FFFFFF; ">{{ totalHours.toFixed(2) }} hours </h2> </div>
+        </div>
+        <div class="col-md-3">
+			<button type="button" routerLink="/giving-dashboard-manage-your-donations"
+      class="btn custom-btn-blue pr15 pl15 mroff30  btn-block"
+      style="font-family: 'Gotham Light'; font-size: 16px; font-weight: bold">My Donation History</button>
+  </div>
+      </div>
+    </div>
+    <div class="container margin-top30">
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-12">
+          <div class="table-responsive">
+            <table class="table borderless">
+              <thead>
+                <tr>
+                  <th class="text-center">CAUSE</th>
+                  <th class="text-center">STATUS</th>
+                  <th class="text-center">Hours</th>
+                  <th class="text-center">Task</th>
+                  <th class="text-center">DATE</th>
+                  <th class="text-center">DETAILS</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let shift of shifts; let shiftIndex = index">
+                  <td width="30%" class="blue white-shadow">{{ shift.name }}</td>
+                  <td width="13%" class="grey-shadow complete">Complete</td>
+                  <td width="10%" class="blue small-white-shadow">{{ shift.hours.toFixed(2) }}</td>
+                  <td width="10%" class="grey-shadow">{{ shift.task }}</td>
+                  <td width="25%" class="blue white-shadow">{{ shift.when }}</td>
+                  <td width="20%" class="grey-shadow"><a routerLink="/giving-vol-receipt/{{ shift._id }}/{{ shiftIndex }}">Receipt</a></td>
+                </tr>
+                <tr style="border-style: none">
+                  <td class="blue"></td>
+                  <td></td>
+                  <td class="blue"></td>
+                  <td></td>
+                  <td class="blue"></td>
+                  <td></td>
+                </tr>
+                <tr style="border-style: none">
+                  <td class="blue"></td>
+                  <td></td>
+                  <td class="blue"></td>
+                  <td></td>
+                  <td class="blue"></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="col-md-12" style="text-align: center;display:none;">
+        <nav aria-label="...">
+          <div class="dotstyle dotstyle-fillup">
+          <ul class="pagination">
+            <li><a class="active">Home</a></li>
+            <li><a>Link 1</a></li>
+            <li><a>Link 2</a></li>
+
+          </ul>
+        </div>
+        </nav>
+      </div>
+
+    </div>
+  </div>
+</div>

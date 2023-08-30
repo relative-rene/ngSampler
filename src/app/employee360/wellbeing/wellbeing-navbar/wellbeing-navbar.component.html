@@ -1,0 +1,29 @@
+<section class="wellbeing-nav">
+  <div class="container-fluid">
+    <div class="row" style="background-color: #fd8b38;margin-top:-43px">
+      <div class="container">
+        <div class="row" style="">
+          <div class="col-md-7">
+            <form #form="ngForm" (ngSubmit)="search(form.value)">
+              <div class="form-group input-group col-xs-9 " style="background:transparent;border: 0;">
+                <span class="input-group-btn">
+                  <button class="btn " type="submit" style="background:transparent;border: 0;top:-8px;">
+                  <i class="fa fa-search" style="color: #FFFFFF;font-size: 33px;"></i></button>
+                </span>
+                <input type="text" class="form-control" placeholder="Search for course here." name="search" ngModel required>
+              </div>
+            </form>
+          </div>
+          <div class="col-md-5">
+            <div class="col-md-4 text-center pointer" style="background-position:left center; font-family: 'Gotham Book'; font-size: 22px; color: #FFFFFF; font-weight: bold; background-image: url('/assets/img/wellbeing/mental/divide.png'); background-repeat: no-repeat; padding-top: 10px; padding-bottom: 10px;">BROWSE</div>
+            <div routerLink="/wellbeing-udemy-my-courses" class="col-md-6  text-center pointer" style="background-position: left center; font-family: 'Gotham Book'; font-size: 22px; color: #FFFFFF; font-weight: bold; background-image: url('/assets/img/wellbeing/mental/divide.png'); background-repeat: no-repeat;  padding-top: 10px; padding-bottom: 10px;">MY COURSES</div>
+            <div class="col-md-2" style="background-position: left center; font-family: 'Gotham Book'; font-size: 22px; color: #FFFFFF; font-weight: bold; background-image: url('/assets/img/wellbeing/mental/divide.png'); background-repeat: no-repeat;">
+          <button class="btn" data-toggle="modal" data-target="#myModal" style="    background: transparent;
+    position: relative; top: -10px;">  <img src="/assets/img/wellbeing/mental/cart.png" alt="" height="61" width="74" /></button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<app-wellbeing-udemy-course-add-to-cart></app-wellbeing-udemy-course-add-to-cart>

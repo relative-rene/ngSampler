@@ -1,0 +1,47 @@
+<div class="eachcontent" style="width:auto;">
+  <div class="col-md-6" style="margin-top:30px;">
+    <div class="imagebg" [style.backgroundImage]="getBKGImage(event)">
+      <div class="blurbg1">
+        <div class="textcontent">
+          <ul class="titlelist">
+            <li class="title"><a [hidden]="event.featured != true" class="campname-featured">Featured Campaign</a></li>
+            <li><a class="campname-featured1">{{ event.name }}</a></li>
+          </ul>
+
+          <div [hidden]="getVolunteerVisible(event)">
+            <div class="col-md-6" style="padding-left: 0px;">
+              <div class="col-md-10">
+
+                <a class="btn btn-volunteer btn-today" routerLink="/giving/{{ event._id }}" fragment="positionAvailableAnchor">VOLUNTEER TODAY</a>
+
+              </div>
+
+            </div>
+
+            <div class="col-md-6">
+              <a class="btn btn-learnmore btn-more" routerLink="/giving/{{ event._id }}">LEARN MORE</a>
+
+            </div>
+          </div>
+
+          <div [hidden]="getFundRaiserVisible(event)">
+            <div class="row">
+              <div class="col-md-8 text1">
+                <div class="brd">
+                  <div class="progress">
+                    <div class="progress-bar skew " [style.width]="getFundProgressWidth(event)" role="progressbar"
+                        aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-1 text2 nan">{{ getFundProgressWidth(event) }}</div>
+            <div class="col-md-3 text-center text3">
+              <button type="button" class="btn btn-lg btngrade pull-right btn-learn" routerLink="/giving/{{ event._id }}">LEARN MORE</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

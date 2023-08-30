@@ -1,0 +1,14 @@
+
+<ul class="list-group">
+    <li class="list-items" *ngFor="let p of airlines; let i = index">
+        <a [routerLink]="['/projects' , p.id]" class="user-link" nfIf="i + 1 == users.length" #theLastList><img
+                [src]="p.avatar" />
+            <span>
+                <p><span class="list-item-heading">Id</span>:{{p.id}}</p>
+                <p><span class="list-item-heading">Name</span>:{{p.firs_name}}
+                    {{p.last_name}}
+                </p>
+            </span>
+        </a>
+    </li>
+</ul>

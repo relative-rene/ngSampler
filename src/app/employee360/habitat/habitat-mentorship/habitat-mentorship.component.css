@@ -1,0 +1,272 @@
+﻿table{border:0px}
+th{
+color:#189bf3;
+}
+
+.imgthumbsize{
+width: 75px; height: 75px
+}
+a {
+    cursor: pointer;
+    outline: none;
+    color: #000;
+    text-decoration: none !important;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+a:hover, a:active, a:focus {
+    color: #c1d3e0;
+    text-decoration: none;
+    outline: none;
+}
+button:focus {
+    outline: none;
+}
+	
+#wrapper{
+margin-left: 10%; 
+margin-right: 10%;
+}
+ 
+	/* Style relevant to this page*/
+	
+.fa-chevron-left{
+		color: #666666;
+	}
+	
+	.margin-top30{
+margin-top:30px
+}
+
+.mostshared .thumb-text-center{text-align: center;color:#656565}
+.mostshared .thumb-shared-no{text-align: center; margin-top: -10px; color: #169cf1;}
+
+
+	th{
+	
+	font-size:2.4rem
+	}
+hr {
+  transform: rotate(90deg);border-top-style: solid; border-top-width: 1px; border-color: #333333;
+}
+.margin-button-blue{
+	
+	margin: 3px;
+	background-color: #0cca61;
+	color: #ffffff;	font-family: "Gotham Book";
+	font-size: 19px;
+
+}
+.margin-button-maroon
+	{
+	background-color: #005826;
+	color: #FFFFFF;
+	margin: 3px;
+	font-family: "Gotham Book";
+	font-size: 19px;
+
+}
+	.pagination>li>a,.pagination>li>span{
+	position: relative;
+	float: left;
+	padding: 15px 20px;
+	margin-left: -1px;
+	line-height: 1.42857143;
+	color: #FFFFFF;
+	text-decoration: none;
+	background-color: #0cca61;
+	border: 1px solid #ddd;font-size: 30px;border: none!important;
+}
+.pagination li a:first-child {
+	border: 1px solid #ddd;
+}
+.pagination>.active>a,.pagination>.active>a:focus,.pagination>.active>a:hover,.pagination>.active>span,.pagination>.active>span:focus,.pagination>.active>span:hover{z-index:3;color:#fff;cursor:default;background-color:#0cca61;border-color:#337ab7; border-radius: 0 !important;
+}  
+
+.pagination>.active>a:focus{
+border-radius:5px;
+}
+.introbtn{
+	border-radius: 20px;
+	padding: 8px 44px 8px 44px;
+	margin-top: 10px;
+	font-size: 19.44px;
+	background-color: #0cca61;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+.dropdown-menu li a {
+	color: #FFFFFF; text-align: center;
+	font-family:'Gotham Book';
+	font-size:16px;font-weight:600;
+	}
+.btnwide{
+	min-width:150px;
+	 -webkit-border-radius: 0 !important;
+     -moz-border-radius: 0 !important;
+          border-radius: 0 !important;
+}
+ul li {
+	border: none;
+}
+img{
+	height:142px; min-width:142px ;margin-top: 25px;
+}
+.caret {
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #0cca61;
+}
+
+	div.col-md-7 h3 {
+font-family: 'Gotham Book'; font-size: 33.33px;
+color:#00a651;
+}
+div.col-md-7 h4{font-family:  'Gotham Book'; 
+margin-top: -8px;font-size: 25px;
+color:#acacac;
+	
+}
+div.col-md-3 i {
+	margin-top: 30px;
+	color: #189BF2;
+	font-size: 45px;
+	float: right;
+	padding-top: 10px;
+	font-family: "Gotham Light";
+}
+div.col-md-9 nav ul{
+		
+		background-color:  #0cca61;
+		color: #FFFFFF;    min-width: 729px;
+	}
+div.col-md-9 nav ul li {
+	border:none!important;padding:0px;margin:0px; border-radius: 0 !important;
+
+}
+	div.col-md-9 nav ul li a.active {
+		border: 1px solid #FFFFFF!important;
+		border-radius: 50%;margin:5px;
+	}
+
+.detail-title{
+	font-family: 'Gotham Thin'; color: #00a651; font-size: 30px
+}
+.detail-desc{
+font-family:  'Gotham Thin'; color: #898989; font-size: 22px
+}
+.button-mentor{
+font-size: 16px; font-family: 'Gotham Book';
+color: #0cca61;border: 3px solid #0cca61; background-color: #FFFFFF; float: right;
+ margin-top: 25px; -webkit-border-radius: 0 !important;
+     -moz-border-radius: 0 !important;
+          border-radius: 0 !important;
+}
+.head1{
+	color:#0cca61;font-size: 41px; font-family: 'Gotham Book';
+	text-align:center
+}
+.mt30{
+	margin-top:30px;
+}
+.fsize50{
+	font-size:50px;
+}
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+    color: #0cca61;
+    background-color: #fff; 
+    border: 2px solid #0cca61;
+    border-radius:0px
+}
+.nav>li>a:focus, .nav>li>a:hover {
+    text-decoration: none;
+    background-color: #fff;
+}
+.dropdown-menu{
+	padding:0px;
+	box-shadow: none;
+}
+.btn-default{
+	border-radius: 0px; width: 100%; 
+	background-color: #fff; color: #b7b7b7;border:1px solid #0cca61; 
+	padding-top: 10px; padding-bottom: 10px; font-size: 1.5rem;
+}
+.sortbyitem1{
+	color: #FFFFFF; 
+	background-color: #b7b7b7; 
+	border-bottom-style: solid!important; 
+	border-bottom-width: 1px!important; 
+	border-bottom-color: #FFFFFF!important;
+	padding:8px;
+	width:155px;font-family: "Gotham Book";
+
+}
+.sortbyitem2{
+	background-color: #b7b7b7!important;
+	border-bottom-style: solid!important;
+	border-bottom-width: 1px!important;
+	border-bottom-color: #FFFFFF!important;
+	padding: 8px;
+	width: 155px;
+	font-family: "Gotham Book";
+	font-size: 22px;
+}
+.btn-default.active, .btn-default:active, .open>.dropdown-toggle.btn-default {
+    color: #b7b7b7 !important;
+    background-color: #fff !important;
+    border-color: #0cca61 !important;
+}
+.btn-default:hover {
+    color: #b7b7b7;
+    background-color: #fff;
+    border-color: #0cca61;
+}
+
+
+.dropdownPanel {
+  position: absolute;
+  width: 120px;
+  background-color: #fff;
+  padding: 0px;
+  left: 8px;
+  top: 20px;
+  margin-top: 35px;
+  display: none;
+  z-index: 2;
+  border: 1px solid #fff;
+}
+
+.dropdownPanel:before {
+  width: 0;
+  content: "";
+  height: 0;
+  border-style: solid;
+  border-width: 0 10px 8px 10px;
+  border-color: transparent transparent #b7b7b7 transparent;
+  text-align: center;
+  top: 0;
+  left: 100px;
+  margin-top: -7px;
+  margin-left: 20px;
+  position: absolute;
+}
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
+    color: #fff;
+    text-decoration: none;
+    background-color: transparent;
+}
+.open>.dropdown-menu {
+    display: block;
+}
+.sortbyitem1 {
+    color: #FFFFFF;
+    background-color: #b7b7b7!important;
+    border-bottom-style: solid!important;
+    border-bottom-width: 1px!important;
+    border-bottom-color: #FFFFFF!important;
+    padding: 8px;
+    width: 155px!important;
+}
+.circle-dir{border-style: solid; border-width: 1px; border-radius: 50%; font-size:2em; padding-right: 5px; padding-left: 5px;}

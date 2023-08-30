@@ -1,0 +1,197 @@
+﻿       .container.smallcontainer {
+            max-width: 1108px;
+            width: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .content {
+            padding: 60px 0px;
+        }
+
+        .topcontent h2 {
+            color: #1899ef;
+            font-size: 41px;
+            line-height: 32px;
+            font-family: 'Gotham Light';
+            text-align: center;
+        }
+
+        .topcontent h3 {
+            color: #b5b8b8;
+            font-size: 25px;
+            line-height: 32px;
+            font-family: 'Gotham Light';
+            text-align: center;
+            padding: 0px 10px;
+        }
+
+        .topcontent h3 strong {
+            font-family: 'Gotham Book';
+            color: #b5b8b8;
+            font-weight: 400;
+        }
+
+        .topcontent h3 span {
+	font-family: 'Gotham Book';
+	color: #b5b8b8;
+	font-weight: 800;
+	font-style: italic;
+}
+
+        .middlecontent {
+            padding-top: 65px;
+        }
+
+        .middlecontent h4 {
+            color: #1899ef;
+            font-size: 22px;
+            line-height: 32px;
+            font-family: 'Gotham Book';
+            text-align: center;
+        }
+
+        h3.slogan {
+            color: #7b0046;
+            font-size: 27px;
+            line-height: 32px;
+            font-family: 'Gotham Book';
+            text-align: center;
+            max-width: 60%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .formcontent {
+            padding-top: 40px;
+        }
+        
+
+        .socialicons {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        ul.socialicons li {
+            list-style-type: none;
+            padding-bottom: 15px;
+        }
+
+        ul.socialicons li:first-child {
+            padding-top: 0px;
+        }
+
+        ul.socialicons li a {
+            display: block;
+            text-indent: -9999px;
+        }
+
+        ul.socialicons li.facebook a{
+            background: url('/assets/img/facebook.png') no-repeat left center;
+            min-height: 45px;
+            display: block;
+            background-size: contain;
+        }
+
+        ul.socialicons li.twitter a{
+            background: url('/assets/img/twitter.png') no-repeat left center;
+            min-height: 45px;
+            display: block;
+            background-size: contain;
+        }
+
+        ul.socialicons li.instagram a{
+            background: url('/assets/img/instagram.png') no-repeat left center;
+            min-height: 45px;
+            display: block;
+            background-size: contain;
+        }
+
+        ul.socialicons li.linkedin a{
+            background: url('/assets/img/linkedin.png') no-repeat left center;
+            min-height: 45px;
+            display: block;
+            background-size: contain;
+        }
+
+        .usersettingsform .form-control {
+            color: #b5b8b8;
+            font-size: 21px;
+            line-height: 28px;
+            font-family:  'Gotham Light';
+            height: 43px;
+            border: 2px solid #1899ef;
+            border-radius: 8px;
+        }
+
+        .btn.btn-login {
+            color: #b5b8b8;
+            font-size: 18px;
+            line-height: 25px;
+            font-family: 'Gotham Book';
+            height: 45px;
+            border: 1px solid #eee;
+            background: #fff;
+            border-radius: 20px;
+            text-transform: uppercase;
+            box-shadow: 1px 4px 1px 1px #f5f5f5;
+            padding: 5px 17px;
+        }
+
+        .totalcontent {
+            background: #7b0046;
+            max-width: 290px;
+            height: 160px;
+            display: block;
+            margin: 70px auto 0px;
+        }
+
+        .totalcontent h1 {
+            color: #fff;
+            font-size: 91px;
+            line-height: 96px;
+            font-family: 'Gotham Thin';
+            text-align: center;
+            margin: 0px !important;
+            padding-top: 10px;
+        }
+
+        .totalcontent h3 {
+            color: #fff;
+            font-size: 27px;
+            line-height: 32px;
+            font-family:  'Gotham Light';
+            text-align: center;
+            margin: 0px;
+        }
+
+        .note {
+            color: #b5b8b8;
+            font-size: 16px;
+            line-height: 20px;
+            font-family:  'Gotham Light';
+            padding-top: 60px;
+        }
+
+        .usersettingsform h3 {
+            color: #7b0046;
+            font-size: 22px;
+            line-height: 32px;
+            font-family:  'Gotham Light';
+            text-align: center;
+        }
+
+        .pointscontent .eachcontent h4 {
+            color: #7b0046;
+            font-size: 22px;
+            line-height: 32px;
+            font-family: 'Gotham Light';
+            text-align: center;
+            padding: 2px 0px;
+        }
+
+        .pointscontent {
+            border: 1px solid #eee;
+            border-radius: 8px;
+            box-shadow: 1px 1px 0px 2px #eee;
+        }

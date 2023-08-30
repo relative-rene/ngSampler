@@ -1,0 +1,33 @@
+<div class="modal fade" id="myModalintro" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document" style="width: 45%">
+    <div class="modal-content">
+      <div class="modal-header" style="border: none">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="font-size: 3em; font-family: 'Gotham Thin'; color: #252525;padding-top:5px;padding-right:5px"><span aria-hidden="true">X</span></button>
+
+      </div>
+      <div class="modal-body">
+
+        <div class="row" style="margin-top: -50px">
+
+          <div class="col-md-12">
+            <h2 class="text-h4" style="text-align: center;	color: #000000; font-family: 'Gotham Thin'; font-size: 41px; font-weight: bold;"><strong>Introduce Yourself!</strong></h2>
+            <h5 style="color: #0cca61; text-align: center; font-family: 'Gotham Light'; font-size: 19px; font-weight: bold;"><strong>Say something short and sweet about yourself</strong></h5>
+          </div>
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10 text-center" style="margin-top:25px">
+              <textarea #commenttext rows="5" class="form-control" cols="20" rows="5" style="border-radius:12px;resize:none;border: 2px solid #0cca61;font-family: 'Gotham Light'; font-size: 19px;color:#acacac" placeholder="Enter Message Here"></textarea>
+           <p style="text-align:right;font-family: 'Gotham Light'; font-size: 19px;color:#acacac;margin: -32px 10px 25px 0px;"><strong>140 Character Limit</strong></p>
+ </div>
+          </div>
+          <div class="row" style="margin-bottom:10px">
+            <div class="col-md-12 text-center " style="margin-top: 10px">
+              <button class="btn modal-introduce-btn text-right" (click)="introduceComment($event)" type="button"><strong>INTRODUCE ME</strong></button>
+                <button class="btn modal-exit-btn" data-dismiss="modal" type="button" ><strong> EXIT</strong></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
