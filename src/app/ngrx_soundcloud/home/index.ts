@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { SharedModule } from 'src/shared';
-import { TracklistsModule } from 'src/tracklists';
+import { SharedModule } from '../shared';
+import { TracklistsModule } from '../tracklists';
 
 import { HomePageComponent } from './pages/home-page';
 

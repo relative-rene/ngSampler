@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
 import { Observable } from 'rxjs';
-import { TimesState } from 'src/player';
+import { TimesState } from '../../player';
 import { Track } from '../models/track';
 
 
@@ -8,9 +8,7 @@ import { Track } from '../models/track';
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
   selector: 'track-card',
-  styles: [
-    require('./track-card.scss')
-  ],
+  styleUrls: ['./track-card.scss'],
   template: `
     <article class="track-card" [ngClass]="{'track-card--compact': compact, 'track-card--full': !compact}">
       <div class="track-card__image">

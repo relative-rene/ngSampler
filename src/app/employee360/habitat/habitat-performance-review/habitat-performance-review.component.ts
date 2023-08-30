@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Http } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { FormGroup, FormControl, Validators, FormBuilder }  from '@angular/forms';
 import { ToastComponent } from '../../shared/toast/toast.component';
 import { ReviewService } from '../../_services/review.service';
@@ -23,7 +23,7 @@ export class HabitatPerformanceReviewComponent implements OnInit {
   private name = new FormControl("", Validators.required);
   private date = new FormControl("", Validators.required);
 
-  constructor(private http: Http,
+  constructor(private http: HttpClient,
               private service: ReviewService,
               private toast: ToastComponent,
               private formBuilder: FormBuilder) { }
@@ -48,8 +48,7 @@ export class HabitatPerformanceReviewComponent implements OnInit {
   addReview() {
     this.service.addReview(this.addReviewForm.value).subscribe(
       res => {
-        let newReview = res.json();
-        this.reviews.push(newReview);
+        this.reviews.push(res.json());
         this.addReviewForm.reset();
         this.toast.setMessage('item added successfully.', 'success');
       },

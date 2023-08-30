@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Http } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { FormGroup, FormControl, Validators, FormBuilder }  from '@angular/forms';
 
 import { ToastComponent } from '../shared/toast/toast.component';
@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
   private age = new FormControl("", Validators.required);
   private weight = new FormControl("", Validators.required);
 
-  constructor(private http: Http,
+  constructor(private http: HttpClient,
               private dataService: DataService,
               private toast: ToastComponent,
               private formBuilder: FormBuilder) { }
@@ -41,7 +41,7 @@ export class HomeComponent implements OnInit {
 
   getCats() {
     this.dataService.getCats().subscribe(
-      data => this.cats = data,
+      data => this.cats = [data],
       error => console.log(error),
       () => this.isLoading = false
     );
@@ -50,8 +50,7 @@ export class HomeComponent implements OnInit {
   addCat() {
     this.dataService.addCat(this.addCatForm.value).subscribe(
       res => {
-        var newCat = res.json();
-        this.cats.push(newCat);
+        this.cats.push(res);
         this.addCatForm.reset();
         this.toast.setMessage("item added successfully.", "success");
       },

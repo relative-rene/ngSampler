@@ -3,9 +3,6 @@ import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'content-header',
-  styles: [
-    require('./content-header.scss')
-  ],
   template: `
     <header class="content-header">
       <div class="g-row g-cont">
@@ -15,9 +12,10 @@ import { Component, Input } from '@angular/core';
         </div>
       </div>
     </header>
-  `
+    `,
+    styleUrls:['./content-header.scss'  ],
 })
 export class ContentHeaderComponent {
-  @Input() section: string;
-  @Input() title: string;
+  @Input() section?: string;
+  @Input() title?: string;
 }

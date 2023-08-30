@@ -1,18 +1,19 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers, RequestOptions } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import 'rxjs/add/operator/map';
+import { map } from 'rxjs';
 
 @Injectable()
 export class DataService {
 
-  private headers = new Headers({ 'Content-Type': 'application/json', 'charset': 'UTF-8' });
-  private options = new RequestOptions({ headers: this.headers });
+  private headers = new HttpHeaders({ 'Content-Type': 'application/json', 'charset': 'UTF-8' });
+  private options = { headers: this.headers };
 
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
 
   getCats() {
-    return this.http.get('/cats').map(res => res.json());
+    return this.http.get('/cats');
   }
 
   addCat(cat) {

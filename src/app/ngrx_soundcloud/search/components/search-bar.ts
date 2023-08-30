@@ -6,9 +6,7 @@ import { Router } from '@angular/router';
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'search-bar',
-  styles: [
-    require('./search-bar.scss')
-  ],
+  styleUrls:['./search-bar.scss' ],
   template: `
     <div class="search-bar" [ngClass]="{'search-bar--open': open}" role="search">
       <form class="search-form" [formGroup]="form" (ngSubmit)="submit()" novalidate>
@@ -27,14 +25,14 @@ import { Router } from '@angular/router';
 export class SearchBarComponent implements OnChanges, OnInit {
   @Input() open = false;
 
-  form: FormGroup;
-  searchInput: FormControl;
-  searchInputEl: HTMLInputElement;
+  form?: FormGroup;
+  searchInput?: FormControl;
+  searchInputEl?: HTMLInputElement;
 
   constructor(public el: ElementRef, public formBuilder: FormBuilder, public router: Router) {}
 
   ngOnChanges(changes: any): void {
-    if (changes.open.currentValue) {
+    if (changes.open.currentValue && this.searchInput) {
       this.searchInput.setValue('');
     }
   }
@@ -51,16 +49,16 @@ export class SearchBarComponent implements OnChanges, OnInit {
     this.el.nativeElement
       .querySelector('.search-bar')
       .addEventListener('transitionend', () => {
-        if (this.open) {
+        if (this.open && this.searchInputEl) {
           this.searchInputEl.focus();
         }
       }, false);
   }
 
   submit(): void {
-    if (this.form.valid) {
+    if (this.form && this.searchInput && this.form.valid) {
       const value = this.searchInput.value.trim();
-      if (value.length) {
+      if (value.length && this.searchInputEl) {
         this.router.navigate(['/search', {q: value}]);
         this.searchInputEl.blur();
       }

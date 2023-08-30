@@ -1,16 +1,14 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Track, TracklistCursor } from 'src/tracklists';
 import { PlayerState } from '../reducers/player-state';
+import { TracklistCursor, Track } from '../../tracklists';
 
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
   selector: 'player-controls',
-  styles: [
-    require('./player-controls.scss')
-  ],
+  styles: ['./player-controls.scss'],
   template: `
     <div class="player-controls" *ngIf="track">
       <div>

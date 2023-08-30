@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { EffectsModule } from '@ngrx/effects';
 
-import { SharedModule } from 'src/shared';
-import { TracklistsModule } from 'src/tracklists';
+import { SharedModule } from '../shared';
+import { TracklistsModule } from '../tracklists';
 
 import { UserCardComponent } from './components/user-card';
 import { UserPageComponent } from './pages/user-page';

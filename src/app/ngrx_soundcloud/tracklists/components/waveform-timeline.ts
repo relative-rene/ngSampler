@@ -1,14 +1,12 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { Observable } from 'rxjs';
-import { TimesState } from 'src/player';
+import { TimesState } from '../../player';
 
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'waveform-timeline',
-  styles: [
-    require('./waveform-timeline.scss')
-  ],
+  styleUrls: ['./waveform-timeline.scss'  ],
   template: `
     <div class="waveform-timeline" [ngClass]="{'waveform-timeline--ready': ready}">
       <audio-timeline
@@ -24,8 +22,8 @@ import { TimesState } from 'src/player';
 })
 export class WaveformTimelineComponent {
   @Input() isActive: boolean = false;
-  @Input() times: Observable<TimesState>;
-  @Input() waveformUrl: string;
+  @Input() times!: Observable<TimesState>;
+  @Input() waveformUrl!: string;
 
   @Output() seek = new EventEmitter<any>(false);
 

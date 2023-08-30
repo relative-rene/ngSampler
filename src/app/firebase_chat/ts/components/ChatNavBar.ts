@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {MessagesService, ThreadsService} from '../services/services';
 import {Message, Thread} from '../models';
 import * as _ from 'underscore';
+import { combineLatest } from 'rxjs';
 
 @Component({
   selector: 'nav-bar',
@@ -35,7 +36,7 @@ export class ChatNavBar implements OnInit {
       .combineLatest(
         this.threadsService.currentThread,
         (messages: Message[], currentThread: Thread) =>
-          [currentThread, messages] )
+          [currentThread, messages] ),
 
       .subscribe(([currentThread, messages]: [Thread, Message[]]) => {
         this.unreadMessagesCount =

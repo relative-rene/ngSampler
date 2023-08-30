@@ -7,7 +7,7 @@ import 'rxjs/add/operator/map';
 export class ReviewService {
   constructor(private http: HttpClient) { }
 
-  getReviews() {
+  getReviews():any {
     return this.http.get('/api/performancereviews/search');
   }
 

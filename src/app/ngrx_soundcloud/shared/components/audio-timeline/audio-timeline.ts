@@ -7,16 +7,14 @@ import {
   Output,
   ViewEncapsulation
 } from '@angular/core';
-import { TimesState } from 'src/player';
+import { TimesState } from './../../../player';
 
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
   selector: 'audio-timeline',
-  styles: [
-    require('./audio-timeline.scss')
-  ],
+  styleUrls: ['./audio-timeline.scss'],
   template: `
     <div class="bar bar--buffered"
       [ngClass]="{'bar--animated': times?.bufferedTime !== 0}"
