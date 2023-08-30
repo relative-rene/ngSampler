@@ -29,7 +29,7 @@ describe('search', () => {
         let query = null;
 
         store
-          .let(getSearchQuery())
+          .select(getSearchQuery())
           .subscribe(value => {
             count++;
             query = value;

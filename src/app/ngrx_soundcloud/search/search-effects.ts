@@ -8,7 +8,7 @@ import 'rxjs/add/operator/switchMap';
 import { Injectable } from '@angular/core';
 import { Actions, Effect } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { AppState } from 'src/app';
 import { ApiService } from 'src/core';
 import { getCurrentTracklist, TracklistActions } from 'src/tracklists';
@@ -27,13 +27,13 @@ export class SearchEffects {
   @Effect()
   loadSearchResults$ = this.actions$
     .ofType(SearchActions.LOAD_SEARCH_RESULTS)
-    .withLatestFrom(this.store$.let(getCurrentTracklist()), (action, tracklist) => ({
+    .withLatestFrom(this.store$.select(getCurrentTracklist()), (action, tracklist) => ({
       payload: action.payload,
       tracklist
     }))
     .filter(({tracklist}) => tracklist.isNew)
     .switchMap(({payload}) => this.api.fetchSearchResults(payload.query)
       .map(data => this.tracklistActions.fetchTracksFulfilled(data, payload.tracklistId))
-      .catch(error => Observable.of(this.tracklistActions.fetchTracksFailed(error)))
+      .catch(error => of(this.tracklistActions.fetchTracksFailed(error)))
     );
 }

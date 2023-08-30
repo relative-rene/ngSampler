@@ -1,17 +1,10 @@
-import 'rxjs/add/observable/of';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/filter';
-import 'rxjs/add/operator/let';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/switchMap';
-
 import { Injectable } from '@angular/core';
-import { Actions, Effect } from '@ngrx/effects';
+import { Actions,  createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import { AppState } from 'src/app';
-import { ApiService } from 'src/core';
-import { getCurrentTracklist, TracklistActions } from 'src/tracklists';
+import {  catchError, filter, map, of, switchMap, withLatestFrom } from 'rxjs';
+import { AppState } from '../app';
+import { ApiService } from '../core';
+import { getCurrentTracklist, TracklistActions } from '../tracklists';
 import { getCurrentUser } from './reducers/selectors';
 import { UserActions } from './user-actions';
 
@@ -26,42 +19,42 @@ export class UserEffects {
     private userActions: UserActions
   ) {}
 
-  @Effect()
-  loadUser$ = this.actions$
-    .ofType(UserActions.LOAD_USER)
-    .withLatestFrom(this.store$.let(getCurrentUser()), (action, user) => ({
+  
+  loadUser$ = createEffect(()=> this.actions$.pipe(
+    ofType(UserActions.LOAD_USER),
+    withLatestFrom(this.store$.select(getCurrentUser()), (action:any, user:any) => ({
       payload: action.payload,
       user
-    }))
-    .filter(({user}) => !user || !user.profile)
-    .switchMap(({payload}) => this.api.fetchUser(payload.userId)
-      .map(data => this.userActions.fetchUserFulfilled(data))
-      .catch(error => Observable.of(this.userActions.fetchUserFailed(error)))
-    );
+    })),
+    filter(({user}) => !user || !user.profile),
+    switchMap(({payload}) => this.api.fetchUser(payload.userId)),
+      map(data => this.userActions.fetchUserFulfilled(data)),
+      catchError(error => of(this.userActions.fetchUserFailed(error)))
+    ));
 
-  @Effect()
-  loadUserLikes$ = this.actions$
-    .ofType(UserActions.LOAD_USER_LIKES, TracklistActions.LOAD_FEATURED_TRACKS)
-    .withLatestFrom(this.store$.let(getCurrentTracklist()), (action, tracklist) => ({
+  
+  loadUserLikes$ = createEffect(()=> this.actions$.pipe(
+    ofType(UserActions.LOAD_USER_LIKES, TracklistActions.LOAD_FEATURED_TRACKS),
+    withLatestFrom(this.store$.select(getCurrentTracklist()), (action:any, tracklist:any) => ({
       payload: action.payload,
       tracklist
-    }))
-    .filter(({tracklist}) => tracklist.isNew)
-    .switchMap(({payload}) => this.api.fetchUserLikes(payload.userId)
-      .map(data => this.tracklistActions.fetchTracksFulfilled(data, payload.tracklistId))
-      .catch(error => Observable.of(this.tracklistActions.fetchTracksFailed(error)))
-    );
+    })),
+    filter(({tracklist}) => tracklist.isNew),
+    switchMap(({payload}) => this.api.fetchUserLikes(payload.userId).pipe(
+      map(data => this.tracklistActions.fetchTracksFulfilled(data, payload.tracklistId)),
+      catchError(error => of(this.tracklistActions.fetchTracksFailed(error))
+    )))));
 
-  @Effect()
-  loadUserTracks$ = this.actions$
-    .ofType(UserActions.LOAD_USER_TRACKS)
-    .withLatestFrom(this.store$.let(getCurrentTracklist()), (action, tracklist) => ({
+  
+  loadUserTracks$ = createEffect(()=>this.actions$.pipe(
+    ofType(UserActions.LOAD_USER_TRACKS),
+    withLatestFrom(this.store$.select(getCurrentTracklist()), (action:any, tracklist) => ({
       payload: action.payload,
       tracklist
-    }))
-    .filter(({tracklist}) => tracklist.isNew)
-    .switchMap(({payload}) => this.api.fetchUserTracks(payload.userId)
-      .map(data => this.tracklistActions.fetchTracksFulfilled(data, payload.tracklistId))
-      .catch(error => Observable.of(this.tracklistActions.fetchTracksFailed(error)))
-    );
+    })),
+    filter(({tracklist}:any) => tracklist.isNew),
+    switchMap(({payload}:any) =>  this.api.fetchUserTracks(payload.userId).pipe(
+      map(data => this.tracklistActions.fetchTracksFulfilled(data, payload.tracklistId)),
+      catchError(error => of(this.tracklistActions.fetchTracksFailed(error))
+    )))));
 }

@@ -28,7 +28,7 @@ export function getTracks(): Selector<AppState,TracksState> {
 
 export function getCurrentTracklist(): Selector<AppState,Tracklist> {
   return state$ => state$
-    .let(getTracklists())
+    .select(getTracklists())
     .map(tracklists => tracklists.get(tracklists.get('currentTracklistId')))
     .filter(tracklist => tracklist)
     .distinctUntilChanged();
@@ -36,12 +36,12 @@ export function getCurrentTracklist(): Selector<AppState,Tracklist> {
 
 export function getTracksForCurrentTracklist(): Selector<AppState,List<Track>> {
   return state$ => state$
-    .let(getCurrentTracklist())
+    .select(getCurrentTracklist())
     .distinctUntilChanged((previous, next) => {
       return previous.currentPage === next.currentPage &&
              previous.trackIds === next.trackIds;
     })
-    .withLatestFrom(state$.let(getTracks()), (tracklist, tracks) => {
+    .withLatestFrom(state$.select(getTracks()), (tracklist, tracks) => {
       return tracklist.trackIds
         .slice(0, tracklist.currentPage * TRACKS_PER_PAGE)
         .map(id => tracks.get(id)) as List<Track>;

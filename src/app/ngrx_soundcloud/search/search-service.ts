@@ -13,7 +13,7 @@ export class SearchService {
   query$: Observable<string>;
 
   constructor(private actions: SearchActions, private store$: Store<AppState>) {
-    this.query$ = store$.let(getSearchQuery());
+    this.query$ = store$.select(getSearchQuery());
   }
 
   loadSearchResults(query: string): void {

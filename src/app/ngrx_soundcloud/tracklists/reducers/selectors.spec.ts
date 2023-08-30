@@ -44,7 +44,7 @@ describe('tracklists', () => {
         let tracklist = null;
 
         store
-          .let(getCurrentTracklist())
+          .select(getCurrentTracklist())
           .subscribe(value => {
             count++;
             tracklist = value;
@@ -76,7 +76,7 @@ describe('tracklists', () => {
         let tracks = null;
 
         store
-          .let(getTracks())
+          .select(getTracks())
           .subscribe(value => {
             count++;
             tracks = value;
@@ -109,7 +109,7 @@ describe('tracklists', () => {
         let tracks = null;
 
         store
-          .let(getTracksForCurrentTracklist())
+          .select(getTracksForCurrentTracklist())
           .subscribe(value => {
             count++;
             tracks = value;
@@ -144,7 +144,7 @@ describe('tracklists', () => {
         let tracklists = null;
 
         store
-          .let(getTracklists())
+          .select(getTracklists())
           .subscribe(value => {
             count++;
             tracklists = value;

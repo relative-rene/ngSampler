@@ -63,7 +63,7 @@ describe('player', () => {
         let player = null;
 
         store
-          .let(getPlayer())
+          .select(getPlayer())
           .subscribe(value => {
             count++;
             player = value;
@@ -99,7 +99,7 @@ describe('player', () => {
         let track = null;
 
         store
-          .let(getPlayerTrack())
+          .select(getPlayerTrack())
           .subscribe(value => {
             count++;
             track = value;
@@ -136,7 +136,7 @@ describe('player', () => {
         let trackId = null;
 
         store
-          .let(getPlayerTrackId())
+          .select(getPlayerTrackId())
           .subscribe(value => {
             count++;
             trackId = value;
@@ -178,7 +178,7 @@ describe('player', () => {
         let tracklist = null;
 
         store
-          .let(getPlayerTracklist())
+          .select(getPlayerTracklist())
           .subscribe(value => {
             count++;
             tracklist = value;
@@ -221,7 +221,7 @@ describe('player', () => {
         let cursor = null;
 
         store
-          .let(getPlayerTracklistCursor())
+          .select(getPlayerTracklistCursor())
           .subscribe(value => {
             count++;
             cursor = value;
@@ -268,7 +268,7 @@ describe('player', () => {
         };
 
         store
-          .let(getTimes())
+          .select(getTimes())
           .subscribe(value => {
             count++;
             timesState = value;

@@ -31,13 +31,13 @@ export class PlayerService extends AudioService {
     this.events$.subscribe(action => store$.dispatch(action));
     this.volume = playerStorage.volume || PLAYER_INITIAL_VOLUME;
 
-    this.cursor$ = store$.let(getPlayerTracklistCursor());
-    this.player$ = store$.let(getPlayer());
+    this.cursor$ = store$.select(getPlayerTracklistCursor());
+    this.player$ = store$.select(getPlayer());
 
-    this.track$ = store$.let(getPlayerTrack());
+    this.track$ = store$.select(getPlayerTrack());
     this.track$.subscribe(track => this.play(track.streamUrl));
 
-    this.times$ = store$.let(getTimes());
+    this.times$ = store$.select(getTimes());
     this.currentTime$ = this.times$.pluck<number>('currentTime');
   }
 

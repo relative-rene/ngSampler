@@ -2,8 +2,7 @@ import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core
 
 import { TaskComponent } from './task.component';
 import { TaskService } from './task.service';
-import { Observable } from 'rxjs';
-import 'rxjs/Rx';
+import { of } from 'rxjs';
 import { By } from '@angular/platform-browser';
 
 describe('TaskComponent', () => {
@@ -14,7 +13,7 @@ describe('TaskComponent', () => {
   let mockService;
   let taskService: TaskService;
   beforeEach(async(() => {
-    // mockService = {getTask: () => {return Observable.of('test item')}};
+    // mockService = {getTask: () => {return of('test item')}};
     // mockService = {getTask:()=>{return { id: 1, name: 'Create Database' }}}
     mockService = jasmine.createSpyObj(mockService, ['getTask']);
     mockService.getTask.and.returnValue({ id: 1, name: 'Create Db' });
@@ -43,7 +42,7 @@ describe('TaskComponent', () => {
 
   it('should set the task when initialised', () => {
     spyOn(taskService, 'getTask')
-      .and.returnValue(Observable.of({ id: 1, name: 'Create Db' }));
+      .and.returnValue(of({ id: 1, name: 'Create Db' }));
     fixture.detectChanges();
     expect(component.task.name).toContain('Db');
   });
@@ -56,8 +55,8 @@ describe('TaskComponent', () => {
   it('should get a new task when button clicked', fakeAsync(() => {
     spyOn(taskService, 'getTask')
       .and.returnValues(
-      Observable.of({ id: 1, name: 'Create Db' }),
-      Observable.of({ id: 2, name: 'Create Frontend' }).timeout(2000)
+      of({ id: 1, name: 'Create Db' }),
+      of({ id: 2, name: 'Create Frontend' }).timeout(2000)
       );
     fixture.detectChanges();
     expect(component.task.name).toContain('Db');
@@ -72,8 +71,8 @@ describe('TaskComponent', () => {
   it('should get a new task when button clicked', async(() => {
     spyOn(taskService, 'getTask')
       .and.returnValues(
-      Observable.of({ id: 1, name: 'Create Db' }),
-      Observable.of({ id: 2, name: 'Create Frontend' }).timeout(2000)
+      of({ id: 1, name: 'Create Db' }),
+      of({ id: 2, name: 'Create Frontend' }).timeout(2000)
       );
     fixture.detectChanges();
     expect(component.task.name).toContain('Db');

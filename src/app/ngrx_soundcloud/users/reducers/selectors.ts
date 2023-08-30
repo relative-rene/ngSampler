@@ -10,7 +10,7 @@ import { UsersState } from './users-reducer';
 
 export function getCurrentUser(): Selector<AppState,User> {
   return state$ => state$
-    .let(getUsers())
+    .select(getUsers())
     .map(users => users.get(users.get('currentUserId')))
     .distinctUntilChanged();
 }

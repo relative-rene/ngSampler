@@ -41,7 +41,7 @@ describe('users', () => {
         let user = null;
 
         store
-          .let(getCurrentUser())
+          .select(getCurrentUser())
           .subscribe(value => {
             count++;
             user = value;
@@ -80,7 +80,7 @@ describe('users', () => {
         let users = null;
 
         store
-          .let(getUsers())
+          .select(getUsers())
           .subscribe(value => {
             count++;
             users = value;

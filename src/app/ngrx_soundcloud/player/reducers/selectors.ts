@@ -20,9 +20,9 @@ export function getPlayer(): Selector<AppState,PlayerState> {
 
 export function getPlayerTrack(): Selector<AppState,Track> {
   return state$ => state$
-    .let(getPlayerTrackId())
+    .select(getPlayerTrackId())
     .distinctUntilChanged()
-    .withLatestFrom(state$.let(getTracks()),
+    .withLatestFrom(state$.select(getTracks()),
       (trackId, tracks) => tracks.get(trackId))
     .filter(track => !!track)
     .distinctUntilChanged();
@@ -36,7 +36,7 @@ export function getPlayerTrackId(): Selector<AppState,number> {
 export function getPlayerTracklist(): Selector<AppState,Tracklist> {
   return state$ => state$
     .map(state => state.player.tracklistId)
-    .combineLatest(state$.let(getTracklists()),
+    .combineLatest(state$.select(getTracklists()),
       (tracklistId, tracklists) => tracklists.get(tracklistId))
     .filter(tracklist => tracklist)
     .distinctUntilChanged();
@@ -44,9 +44,9 @@ export function getPlayerTracklist(): Selector<AppState,Tracklist> {
 
 export function getPlayerTracklistCursor(distinct: boolean = true): Selector<AppState,TracklistCursor> {
   return state$ => {
-    let source$ = state$.let(getPlayerTrackId());
+    let source$ = state$.select(getPlayerTrackId());
     if (distinct) source$ = source$.distinctUntilChanged();
-    return source$.combineLatest(state$.let(getPlayerTracklist()), getTracklistCursor);
+    return source$.combineLatest(state$.select(getPlayerTracklist()), getTracklistCursor);
   };
 }
 

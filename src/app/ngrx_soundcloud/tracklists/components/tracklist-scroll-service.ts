@@ -32,7 +32,7 @@ export class TracklistScrollService {
     this.scrollData$ = Observable
       .fromEvent(window, 'scroll')
       .debounceTime(100)
-      .let(this.getScrollData());
+      .select(this.getScrollData());
 
     const checkPosition$ = this.scrollData$
       .filter((data: ScrollData) => {

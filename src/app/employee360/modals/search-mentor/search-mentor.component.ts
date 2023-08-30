@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../_services/user.service';
-import { Observable, Subject } from 'rxjs';
+import { Observable, Subject, of} from 'rxjs';
 import { SearchService } from '../../_services/search.service';
 import { Imentor } from '../../_interfaces/mentor.interface';
 import { ToastComponent } from '../../shared/toast/toast.component';
@@ -55,10 +55,10 @@ export class SearchMentorComponent implements OnInit {
         // return the http search observable
         ? this.searchService.searchProfiles(term)
         // or the observable of empty mentor if there was no search term
-        : Observable.of<Imentor[]>([]))
+        : of<Imentor[]>([]))
       .catch(error => {
         console.log(error);
-        return Observable.of<Imentor[]>([]);
+        return of<Imentor[]>([]);
       });
   }
 }

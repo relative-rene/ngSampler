@@ -8,7 +8,7 @@ import 'rxjs/add/operator/switchMap';
 import { Injectable } from '@angular/core';
 import { Actions, Effect } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { AppState } from 'src/app';
 import { ApiService } from 'src/core';
 import { getCurrentTracklist } from './reducers/selectors';
@@ -27,10 +27,10 @@ export class TracklistEffects {
   @Effect()
   loadNextTracks$ = this.actions$
     .ofType(TracklistActions.LOAD_NEXT_TRACKS)
-    .withLatestFrom(this.store$.let(getCurrentTracklist()), (action, tracklist) => tracklist)
+    .withLatestFrom(this.store$.select(getCurrentTracklist()), (action, tracklist) => tracklist)
     .filter(tracklist => tracklist.isPending)
     .switchMap(tracklist => this.api.fetch(tracklist.nextUrl)
       .map(data => this.tracklistActions.fetchTracksFulfilled(data, tracklist.id))
-      .catch(error => Observable.of(this.tracklistActions.fetchTracksFailed(error)))
+      .catch(error => of(this.tracklistActions.fetchTracksFailed(error)))
     );
 }

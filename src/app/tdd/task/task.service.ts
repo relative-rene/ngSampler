@@ -1,13 +1,13 @@
-import {Observable} from 'rxjs';
-import  'rxjs/Rx';
+import { Observable, of } from 'rxjs';
+import 'rxjs/Rx';
 
 export class TaskService {
     private tasks = [{ id: 1, name: 'Create Database' }, { id: 2, name: 'Create Webservice' }, { id: 3, name: 'Create Frontend' }]
 
-    public getTask():Observable<{id:number,name:string}> {
+    public getTask(): Observable<{ id: number, name: string }> {
         const index = this.getRandomTaskIndex(0, 2);
-         return Observable.of(this.tasks[index]);
-        // return Observable.of(this.tasks[index]);
+        return of(this.tasks[index]);
+        // return of(this.tasks[index]);
     }
 
     public getRandomTaskIndex(min, max) {
