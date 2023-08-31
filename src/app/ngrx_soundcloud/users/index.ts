@@ -31,7 +31,7 @@ const routes: Routes = [
   imports: [
     RouterModule.forChild(routes),
     SharedModule,
-    EffectsModule.run(UserEffects),
+    EffectsModule.forRoot(UserEffects),
     TracklistsModule
   ],
   providers: [

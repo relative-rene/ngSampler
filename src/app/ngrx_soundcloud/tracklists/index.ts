@@ -38,7 +38,7 @@ export { getTracklistCursor, TracklistCursor } from './tracklist-cursor';
   imports: [
     RouterModule,
     SharedModule,
-    EffectsModule.run(TracklistEffects)
+    EffectsModule.forRoot(TracklistEffects)
   ],
   providers: [
     TracklistActions,

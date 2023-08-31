@@ -33,7 +33,7 @@ export { TimesState, TimesStateRecord } from './reducers/times-state';
     PlayerComponent
   ],
   imports: [
-    EffectsModule.run(PlayerEffects),
+    EffectsModule.forRoot(PlayerEffects),
     SharedModule
   ],
   providers: [

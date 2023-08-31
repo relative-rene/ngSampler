@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { async, TestBed } from '@angular/core/testing';
 import { ActivatedRoute } from '@angular/router';
-import { Subject } from 'rxjs/Subject';
-import { SharedModule } from 'src/shared';
+import { Subject } from 'rxjs';
+import { SharedModule } from '../../shared';
 import { SearchService } from '../search-service';
 import { SearchPageComponent } from './search-page';
 

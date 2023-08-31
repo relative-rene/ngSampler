@@ -14,10 +14,10 @@ import { DataService } from '../services/data.service';
 export class HomeComponent implements OnInit {
 
   private cats = [];
-  private isLoading = true;
+  public isLoading = true;
 
   private cat = {};
-  private isEditing = false;
+  public isEditing = false;
 
   private addCatForm: FormGroup;
   private name = new FormControl("", Validators.required);
@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
 
   constructor(private http: HttpClient,
               private dataService: DataService,
-              private toast: ToastComponent,
+              public toast: ToastComponent,
               private formBuilder: FormBuilder) { }
 
   ngOnInit() {

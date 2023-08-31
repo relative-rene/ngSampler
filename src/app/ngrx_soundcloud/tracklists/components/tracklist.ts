@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { Subject } from 'rxjs/Subject';
-import { MediaQueryService } from 'src/core';
-import { PlayerService } from 'src/player';
+import { Subject } from 'rxjs';
+import { MediaQueryService } from '../../core';
+import { PlayerService } from '../../player';
 import { TracklistService } from '../tracklist-service';
 import { TracklistScrollService } from './tracklist-scroll-service';
 

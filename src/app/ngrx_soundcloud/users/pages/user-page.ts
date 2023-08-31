@@ -5,7 +5,7 @@ import 'rxjs/add/operator/takeUntil';
 
 import { ChangeDetectionStrategy, Component, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Subject } from 'rxjs/Subject';
+import { Subject } from 'rxjs';
 import { UserService } from '../user-service';
 
 

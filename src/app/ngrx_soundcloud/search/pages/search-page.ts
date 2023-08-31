@@ -4,7 +4,7 @@ import 'rxjs/add/operator/takeUntil';
 
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Subject } from 'rxjs/Subject';
+import { Subject } from 'rxjs';
 import { SearchService } from '../search-service';
 
 

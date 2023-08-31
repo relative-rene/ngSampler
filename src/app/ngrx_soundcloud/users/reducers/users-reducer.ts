@@ -1,6 +1,6 @@
 import { Action, ActionReducer } from '@ngrx/store';
 import { Map } from 'immutable';
-import { TracklistActions } from 'src/tracklists';
+import { TracklistActions } from '../../tracklists';
 import { createUser } from '../models/user';
 import { UserActions } from '../user-actions';
 
@@ -12,7 +12,7 @@ export const initialState: UsersState = Map<any,any>({
 });
 
 
-export const usersReducer: ActionReducer<UsersState> = (state: UsersState = initialState, {payload, type}: Action) => {
+export const usersReducer: ActionReducer<UsersState> = (state: UsersState = initialState, {payload:any, type}: Action) => {
   switch (type) {
     case TracklistActions.FETCH_TRACKS_FULFILLED:
       return state.withMutations(users => {

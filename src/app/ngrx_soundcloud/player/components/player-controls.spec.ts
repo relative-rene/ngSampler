@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { async, TestBed } from '@angular/core/testing';
-import { Subject } from 'rxjs/Subject';
+import { Subject } from 'rxjs';
 import { SharedModule } from 'src/shared';
 import { FormatVolumePipe } from '../pipes/format-volume';
 import { PlayerControlsComponent } from './player-controls';

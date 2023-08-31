@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { EffectsModule } from '@ngrx/effects';
 
@@ -12,6 +12,7 @@ import { SearchPageComponent } from './pages/search-page';
 import { SearchActions } from './search-actions';
 import { SearchEffects } from './search-effects';
 import { SearchService } from './search-service';
+import { CommonModule } from '@angular/common';
 
 
 export { SearchActions, SearchService };
@@ -33,11 +34,13 @@ const routes: Routes = [
     SearchBarComponent
   ],
   imports: [
-    EffectsModule.run(SearchEffects),
+    EffectsModule.forRoot(SearchEffects),
     ReactiveFormsModule,
     RouterModule.forChild(routes),
     SharedModule,
-    TracklistsModule
+    TracklistsModule,
+    FormsModule,
+    CommonModule,
   ],
   providers: [
     SearchActions,
