@@ -1,16 +1,16 @@
 import 'rxjs/add/operator/map';
 
 import { Injectable } from '@angular/core';
-import { Http, Request, RequestMethod, Response } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { API_TRACKS_URL, API_USERS_URL, CLIENT_ID_PARAM, PAGINATION_PARAMS } from 'src/constants';
-import { UserData } from 'src/users';
+import { HttpClient, HttpResponse, Request, RequestMethod } from '@angular/common/http';
+import { Observable, map } from 'rxjs';
+import { API_TRACKS_URL, API_USERS_URL, CLIENT_ID_PARAM, PAGINATION_PARAMS } from '../../constants';
+import { UserData } from '../../users';
 import { PaginatedData, RequestArgs, RequestOptions } from './interfaces';
 
 
 @Injectable()
 export class ApiService {
-  constructor(private http: Http) {}
+  constructor(private http: HttpClient) {}
 
   fetch(url: string): Observable<any> {
     return this.request({url});
@@ -46,8 +46,7 @@ export class ApiService {
 
   request(options: RequestOptions): Observable<any> {
     const req: Request = new Request(this.requestArgs(options));
-    return this.http.request(req)
-      .map((res: Response) => res.json());
+    return this.http.request(req);
   }
 
   requestArgs(options: RequestOptions): RequestArgs {

@@ -22,7 +22,7 @@ export class UserEffects {
   
   loadUser$ = createEffect(()=> this.actions$.pipe(
     ofType(UserActions.LOAD_USER),
-    withLatestFrom(this.store$.select(getCurrentUser()), (action:any, user:any) => ({
+    withLatestFrom(this.store$.pipe(getCurrentUser()), (action:any, user:any) => ({
       payload: action.payload,
       user
     })),

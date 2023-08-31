@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 // The RxJS library is quite large. Size matters when we build a production application and deploy it to mobile devices.
 // We should include only those features that we actually need.
@@ -9,7 +9,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class CharityNavigatorService {
 
-  constructor(private http: Http) {
+  constructor(private http: HttpClient) {
     console.log('CharityNavigatorService Initialized...');
   }
 
@@ -18,18 +18,15 @@ export class CharityNavigatorService {
     // return observable
     return this.http.get('/api/search/' + term)
       // transform the items emitted by an Observable by applying a function to each item
-      .map(res => res.json());
   }
 
   getCharitiesByCategory(categoryid) {
     return this.http.get('/api/search/category/' + categoryid)
-      .map(res => res.json());
   }
 
   getCharityDetail(orgid) {
     return this.http.get('/api/charity/' + orgid)
       // transform the items emitted by an Observable by applying a function to each item
-      .map(res => res.json());
   }
 
   getCategories() {
@@ -37,6 +34,5 @@ export class CharityNavigatorService {
     // console.log('SERVICE->getCategories',);
     // return observable
     return this.http.get('/api/categories')
-      .map(res => res.json());
   }
 }

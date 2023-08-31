@@ -1,11 +1,3 @@
-/**
- * Copyright 2016, Fullstack.io, LLC.
- *
- * This source code is licensed under the MIT-style license found in the
- * LICENSE file in the root directory of this source tree. 
- *
- */
-
 import {
   NgModule,
   Component
@@ -49,7 +41,7 @@ import {ChatExampleData} from './ChatExampleData';
 /*
  * Webpack
  */
-require('../css/styles.css');
+import '../css/styles.css';
 
 @Component({
   selector: 'chat-app',
@@ -91,15 +83,4 @@ class ChatApp {
 export class ChatAppModule {}
 
 platformBrowserDynamic().bootstrapModule(ChatAppModule);
-
-// --------------------
-// You can ignore these 'require' statements. The code will work without them.
-// They're currently required to get watch-reloading
-// from webpack, but removing them is a TODO
-require('./services/services');
-require('./ChatExampleData');
-require('./util/util');
-require('./components/ChatNavBar');
-require('./components/ChatWindow');
-require('./components/ChatThreads');
 

@@ -3,7 +3,7 @@ import 'rxjs/add/operator/let';
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { AppState } from 'src/app';
+import { AppState } from '../app';
 import { getSearchQuery } from './reducers/selectors';
 import { SearchActions } from './search-actions';
 
@@ -13,7 +13,7 @@ export class SearchService {
   query$: Observable<string>;
 
   constructor(private actions: SearchActions, private store$: Store<AppState>) {
-    this.query$ = store$.select(getSearchQuery());
+    this.query$ = store$.pipe(getSearchQuery());
   }
 
   loadSearchResults(query: string): void {

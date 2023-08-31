@@ -1,17 +1,17 @@
-import { Action, ActionReducer } from '@ngrx/store';
 import { List } from 'immutable';
-import { TRACKS_PER_PAGE } from 'src/constants';
-import { SearchActions } from 'src/search/search-actions';
-import { UserActions } from 'src/users/user-actions';
+import { TRACKS_PER_PAGE } from '../../constants';
+import { SearchActions } from '../../search/search-actions';
+import { UserActions } from '../../users/user-actions';
 import { TrackData } from '../models/track';
 import { Tracklist, TracklistRecord } from '../models/tracklist';
 import { TracklistActions } from '../tracklist-actions';
+import { ActionPayload } from '../../core';
 
 
 const initialState: Tracklist = new TracklistRecord() as Tracklist;
 
 
-export const tracklistReducer: ActionReducer<Tracklist> = (state: Tracklist = initialState, {payload, type}: Action) => {
+export const tracklistReducer = (state: Tracklist = initialState, {payload, type}: ActionPayload) => {
   switch (type) {
     case TracklistActions.FETCH_TRACKS_FULFILLED:
       return state.withMutations((tracklist: any) => {

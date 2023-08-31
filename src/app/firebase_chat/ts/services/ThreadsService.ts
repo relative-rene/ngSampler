@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Subject, BehaviorSubject, Observable} from 'rxjs';
+import {Subject, BehaviorSubject, Observable, map} from 'rxjs';
 import {Thread, Message} from '../models';
 import {MessagesService} from './MessagesService';
 import * as _ from 'underscore';
@@ -23,13 +23,12 @@ export class ThreadsService {
 
   constructor(public messagesService: MessagesService) {
 
-    this.threads = messagesService.messages
-      .map( (messages: Message[]) => {
+    this.threads = messagesService.messages.pipe(
+      map( (messages: Message[]) => {
         let threads: {[key: string]: Thread} = {};
         // Store the message's thread in our accumulator `threads`
         messages.map((message: Message) => {
-          threads[message.thread.id] = threads[message.thread.id] ||
-            message.thread;
+          threads[message.thread.id] = threads[message.thread.id] || message.thread;
 
           // Cache the most recent message for each thread
           let messagesThread: Thread = threads[message.thread.id];
@@ -39,13 +38,13 @@ export class ThreadsService {
           }
         });
         return threads;
-      });
+      }));
 
-    this.orderedThreads = this.threads
-      .map((threadGroups: { [key: string]: Thread }) => {
+    this.orderedThreads = this.threads.pipe(
+      map((threadGroups: { [key: string]: Thread }) => {
         let threads: Thread[] = _.values(threadGroups);
-        return _.sortBy(threads, (t: Thread) => t.lastMessage.sentAt).reverse();
-      });
+        return _.sortBy(threads, (t: Thread) => t.lastMessage && t.lastMessage.sentAt).reverse();
+      }));
 
     this.currentThreadMessages = this.currentThread
       .combineLatest(messagesService.messages,

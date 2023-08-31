@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { List } from 'immutable';
 import { Observable } from 'rxjs';
-import { AppState } from 'src/app';
+import { AppState } from '../app';
 import { Tracklist } from './models/tracklist';
 import { Track } from './models/track';
 import { getCurrentTracklist, getTracksForCurrentTracklist } from './reducers/selectors';

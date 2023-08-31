@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {MessagesService, ThreadsService} from '../services/services';
 import {Message, Thread} from '../models';
 import * as _ from 'underscore';
-import { combineLatest } from 'rxjs';
 
 @Component({
   selector: 'nav-bar',
@@ -11,7 +10,7 @@ import { combineLatest } from 'rxjs';
     <div class="container-fluid">
       <div class="navbar-header">
         <a class="navbar-brand" href="https://ng-book.com/2">
-          <img src="${require('images/logos/ng-book-2-minibook.png')}"/>
+          <img src="images/logos/ng-book-2-minibook.png"/>
            ng-book 2
         </a>
       </div>
@@ -24,10 +23,12 @@ import { combineLatest } from 'rxjs';
   </nav>
   `
 })
-export class ChatNavBar implements OnInit {
-  unreadMessagesCount: number;
 
-  constructor(public messagesService: MessagesService,
+export class ChatNavBar implements OnInit {
+  
+
+  constructor(public unreadMessagesCount: number,
+              public messagesService: MessagesService,
               public threadsService: ThreadsService) {
   }
 

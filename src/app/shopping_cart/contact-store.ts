@@ -1,11 +1,11 @@
-import Immutable = require('immutable');
+import * as Immutable from 'immutable';
 import { createStore } from 'redux';
 import { IContactAction } from './actions';
 import { reducer } from './reducer';
 
 export class Contact {
   id: number;
-  name: String;
+  name!: string;
   star: boolean;
 }
 

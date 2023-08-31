@@ -5,7 +5,12 @@ import { FormGroup, FormControl, Validators, FormBuilder }  from '@angular/forms
 import { ToastComponent } from '../shared/toast/toast.component';
 
 import { DataService } from '../services/data.service';
+export interface Cat {
+  name?:string,
+  age?:number,
+  weight?:string
 
+}
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -16,10 +21,10 @@ export class HomeComponent implements OnInit {
   private cats = [];
   public isLoading = true;
 
-  private cat = {};
+  public cat:Cat = {};
   public isEditing = false;
 
-  private addCatForm: FormGroup;
+  public addCatForm: FormGroup;
   private name = new FormControl("", Validators.required);
   private age = new FormControl("", Validators.required);
   private weight = new FormControl("", Validators.required);

@@ -1,5 +1,6 @@
 import { Action } from '@ngrx/store';
-import { FEATURED_TRACKLIST_ID, FEATURED_TRACKLIST_USER_ID } from 'src/constants';
+import { FEATURED_TRACKLIST_ID, FEATURED_TRACKLIST_USER_ID } from '../constants';
+import { ActionPayload } from '../core/interfaces';
 
 
 export class TracklistActions {
@@ -10,21 +11,21 @@ export class TracklistActions {
   static MOUNT_TRACKLIST = 'MOUNT_TRACKLIST';
 
 
-  fetchTracksFailed(error: any): Action {
+  fetchTracksFailed(error: any): ActionPayload {
     return {
       type: TracklistActions.FETCH_TRACKS_FAILED,
       payload: error
     };
   }
 
-  fetchTracksFulfilled(data: any, tracklistId: string): Action {
+  fetchTracksFulfilled(data: any, tracklistId: string): ActionPayload {
     return {
       type: TracklistActions.FETCH_TRACKS_FULFILLED,
       payload: Object.assign({}, data, {tracklistId})
     };
   }
 
-  loadFeaturedTracks(): Action {
+  loadFeaturedTracks(): ActionPayload {
     return {
       type: TracklistActions.LOAD_FEATURED_TRACKS,
       payload: {
@@ -40,7 +41,7 @@ export class TracklistActions {
     };
   }
 
-  mountTracklist(tracklistId: string): Action {
+  mountTracklist(tracklistId: string): ActionPayload {
     return {
       type: TracklistActions.MOUNT_TRACKLIST,
       payload: {

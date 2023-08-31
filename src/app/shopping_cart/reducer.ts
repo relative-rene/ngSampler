@@ -1,4 +1,4 @@
-import Immutable = require('immutable');
+import * as Immutable from 'immutable';
 import { IContactAction } from './actions';
 import { Contact as ContactModel} from './contact-store';
 

@@ -1,9 +1,9 @@
-import { Action, ActionReducer } from '@ngrx/store';
 import { Map } from 'immutable';
-import { SearchActions } from 'src/search/search-actions';
-import { UserActions } from 'src/users/user-actions';
+import { SearchActions } from '../../search/search-actions';
+import { UserActions } from '../../users/user-actions';
 import { TracklistActions } from '../tracklist-actions';
 import { tracklistReducer } from './tracklist-reducer';
+import { ActionPayload } from '../../core';
 
 
 export type TracklistsState = Map<string,any>;
@@ -13,7 +13,7 @@ export const initialState: TracklistsState = Map<string,any>({
 });
 
 
-export const tracklistsReducer: ActionReducer<TracklistsState> = (state: TracklistsState = initialState, action: Action) => {
+export const tracklistsReducer = (state: TracklistsState = initialState, action: ActionPayload) => {
   switch (action.type) {
     case TracklistActions.FETCH_TRACKS_FULFILLED:
       return state.set(

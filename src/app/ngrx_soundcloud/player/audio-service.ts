@@ -3,8 +3,8 @@ import 'rxjs/add/observable/merge';
 import 'rxjs/add/operator/map';
 
 import { Action } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import { PLAYER_MAX_VOLUME, PLAYER_VOLUME_INCREMENT } from 'src/constants';
+import { Observable, fromEvent, map, merge } from 'rxjs';
+import { PLAYER_MAX_VOLUME, PLAYER_VOLUME_INCREMENT } from '../constants';
 import { Times } from './reducers/times-state';
 import { AudioSource } from './audio-source';
 import { PlayerActions } from './player-actions';
@@ -14,13 +14,13 @@ export class AudioService {
   events$: Observable<Action>;
 
   constructor(actions: PlayerActions, protected audio: AudioSource) {
-    this.events$ = Observable.merge(
-      Observable.fromEvent(audio, 'ended').map(actions.audioEnded),
-      Observable.fromEvent(audio, 'pause').map(actions.audioPaused),
-      Observable.fromEvent(audio, 'playing').map(actions.audioPlaying),
-      Observable.fromEvent(audio, 'timeupdate', this.getTimes).map(actions.audioTimeUpdated),
-      Observable.fromEvent(audio, 'volumechange').map(() => actions.audioVolumeChanged(this.volume))
-    );
+    this.events$ = merge(
+      fromEvent(audio, 'ended').pipe(map(actions.audioEnded)),
+      fromEvent(audio, 'pause').pipe(map(actions.audioPaused)),
+      fromEvent(audio, 'playing').pipe(map(actions.audioPlaying)),
+      fromEvent(audio, 'timeupdate', this.getTimes).pipe(map(actions.audioTimeUpdated)),
+      fromEvent(audio, 'volumechange').pipe(map(() => actions.audioVolumeChanged(this.volume))
+    ));
   }
 
 

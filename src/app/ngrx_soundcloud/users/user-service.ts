@@ -14,7 +14,7 @@ export class UserService {
   currentUser$: Observable<User>;
 
   constructor(private actions: UserActions, private store$: Store<AppState>) {
-    this.currentUser$ = store$.select(getCurrentUser());
+    this.currentUser$ = store$.pipe(getCurrentUser());
   }
 
   loadResource(userId: number|string, resource: string): void {

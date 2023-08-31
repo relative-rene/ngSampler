@@ -5,45 +5,46 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/withLatestFrom';
 
 import { List } from 'immutable';
-import { AppState } from 'src/app';
-import { TRACKS_PER_PAGE } from 'src/constants';
-import { Selector } from 'src/core';
+import { AppState } from '../../app';
+import { TRACKS_PER_PAGE } from '../../constants';
+import { Selector } from '../../core';
 import { Tracklist } from '../models/tracklist';
 import { Track } from '../models/track';
 import { TracklistsState } from './tracklists-reducer';
 import { TracksState } from './tracks-reducer';
+import { distinctUntilChanged, filter, map, withLatestFrom } from 'rxjs';
 
 
 export function getTracklists(): Selector<AppState,TracklistsState> {
-  return state$ => state$
-    .map(state => state.tracklists)
-    .distinctUntilChanged();
+  return state$ => state$.pipe(
+    map(state => state.tracklists),
+    distinctUntilChanged());
 }
 
 export function getTracks(): Selector<AppState,TracksState> {
-  return state$ => state$
-    .map(state => state.tracks)
-    .distinctUntilChanged();
+  return state$ => state$.pipe(
+    map(state => state.tracks),
+    distinctUntilChanged())
 }
 
 export function getCurrentTracklist(): Selector<AppState,Tracklist> {
-  return state$ => state$
-    .select(getTracklists())
-    .map(tracklists => tracklists.get(tracklists.get('currentTracklistId')))
-    .filter(tracklist => tracklist)
-    .distinctUntilChanged();
+  return state$ => state$.pipe(
+    (getTracklists()),
+    map(tracklists => tracklists.get(tracklists.get('currentTracklistId'))),
+    filter(tracklist => tracklist),
+    distinctUntilChanged());
 }
 
 export function getTracksForCurrentTracklist(): Selector<AppState,List<Track>> {
-  return state$ => state$
-    .select(getCurrentTracklist())
-    .distinctUntilChanged((previous, next) => {
+  return state$ => state$.pipe(
+    (getCurrentTracklist()),
+    distinctUntilChanged((previous, next) => {
       return previous.currentPage === next.currentPage &&
              previous.trackIds === next.trackIds;
-    })
-    .withLatestFrom(state$.select(getTracks()), (tracklist, tracks) => {
+    }),
+    withLatestFrom(state$.pipe(getTracks()), (tracklist, tracks) => {
       return tracklist.trackIds
         .slice(0, tracklist.currentPage * TRACKS_PER_PAGE)
         .map(id => tracks.get(id)) as List<Track>;
-    });
+    }));
 }

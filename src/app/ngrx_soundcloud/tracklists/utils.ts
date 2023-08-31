@@ -4,7 +4,7 @@ import {
   IMAGE_XLARGE_SIZE,
   WAVEFORM_IMAGE_HOST,
   WAVEFORM_JSON_HOST
-} from 'src/constants';
+} from '../constants';
 import { TrackData } from './models/track';
 
 

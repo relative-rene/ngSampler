@@ -17,7 +17,6 @@ export class LoginService {
 
     return this.http // We get an RxJS observable object.
       .post('/api/users/auth', JSON.stringify({ username, password }), { headers })
-      .map(res => res.json()) // json to object
       .map((res) => {
         let token = res && res.token;
 
@@ -44,11 +43,7 @@ export class LoginService {
     headers.append('Content-Type', 'application/json');
 
     return this.http // We get an RxJS observable object.
-      .post('/api/users/create', JSON.stringify({ username, password }), { headers })
-      .map(res => res.json()) // json to object
-      .map((res) => {
-        return res;
-      });
+      .post('/api/users/create', JSON.stringify({ username, password }), { headers });
   }
 
   isLoggedIn() {
