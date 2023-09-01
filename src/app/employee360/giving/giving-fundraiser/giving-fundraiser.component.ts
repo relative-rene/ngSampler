@@ -40,8 +40,8 @@ export class GivingFundraiserComponent implements OnInit, AfterViewInit {
   fetchCommentsPending = false;
   settings: any = {};
   hideEditButton = false;
-
-  public session = JSON.parse(sessionStorage.getItem('currentUser'));
+  public user = sessionStorage.getItem('currentUser') || '';
+  public session  = JSON.parse(this.user);
 
 
   constructor(private service: GivingService,

@@ -12,7 +12,8 @@ export class AdminTransactionsComponent implements OnInit {
   userId = '';
 
   constructor(private service: TransactionsService) {
-    var currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+    let user = sessionStorage.getItem('currentUser') || '';
+    let currentUser = JSON.parse(user);
     this.userId = currentUser.id;
   }
 

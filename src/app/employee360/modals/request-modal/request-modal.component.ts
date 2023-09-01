@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ToastComponent } from '../../shared/toast/toast.component';
 import { UserService } from '../../_services/user.service';
-// import { UtilityService } from '../../_services/util.service';
 
 @Component({
   selector: 'app-request-modal',
@@ -10,22 +9,23 @@ import { UserService } from '../../_services/user.service';
   providers: [UserService]
 })
 export class RequestModalComponent implements OnInit {
-  public session = JSON.parse(sessionStorage.getItem('currentUser'));
-  public profile = {};
-  public newMentee = {};
-  @Input() acceptableMentee: number;
+  @Input() acceptableMentee!: number;
   @Input() commentMessage = {};
   @Input() notification = {};
+  public user = sessionStorage.getItem('currentUser') || '';
+  public session = JSON.parse(this.user);
+  public profile = {};
+  public newMentee = {};
 
   constructor(
-    private toast: ToastComponent,
+    public toast: ToastComponent,
     private userService: UserService) { }
 
   ngOnInit() {
     this.setProfile();
   }
 
-  acceptMentee(id) {
+  acceptMentee() {
     const menteeId = this.acceptableMentee;
     this.userService.getById(menteeId)
       .subscribe(res => {

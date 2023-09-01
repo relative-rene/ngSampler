@@ -19,7 +19,7 @@ export class SearchEffects {
 
   loadSearchResults$ = createEffect(()=>this.actions$.pipe(
     ofType(SearchActions.LOAD_SEARCH_RESULTS),
-    withLatestFrom(this.store$.select(getCurrentTracklist()), (action:any, tracklist) => ({
+    withLatestFrom(this.store$.pipe(getCurrentTracklist()), (action:any, tracklist) => ({
       payload: action.payload,
       tracklist
     })),

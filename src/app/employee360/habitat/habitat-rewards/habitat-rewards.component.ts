@@ -23,11 +23,10 @@ export class HabitatRewardsComponent {
   // allItems setting pager
   public pagedItems: any[];
   // complete user info
-  private user = {};
   // user points
   private points = {};
-  private session = JSON.parse(sessionStorage.getItem('currentUser'));
-
+  public user = sessionStorage.getItem('currentUser') || ''; 
+  private session = JSON.parse(this.user);
   constructor(
     private receiptService: ReceiptService,
     private pagerService: RewardPaginationService,

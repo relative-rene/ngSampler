@@ -44,5 +44,5 @@ import { User } from '../models/user';
 })
 export class UserCardComponent {
   @Input() resource = 'tracks';
-  @Input() user!: User;
+  @Input() user!: User | null;
 }

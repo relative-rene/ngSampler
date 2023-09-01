@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../_services/user.service';
-import { Observable, Subject, of} from 'rxjs';
+import { Observable, Subject, catchError, debounceTime, distinctUntilChanged, of, switchMap} from 'rxjs';
 import { SearchService } from '../../_services/search.service';
 import { Imentor } from '../../_interfaces/mentor.interface';
 import { ToastComponent } from '../../shared/toast/toast.component';
@@ -22,7 +22,7 @@ import 'rxjs/add/operator/distinctUntilChanged';
 
 export class SearchMentorComponent implements OnInit {
   // subscribe to this Observable in our component.
-  private profiles: Observable<Imentor[]>;
+  public profiles: Observable<Imentor[]>;
   // A Subject is a sort of bridge or proxy that is available in some implementations of ReactiveX that acts both as an observer and as an Observable.
   private searchTerms = new Subject<string>();
   private profile: any = {};
@@ -48,15 +48,15 @@ export class SearchMentorComponent implements OnInit {
 
   ngOnInit(): void {
     // Each time there is a new value emitted from our Observable Angular updates the view.
-    this.profiles = this.searchTerms
-      .debounceTime(300)        // wait 300ms after each keystroke before considering the term
-      .distinctUntilChanged()   // ignore if next search term is same as previous
-      .switchMap(term => term   // switch to new observable each time the term changes
+    this.profiles = this.searchTerms.pipe(
+      debounceTime(300),        // wait 300ms after each keystroke before considering the term
+      distinctUntilChanged()).pipe(  // ignore if next search term is same as previous
+      switchMap((term:any) => term   // switch to new observable each time the term changes
         // return the http search observable
         ? this.searchService.searchProfiles(term)
         // or the observable of empty mentor if there was no search term
-        : of<Imentor[]>([]))
-      .catch(error => {
+        : of<Imentor[]>([]))),
+      catchError(error => {
         console.log(error);
         return of<Imentor[]>([]);
       });

@@ -15,7 +15,8 @@ declare let $: any;
 })
 
 export class GivingDashboardComponent implements AfterViewInit, OnInit {
-  private session = JSON.parse(sessionStorage.getItem('currentUser'));
+  public user = sessionStorage.getItem('currentUser') || ''; 
+  private session = JSON.parse(this.user);
   public points = {};
   public profile = {};
   searchFilter: string = '';

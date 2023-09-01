@@ -17,5 +17,5 @@ import { Component, Input } from '@angular/core';
 })
 export class ContentHeaderComponent {
   @Input() section?: string;
-  @Input() title?: string;
+  @Input() title!: string | null;
 }

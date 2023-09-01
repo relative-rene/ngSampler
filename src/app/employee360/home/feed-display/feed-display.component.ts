@@ -18,7 +18,8 @@ export class FeedDisplayComponent implements OnInit {
   constructor(private service: FeedService, private notificationsService: NotificationsService) {
   }
   ngOnInit() {
-    var currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+    let user = sessionStorage.getItem('currentUser') || '';
+    var currentUser = JSON.parse(user);
     this.userId = currentUser.id;
 
     this.reloadData();

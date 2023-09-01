@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 // The RxJS library is quite large. Size matters when we build a production application and deploy it to mobile devices.
 // We should include only those features that we actually need.
 import 'rxjs/add/operator/map';
-// import 'rxjs/Rx'; // Or we can pull in the full set of operators:
+// import 'rxjs'; // Or we can pull in the full set of operators:
 
 @Injectable()
 export class CharityNavigatorService {

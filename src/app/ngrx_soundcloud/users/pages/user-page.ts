@@ -5,7 +5,7 @@ import 'rxjs/add/operator/takeUntil';
 
 import { ChangeDetectionStrategy, Component, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Subject } from 'rxjs';
+import { Subject, distinctUntilChanged, map, takeUntil } from 'rxjs';
 import { UserService } from '../user-service';
 
 
@@ -22,19 +22,18 @@ import { UserService } from '../user-service';
   `
 })
 export class UserPageComponent implements OnDestroy {
-  ngOnDestroy$ = new Subject<boolean>();
-  resource: string;
+  public ngOnDestroy$ = new Subject<boolean>();
+  public resource: string = '';
 
   constructor(public route: ActivatedRoute, public user: UserService) {
-    route.params
-      .takeUntil(this.ngOnDestroy$)
-      .do(({id, resource}: {id: string, resource: string}) => {
+    route.params.pipe(
+      takeUntil(this.ngOnDestroy$)),
+      map(({id, resource}: {id: string, resource: string}) => {
         user.loadResource(id, resource);
         this.resource = resource;
-      })
-      .pluck('id')
-      .distinctUntilChanged()
-      .subscribe((id: string) => user.loadUser(id));
+      }),
+      map(({id})=> user.loadUser(id)),
+      distinctUntilChanged();
   }
 
   ngOnDestroy(): void {

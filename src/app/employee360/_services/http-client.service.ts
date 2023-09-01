@@ -31,7 +31,8 @@ export class HttpClient {
   private jwt() {
     // create authorization header with jwt token
     let headers = new Headers({ 'Content-Type': 'application/json' });
-    let currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+    let user = sessionStorage.getItem('currentUser') || '';
+    let currentUser = JSON.parse(user);
 
     if (currentUser.token) {
       headers.append('Authorization', currentUser.token);

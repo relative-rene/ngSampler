@@ -23,7 +23,8 @@ export class CommentDisplayComponent implements OnInit {
   constructor(private service: CommentsService) { }
   ngOnInit() {
     this.reloadData();
-    var currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+    let user = sessionStorage.getItem('currentUser') || '';
+    var currentUser = JSON.parse(user);
     this.userId = currentUser.id;
   }
   isRoot() {

@@ -1,4 +1,3 @@
-import { Map, Record } from 'immutable';
 import { formatTrackTitle, streamUrl, trackImageUrl, waveformUrl } from '../utils';
 
 
@@ -23,42 +22,25 @@ export interface TrackData {
   waveform_url: string;
 }
 
-export interface Track extends Map<string,any> {
-  artworkUrl: string;
-  duration: number;
-  id: number;
+export interface Track {
+  artworkUrl: undefined | string;
+  duration: undefined |number;
+  id: undefined |number;
   liked: boolean;
   likesCount: number;
-  permalinkUrl: string;
-  playbackCount: number;
-  streamable: boolean;
-  streamUrl: string;
-  title: string;
-  userId: number;
-  username: string;
-  userPermalinkUrl: string;
-  waveformUrl: string;
+  permalinkUrl: undefined |string;
+  playbackCount: null |number;
+  streamable: undefined |boolean;
+  streamUrl: null |string;
+  title: undefined |string;
+  userId: undefined |number;
+  username: undefined |string;
+  userPermalinkUrl: undefined |string;
+  waveformUrl: null |string;
 }
 
-export const TrackRecord = Record({
-  artworkUrl: null,
-  duration: null,
-  id: null,
-  liked: null,
-  likesCount: null,
-  permalinkUrl: null,
-  playbackCount: null,
-  streamable: null,
-  streamUrl: null,
-  title: null,
-  userId: null,
-  username: null,
-  userPermalinkUrl: null,
-  waveformUrl: null
-});
-
 export function createTrack(data: TrackData): Track {
-  return new TrackRecord({
+  return Object.assign({},{
     artworkUrl: trackImageUrl(data),
     duration: data.duration,
     id: data.id,
@@ -73,5 +55,5 @@ export function createTrack(data: TrackData): Track {
     username: data.user.username,
     userPermalinkUrl: data.user.permalink_url,
     waveformUrl: waveformUrl(data.waveform_url)
-  }) as Track;
+  }) 
 }

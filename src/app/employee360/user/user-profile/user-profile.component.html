@@ -39,13 +39,13 @@
                     </div>
 
                     <!--sidebar-Mentors-->
-                    <div *ngIf="profile.mentorStatus === Approved" id="sidebarmentors">
+                    <div *ngIf="profile.mentorStatus === 'Approved'" id="sidebarmentors">
                       <h3>Mentors </h3>
                       <ul *ngFor="let mentor of profile.mentors" class="list">
                         <li>{{mentor.name}}</li>
                       </ul>
                     </div>
-                    <div *ngIf="!profile.mentorStatus === Approved" id="sidebarmentors">
+                    <div *ngIf="profile.mentorStatus !== 'Approved'" id="sidebarmentors">
                       <h3>Find Mentors </h3>
                       <p>Learn from experience, get a mentor</p>
                         <span routerLink="/habitat-mentors"><i class="fa fa-address-book-o" aria-hidden="true"></i>

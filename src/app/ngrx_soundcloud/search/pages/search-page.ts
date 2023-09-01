@@ -4,7 +4,7 @@ import 'rxjs/add/operator/takeUntil';
 
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Subject } from 'rxjs';
+import { Subject, map, takeUntil } from 'rxjs';
 import { SearchService } from '../search-service';
 
 
@@ -26,10 +26,9 @@ export class SearchPageComponent {
   section = 'Search Results';
 
   constructor(public route: ActivatedRoute, public search: SearchService) {
-    route.params
-      .takeUntil(this.ngOnDestroy$)
-      .pluck('q')
-      .subscribe((value: string) => search.loadSearchResults(value));
+    route.params.pipe(
+      takeUntil(this.ngOnDestroy$)),
+      map(({q})=> search.loadSearchResults(q));
   }
 
   ngOnDestroy(): void {

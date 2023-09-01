@@ -35,7 +35,7 @@ export class UserEffects {
   
   loadUserLikes$ = createEffect(()=> this.actions$.pipe(
     ofType(UserActions.LOAD_USER_LIKES, TracklistActions.LOAD_FEATURED_TRACKS),
-    withLatestFrom(this.store$.select(getCurrentTracklist()), (action:any, tracklist:any) => ({
+    withLatestFrom(this.store$.pipe(getCurrentTracklist()), (action:any, tracklist:any) => ({
       payload: action.payload,
       tracklist
     })),
@@ -48,7 +48,7 @@ export class UserEffects {
   
   loadUserTracks$ = createEffect(()=>this.actions$.pipe(
     ofType(UserActions.LOAD_USER_TRACKS),
-    withLatestFrom(this.store$.select(getCurrentTracklist()), (action:any, tracklist) => ({
+    withLatestFrom(this.store$.pipe(getCurrentTracklist()), (action:any, tracklist) => ({
       payload: action.payload,
       tracklist
     })),

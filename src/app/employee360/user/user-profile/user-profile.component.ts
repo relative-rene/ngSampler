@@ -10,8 +10,9 @@ import { UserService } from '../../_services/user.service';
 })
 export class UserProfileComponent implements AfterViewInit, OnInit {
   public allItems: any = [];
-  public session = JSON.parse(sessionStorage.getItem('currentUser'));
-  public profile = {};
+  public currentUser  = sessionStorage.getItem('currentUser') || '';
+  public session = JSON.parse(this.currentUser);
+  public profile:any = {};
   public points = {};
   public pageVisits = 0;
   public hasReceipts = false;
@@ -20,7 +21,7 @@ export class UserProfileComponent implements AfterViewInit, OnInit {
     private receiptService: ReceiptService,
     private userService: UserService) {
     this.userService.getById(this.session.id)
-      .subscribe(res => {
+      .subscribe((res:any) => {
         this.profile = res;
         this.points = res.points;
       });
@@ -36,8 +37,8 @@ export class UserProfileComponent implements AfterViewInit, OnInit {
   }
 
   ngAfterViewInit() {
-    this.receiptService.getByUserId(this.session.id).subscribe(res => {
-      res.forEach(function(receipt) {
+    this.receiptService.getByUserId(this.session.id).subscribe((res:any) => {
+      res.forEach((receipt:any) => {
         if (receipt.userId === this.session.id) {
           this.allItems.push(receipt);
           this.hasReceipts = true;

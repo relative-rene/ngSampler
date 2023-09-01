@@ -12,7 +12,8 @@ export class GivingDashboardManageYourDonationsComponent implements OnInit {
   userId: string = '';
   donationTotal: any = 0.0;
   constructor(private service: TransactionsService) {
-    var currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+    let user = sessionStorage.getItem('currentUser') || '';
+    var currentUser = JSON.parse(user);
     this.userId = currentUser.id;
   }
 

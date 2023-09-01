@@ -20,7 +20,7 @@ export class TracklistEffects {
   
   loadNextTracks$ = createEffect(()=> this.actions$.pipe(
     ofType(TracklistActions.LOAD_NEXT_TRACKS),
-    withLatestFrom(this.store$.select(getCurrentTracklist()), (action:any, tracklist) => tracklist),
+    withLatestFrom(this.store$.pipe(getCurrentTracklist()), (action:any, tracklist) => tracklist),
     filter(tracklist => tracklist.isPending),
     switchMap(tracklist => this.api.fetch(tracklist.nextUrl).pipe(
       map(data => this.tracklistActions.fetchTracksFulfilled(data, tracklist.id)),

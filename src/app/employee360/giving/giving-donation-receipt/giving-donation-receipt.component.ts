@@ -53,7 +53,8 @@ export class GivingDonationReceiptComponent implements OnInit {
         this.reloadData();
       }
     });
-    var currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+    let user = sessionStorage.getItem('currentUser') || '';
+    var currentUser = JSON.parse(user);
     this.userId = currentUser.id;
   }
   getWhen() {

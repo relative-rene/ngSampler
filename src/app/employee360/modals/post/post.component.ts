@@ -11,9 +11,11 @@ declare let $: any;
   providers: [FeedService, UserService]
 })
 export class PostComponent implements OnInit {
-  profile = {};
-  userPoints = {};
-  session = JSON.parse(sessionStorage.getItem('currentUser'));
+  public profile = {};
+  public userPoints = {};
+  public points = 0;
+  public user = sessionStorage.getItem('currentUser') || '';
+  session = JSON.parse(this.user);
 
   constructor(private feedService: FeedService,
     private userService: UserService,
@@ -33,9 +35,10 @@ export class PostComponent implements OnInit {
       return 'userfile';
     if ((<HTMLInputElement>document.getElementById('userposttypeyoutube')).checked)
       return 'useryoutube';
+    return;
   }
 
-  postSocialPost(modal) {
+  postSocialPost() {
     var me = this;
     var summaryCtl = <HTMLInputElement>document.getElementById('postComponentTextArea');
     var summary = summaryCtl.value;
@@ -90,8 +93,8 @@ export class PostComponent implements OnInit {
     var formData = new FormData();
     formData.append('uploadfile', fileSelect.files[0]);
     var url = 'http://localhost/api/posting/posts/' + id + '/files/picture.png';
-    let currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
-
+    let user = sessionStorage.getItem('currentUser') || '';
+    var currentUser = JSON.parse(user);
     $.ajax({
       url: url,
       type: 'post',
@@ -100,17 +103,17 @@ export class PostComponent implements OnInit {
         'Accept': 'application/json',
         'Authorization': currentUser.token
       },
-      xhr: function() {
+      xhr: function () {
         var xhr = $.ajaxSettings.xhr();
         if (xhr.upload) { }
         return xhr;
       },
       async: true,
       dataType: 'json',
-      success: function(data) {
+      success: function (data) {
         return me.uploadComplete(data);
       },
-      error: function(xhr, ajaxoptions, msg) {
+      error: function (xhr, ajaxoptions, msg) {
         alert(xhr.status + ' ' + msg);
       },
       cache: false,
@@ -121,8 +124,10 @@ export class PostComponent implements OnInit {
 
 
   dismissAndReload() {
-    document.getElementById('addPostModalDismissButton').click();
-    document.getElementById('feedDisplayreloadDataButton').click();
+    let addPostModalDismissButton = document.getElementById('addPostModalDismissButton');
+    let feedDisplayreloadDataButton = document.getElementById('feedDisplayreloadDataButton');
+    addPostModalDismissButton && addPostModalDismissButton.click();
+    feedDisplayreloadDataButton && feedDisplayreloadDataButton.click();
   }
 
   earnSocialPts() {
@@ -141,7 +146,7 @@ export class PostComponent implements OnInit {
 
   setProfile() {
     this.userService.getById(this.session.id)
-      .subscribe(res => {
+      .subscribe((res: any) => {
         this.profile = res;
         console.log('res.points', res.points);
         if (res.points['totalPts'] !== null) {

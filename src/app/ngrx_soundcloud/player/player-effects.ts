@@ -24,7 +24,7 @@ export class PlayerEffects {
 
   audioEnded$ = createEffect(()=>this.actions$.pipe(
     ofType(PlayerActions.AUDIO_ENDED),
-    withLatestFrom(this.store$.select(getPlayerTracklistCursor(false)), (action, cursor) => cursor),
+    withLatestFrom(this.store$.pipe(getPlayerTracklistCursor(false)), (action, cursor) => cursor),
     filter((cursor:any) => !!cursor.nextTrackId),
     map(cursor => this.playerActions.playSelectedTrack(cursor.nextTrackId))));
 

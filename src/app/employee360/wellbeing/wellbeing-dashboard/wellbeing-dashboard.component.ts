@@ -11,10 +11,10 @@ declare let $: any;
 })
 export class WellbeingDashboardComponent implements AfterViewInit {
   private points = {};
-  private session = JSON.parse(sessionStorage.getItem('currentUser'));
-
+  public user = sessionStorage.getItem('currentUser') || ''; 
+  private session = JSON.parse(this.user);
   constructor(private userService: UserService, private toast: ToastComponent) {
-    this.userService.getById(this.session.id).subscribe(res => {
+    this.userService.getById(this.session.id).subscribe((res:any) => {
       this.points = res.points;
     });
   }

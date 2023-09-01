@@ -13,7 +13,8 @@ export class GivingDashboardManageVolunteeringComponent implements OnInit {
   userId: string = '';
   totalHours: any = 0.0;
   constructor(private service: GivingService) {
-    var currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+    let user = sessionStorage.getItem('currentUser') || '';
+    var currentUser = JSON.parse(user);
     this.userId = currentUser.id;
   }
 

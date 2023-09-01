@@ -10,11 +10,12 @@ import { ToastComponent } from '../../shared/toast/toast.component';
 })
 export class HabitatHowsItGoingComponent implements OnInit {
   private points = {};
-  private session = JSON.parse(sessionStorage.getItem('currentUser'));
+  private user = sessionStorage.getItem('currentUser') || '';
+  private session = JSON.parse(this.user);
 
 
   constructor(private userService: UserService, private toast: ToastComponent) {
-    this.userService.getById(this.session.id).subscribe(res => {
+    this.userService.getById(this.session.id).subscribe((res:any) => {
       this.points = res.points;
     });
   }

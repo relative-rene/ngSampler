@@ -23,7 +23,8 @@ export class CommentAddComponent implements OnInit {
   constructor(private service: CommentsService) { }
 
   ngOnInit() {
-    var currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+    let user = sessionStorage.getItem('currentUser') || '';
+    var currentUser = JSON.parse(user);
     this.userId = currentUser.id;
   }
 
@@ -56,8 +57,8 @@ export class CommentAddComponent implements OnInit {
     var formData = new FormData();
     formData.append('uploadfile', fileSelect.files[0]);
     var url = 'http://localhost' + this.service.getApiPrefix(this.collname) + '/' + id + '/files/comment' + commentid.toString() + '.png';
-    let currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
-
+    let user = sessionStorage.getItem('currentUser') || '';
+    var currentUser = JSON.parse(user);
     $.ajax({
       url: url,
       type: 'post',

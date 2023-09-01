@@ -1,6 +1,7 @@
 export const localStorageAdapter = {
   getItem(key: string): any {
-    return JSON.parse(localStorage.getItem(key));
+    const retrievedStorage = localStorage.getItem(key) || '';
+    return JSON.parse(retrievedStorage);
   },
 
   setItem(key: string, value: any): void {

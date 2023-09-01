@@ -12,14 +12,15 @@ declare let $: any;
 })
 export class NavbarComponent implements OnInit, AfterViewInit {
   // @Input() active: string;
-  active: string;
+  public active: string = '';
   // isWellbeing:boolean;
   // isGiving:boolean;
   // isHabitat:boolean;
   // isSocial:boolean;
-  userId: string;
-  profile = {};
-  session = JSON.parse(sessionStorage.getItem('currentUser'));
+  public userId: string = '';
+  public profile = {};
+  public user =  sessionStorage.getItem('currentUser') || '';
+  public session = JSON.parse(this.user);
   points = this.profile['points'];
 
   constructor(private auth: LoginService, private router: Router, private userService: UserService) {
@@ -45,8 +46,8 @@ export class NavbarComponent implements OnInit, AfterViewInit {
         $('ul.dropdown-menu [data-toggle=dropdown]').on('click', function(event) {
           event.preventDefault();
           event.stopPropagation();
-          $(this).parent().siblings().removeClass('open');
-          $(this).parent().toggleClass('open');
+          $(event.currentTarget).parent().siblings().removeClass('open');
+          $(event.currentTarget).parent().toggleClass('open');
         });
       });
     });
@@ -130,7 +131,8 @@ export class NavbarComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     // this.move();
     // console.log('active',this.active);
-    var currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+    let user = sessionStorage.getItem('currentUser') || '';
+    var currentUser = JSON.parse(user);
     this.userId = currentUser.id;
     this.setProfile();
   }

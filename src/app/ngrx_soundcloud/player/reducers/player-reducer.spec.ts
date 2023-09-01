@@ -1,6 +1,6 @@
 import { PlayerActions } from '../player-actions';
 import { playerReducer } from './player-reducer';
-import { PlayerState, PlayerStateRecord } from './player-state';
+import { PlayerState, createPlayerStateRecord } from './player-state';
 
 
 describe('player', () => {
@@ -14,7 +14,7 @@ describe('player', () => {
 
     describe('AUDIO_PAUSED action', () => {
       it('should set PlayerState.isPlaying to false', () => {
-        let player = new PlayerStateRecord({isPlaying: true}) as PlayerState;
+        let player = createPlayerStateRecord({isPlaying: true}) as PlayerState;
         player = playerReducer(player, actions.audioPaused());
         expect(player.isPlaying).toBe(false);
       });

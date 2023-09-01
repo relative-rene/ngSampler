@@ -1,19 +1,19 @@
 import { Action, ActionReducer } from '@ngrx/store';
 import { PlayerActions } from '../player-actions';
-import { TimesState, TimesStateRecord } from './times-state';
+import { Times, createTimesStateRecord } from './times-state';
 
 
-export const initialState: TimesState = new TimesStateRecord() as TimesState;
+export const initialState: Times = createTimesStateRecord() as Times;
 
 
-export const timesReducer: ActionReducer<TimesState> = (state: TimesState = initialState, {payload, type}: Action) => {
+export const timesReducer: ActionReducer<Times> = (state: Times = initialState, {payload, type}: Action) => {
   switch (type) {
     case PlayerActions.AUDIO_ENDED:
     case PlayerActions.PLAY_SELECTED_TRACK:
-      return new TimesStateRecord() as TimesState;
+      return createTimesStateRecord() as Times;
 
     case PlayerActions.AUDIO_TIME_UPDATED:
-      return state.merge(payload) as TimesState;
+      return Object.assign({...state},{...payload}) as Times;
 
     default:
       return state;

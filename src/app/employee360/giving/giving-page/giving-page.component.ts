@@ -51,7 +51,8 @@ export class GivingPageComponent implements OnInit, AfterViewInit {
       }
     });
 
-    var currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+    let user = sessionStorage.getItem('currentUser') || '';
+    var currentUser = JSON.parse(user);
     this.userId = currentUser.id;
     this.setProfile(currentUser.id);
   }

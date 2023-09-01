@@ -3,7 +3,7 @@ import { NotificationsService } from '../../_services/notifications.service';
 import { CommentsService } from '../../_services/comments.service';
 import { UtilityService } from '../../_services/util.service';
 import { UserService } from '../../_services/user.service';
-import { Observable } from 'rxjs/Rx';
+import {  timer } from 'rxjs';
 declare let $: any;
 
 @Component({
@@ -13,14 +13,14 @@ declare let $: any;
   providers: [NotificationsService, CommentsService, UserService, UtilityService]
 })
 export class NotificationDisplayComponent implements OnInit {
-  notifications: Object[];
-  userId: string;
-  commentMessage: string;
-  notification = {};
   @Output() loaded: EventEmitter<any> = new EventEmitter();
   @Output() refreshFeed: EventEmitter<any> = new EventEmitter();
   @ViewChild('notificationCount') notificationCount;
-
+  public notifications: any[] = [];
+  public userId: string = '';
+  public commentMessage: string = '';
+  public notification = {};
+  public acceptableMentee = '';
   constructor(
     private service: NotificationsService,
     private commentService: CommentsService,
@@ -29,13 +29,14 @@ export class NotificationDisplayComponent implements OnInit {
 
   ngOnInit() {
     this.reloadData();
-    var currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+    let user = sessionStorage.getItem('currentUser') || '';
+    var currentUser = JSON.parse(user);
     this.userId = currentUser.id;
 
     // 3 sec delay to start, tick every second
     var me = this;
-    let timer = Observable.timer(3000, 1000);
-    timer.subscribe(function(t) {
+    let timerSub = timer(3000, 1000);
+    timerSub.subscribe(function(t) {
       // me.reloadData()
     });
   }
@@ -47,9 +48,9 @@ export class NotificationDisplayComponent implements OnInit {
       this.notification = notification;
       // TODO: GRAB THE RIGHT COMMENT
       this.commentService.listAll('users', notification.user)
-        .subscribe(res => {
+        .subscribe((res:any) => {
           // set COMMENT MESSAGE
-          res.forEach(function(item) {
+          res.forEach((item)=> {
             let count;
             if (item.id === commentId) {
               count = + 1;
@@ -101,7 +102,7 @@ export class NotificationDisplayComponent implements OnInit {
 
   reloadData() {
     this.service.listDisplay()
-      .subscribe(res => {
+      .subscribe((res:any) => {
         this.notifications = res.notifications;
         this.loaded.emit(this.notifications);
         var display = res.unseenCount.toString();

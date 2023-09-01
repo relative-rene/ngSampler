@@ -80,8 +80,8 @@ export class AdminToolsConfigComponent implements OnInit {
     var filename = this.gertieFile.nativeElement.files[0].name;
 
     var url = 'http://localhost/api/settings/file/' + filename;
-    let currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
-
+    let user = sessionStorage.getItem('currentUser') || '';
+    let currentUser = JSON.parse(user);
     $.ajax({
       url: url,
       type: 'post',

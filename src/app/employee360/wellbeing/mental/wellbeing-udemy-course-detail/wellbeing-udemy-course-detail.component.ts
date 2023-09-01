@@ -28,13 +28,13 @@ export class WellbeingUdemyCourseDetailComponent implements AfterViewInit {
         }
       }
 
-      $('.collapse').on('shown.bs.collapse', function() {
-        $(this).parent().find(".glyphicon-plus").removeClass("glyphicon-plus").addClass("glyphicon-minus");
-      }).on('hidden.bs.collapse', function() {
-        $(this).parent().find(".glyphicon-minus").removeClass("glyphicon-minus").addClass("glyphicon-plus");
+      $('.collapse').on('shown.bs.collapse', (event) => {
+        $(event.currentTarget).parent().find(".glyphicon-plus").removeClass("glyphicon-plus").addClass("glyphicon-minus");
+      }).on('hidden.bs.collapse', (event) => {
+        $(event.currentTarget).parent().find(".glyphicon-minus").removeClass("glyphicon-minus").addClass("glyphicon-plus");
       });
-      $("#example-one").on("click", function() {
-        var el = $(this);
+      $("#example-one").on("click", (event) => {
+        var el = $(event.currentTarget);
         el.text() == el.data("text-swap")
           ? el.text(el.data("text-original"))
           : el.text(el.data("text-swap"));

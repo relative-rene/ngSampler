@@ -18,7 +18,7 @@ import {
 
 import {
   Observable
-} from 'rxjs/Rx';
+} from 'rxjs';
 declare let $: any;
 import {
   GivingSearchResultComponent
@@ -110,8 +110,9 @@ export class GivingOpportunityComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.loading = true;
-    var currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
-    if (currentUser.permissions.indexOf('admin') !== -1)
+    let user = sessionStorage.getItem('currentUser') || '';
+    var currentUser = JSON.parse(user);
+     if (currentUser.permissions.indexOf('admin') !== -1)
       this.isAdmin = true;
 
     this.userId = currentUser.id;
@@ -415,8 +416,8 @@ export class GivingOpportunityComponent implements OnInit, AfterViewInit {
     var fileName = fileSelect.files[0].name;
     var url = 'http://localhost/api/giving/events/' + id + '/files/' +
       fileName;
-    let currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
-
+      let user = sessionStorage.getItem('currentUser') || '';
+      var currentUser = JSON.parse(user);
     $.ajax({
       url: url,
       type: 'post',

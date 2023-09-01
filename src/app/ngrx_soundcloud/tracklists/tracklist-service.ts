@@ -17,8 +17,8 @@ export class TracklistService {
   tracks$: Observable<List<Track>>;
 
   constructor(private actions: TracklistActions, private store$: Store<AppState>) {
-    this.tracklist$ = store$.select(getCurrentTracklist());
-    this.tracks$ = store$.select(getTracksForCurrentTracklist());
+    this.tracklist$ = store$.pipe(getCurrentTracklist());
+    this.tracks$ = store$.pipe(getTracksForCurrentTracklist());
   }
 
   loadFeaturedTracks(): void {

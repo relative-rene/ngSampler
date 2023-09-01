@@ -1,4 +1,3 @@
-import { Map, Record } from 'immutable';
 
 
 export interface UserData {
@@ -13,9 +12,10 @@ export interface UserData {
   public_favorites_count?: number;
   track_count?: number;
   username: string;
+  profile?:boolean;
 }
 
-export interface User extends Map<string,any> {
+export interface User {
   avatarUrl: string;
   city: string;
   country: string;
@@ -30,21 +30,6 @@ export interface User extends Map<string,any> {
   username: string;
 }
 
-export const UserRecord = Record({
-  avatarUrl: null,
-  city: null,
-  country: null,
-  followersCount: 0,
-  followingsCount: 0,
-  fullName: null,
-  id: null,
-  likesCount: 0,
-  playlistCount: 0,
-  profile: false,
-  trackCount: 0,
-  username: null
-});
-
 export function createUser(data: UserData, profile: boolean = false): User {
   let attrs = {
     avatarUrl: data.avatar_url,
@@ -53,7 +38,7 @@ export function createUser(data: UserData, profile: boolean = false): User {
   };
 
   if (profile) {
-    attrs = Object.assign(attrs, {
+    attrs = Object.assign({...attrs}, {
       city: data.city,
       country: data.country,
       followersCount: data.followers_count,
@@ -66,5 +51,5 @@ export function createUser(data: UserData, profile: boolean = false): User {
     });
   }
 
-  return new UserRecord(attrs) as User;
+  return {...attrs} as User;
 }

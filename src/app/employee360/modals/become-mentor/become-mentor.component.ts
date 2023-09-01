@@ -11,7 +11,8 @@ declare let $: any;
 })
 export class BecomeMentorComponent implements OnInit {
 
-  private session = JSON.parse(sessionStorage.getItem('currentUser'));
+  public userStorage = sessionStorage.getItem('currentUser') || ''; 
+  private session = JSON.parse(this.userStorage);
   private user: Object = {};
 
 

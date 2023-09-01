@@ -17,8 +17,8 @@ export const TracklistCursorRecord = Record({
 
 export function getTracklistCursor(trackId: number, {trackIds}: Tracklist): TracklistCursor {
   let index = trackIds.indexOf(trackId);
-  let nextTrackId = null;
-  let previousTrackId = null;
+  let nextTrackId;
+  let previousTrackId;
 
   if (index !== -1) {
     if (index < trackIds.size - 1) {
@@ -34,5 +34,7 @@ export function getTracklistCursor(trackId: number, {trackIds}: Tracklist): Trac
     currentTrackId: trackId,
     nextTrackId,
     previousTrackId
-  }) as TracklistCursor;
+  }) as unknown as TracklistCursor;
 }
+
+

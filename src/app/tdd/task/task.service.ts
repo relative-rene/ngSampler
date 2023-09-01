@@ -1,5 +1,4 @@
 import { Observable, of } from 'rxjs';
-import 'rxjs/Rx';
 
 export class TaskService {
     private tasks = [{ id: 1, name: 'Create Database' }, { id: 2, name: 'Create Webservice' }, { id: 3, name: 'Create Frontend' }]

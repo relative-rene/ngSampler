@@ -17,8 +17,9 @@ export class HabitatSuggestionBoxComponent implements OnInit {
   isAdmin: boolean = false;
 
   constructor(private service: SuggestionsService) {
-    var currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
-    if (currentUser.permissions.indexOf('admin') !== -1)
+    let user = sessionStorage.getItem('currentUser') || '';
+    var currentUser = JSON.parse(user);
+     if (currentUser.permissions.indexOf('admin') !== -1)
       this.isAdmin = true;
 
     this.userId = currentUser.id;

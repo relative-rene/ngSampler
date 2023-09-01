@@ -14,7 +14,7 @@ import { UserService } from './user-service';
 
 
 export { UserActions, UserService };
-export { User, UserData, UserRecord } from './models/user';
+export { User, UserData} from './models/user';
 export { usersReducer, UsersState } from './reducers/users-reducer';
 
 

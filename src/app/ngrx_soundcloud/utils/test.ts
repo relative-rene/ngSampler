@@ -1,5 +1,5 @@
-import { TrackData } from 'src/tracklists';
-import { UserData } from 'src/users';
+import { TrackData } from '../tracklists';
+import { UserData } from '../users';
 
 
 export const testUtils = {

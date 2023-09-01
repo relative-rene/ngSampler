@@ -8,8 +8,9 @@ declare let $: any;
   styleUrls: ['./onboarding.component.css']
 })
 export class OnboardingComponent implements AfterViewInit {
-  private session = JSON.parse(sessionStorage.getItem('currentUser'));
-  private user: Object = {}; // view model variable
+  public userStorage = sessionStorage.getItem('currentUser') || ''; 
+  private session = JSON.parse(this.userStorage);
+  public user: any = {}; // view model variable
 
   constructor(private User: UserService) {
     this.User.getById(this.session.id).subscribe((res) => {
@@ -19,7 +20,8 @@ export class OnboardingComponent implements AfterViewInit {
   }
 
   onSubmit(form: any) {
-    let session = JSON.parse(sessionStorage.getItem('currentUser'));
+    let user = sessionStorage.getItem('currentUser') || '';
+    let session = JSON.parse(user);
     // TODO: bind/subscribe ui to user service profile
 
     console.log('onSubmit', form);
@@ -35,23 +37,24 @@ export class OnboardingComponent implements AfterViewInit {
       $('.nav-tabs > li a[title]').tooltip();
 
       //Wizard
-      $('a[data-toggle="tab"]').on('show.bs.tab', function(e) {
+      $('a[data-toggle="tab"]').on('show.bs.tab', ((e:Event)=> {
 
         var $target = $(e.target);
 
         if ($target.parent().hasClass('disabled')) {
           return false;
         }
-      });
+        return;
+      }));
 
-      $(".next-step").click(function(e) {
+      $(".next-step").click((e)=> {
 
         var $active = $('.wizard .nav-tabs li.active');
         $active.next().removeClass('disabled');
         nextTab($active);
 
       });
-      $(".prev-step").click(function(e) {
+      $(".prev-step").click((e)=> {
 
         var $active = $('.wizard .nav-tabs li.active');
         prevTab($active);
