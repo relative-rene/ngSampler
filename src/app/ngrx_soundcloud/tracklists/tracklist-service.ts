@@ -2,7 +2,6 @@ import 'rxjs/add/operator/let';
 
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { List } from 'immutable';
 import { Observable } from 'rxjs';
 import { AppState } from '../app';
 import { Tracklist } from './models/tracklist';
@@ -14,7 +13,7 @@ import { TracklistActions } from './tracklist-actions';
 @Injectable()
 export class TracklistService {
   tracklist$: Observable<Tracklist>;
-  tracks$: Observable<List<Track>>;
+  tracks$: Observable<Track[]>;
 
   constructor(private actions: TracklistActions, private store$: Store<AppState>) {
     this.tracklist$ = store$.pipe(getCurrentTracklist());

@@ -1,7 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { Store, StoreModule } from '@ngrx/store';
-import { List, Map } from 'immutable';
-import { TracklistRecord, tracklistsReducer, TrackRecord, tracksReducer } from 'src/tracklists';
+import {  tracklistsReducer, TrackRecord, tracksReducer } from '../tracklists';
 import { initialState as playerInitialState, playerReducer } from './reducers/player-reducer';
 import { AUDIO_SOURCE_PROVIDER } from './audio-source';
 import { PlayerActions } from './player-actions';

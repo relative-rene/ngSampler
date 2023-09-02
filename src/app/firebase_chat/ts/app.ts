@@ -55,7 +55,7 @@ import '../css/styles.css';
   </div>
   `
 })
-class ChatApp {
+class ChatAppComponent {
   constructor(public messagesService: MessagesService,
               public threadsService: ThreadsService,
               public userService: UserService) {
@@ -65,7 +65,7 @@ class ChatApp {
 
 @NgModule({
   declarations: [
-    ChatApp,
+    ChatAppComponent,
     ChatNavBar,
     ChatThreads,
     ChatThread,

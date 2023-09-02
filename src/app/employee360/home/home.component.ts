@@ -11,16 +11,17 @@ declare let $: any;
   providers: [UserService, GivingService]
 })
 export class HomeComponent implements AfterViewInit, OnInit {
-  session = {};
+  session:any = {};
   trending: any[] = [];
 
   constructor(private User: UserService,
-    private toast: ToastComponent,
+    public toast: ToastComponent,
     private givingService: GivingService ) { }
 
 
   ngOnInit() {
-    this.session = JSON.parse(sessionStorage.getItem('currentUser'));
+    let user = sessionStorage.getItem('currentUser') || '';
+    this.session = JSON.parse(user);
 
     this.givingService.getTrending()
       .subscribe(res => {

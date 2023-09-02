@@ -17,14 +17,14 @@ declare let $: any;
 })
 export class HabitatRewardsComponent {
   // The Array of Object, pulled from rewards collection
-  private allItems: any[];
+  private allItems: any[] = [];
   // Individual userProfiles
   public pager: any = {};
   // allItems setting pager
-  public pagedItems: any[];
+  public pagedItems: any[] = [];
   // complete user info
   // user points
-  private points = {};
+  public points:any = {};
   public user = sessionStorage.getItem('currentUser') || ''; 
   private session = JSON.parse(this.user);
   constructor(
@@ -32,13 +32,13 @@ export class HabitatRewardsComponent {
     private pagerService: RewardPaginationService,
     private rewardService: RewardService,
     private userService: UserService,
-    private toast: ToastComponent) {
+    public toast: ToastComponent) {
     this.rewardService.getRewards()
-      .subscribe(res => {
+      .subscribe((res:any) => {
         this.allItems = res;
         this.setPage(1);
       });
-    this.userService.getById(this.session.id).subscribe(res => {
+    this.userService.getById(this.session.id).subscribe((res:any) => {
       this.user = res;
       this.points = this.user['points'];
       if (this.points === undefined) {

@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
-    selector: 'app-root',
+    selector: 'employee360',
     template: '<router-outlet></router-outlet>',
 })
-export class AppComponent implements OnInit {
+export class Employee360Component implements OnInit {
     constructor(private router: Router) { }
 
     ngOnInit() {

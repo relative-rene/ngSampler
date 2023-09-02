@@ -1,8 +1,7 @@
-import * as Immutable from 'immutable';
 import { IContactAction } from './actions';
 import { Contact as ContactModel} from './contact-store';
 
-export function reducer(state: Immutable.List<ContactModel> = Immutable.List<ContactModel>(), action: IContactAction) {
+export function reducer(state: Array<ContactModel> = Array<ContactModel>(), action: IContactAction) {
   switch (action.type) {
     case 'ADD':
       return state.push({
@@ -11,7 +10,7 @@ export function reducer(state: Immutable.List<ContactModel> = Immutable.List<Con
         star: false
       });
     case 'REMOVE':
-      return state.delete(findIndexById());
+      return delete state[action.id].id
     case 'STAR':
       return (<any>state).update(findIndexById(), (contact) => {
         return {

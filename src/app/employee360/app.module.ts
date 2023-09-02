@@ -18,7 +18,7 @@ import { HttpClient } from './_services/http-client.service';
  * ROUTES
  */
 // shared
-import { AppComponent } from './app.component';
+import { Employee360Component } from './app.component';
 import { LayoutComponent } from './shared/layout/layout.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';

@@ -25,7 +25,7 @@ export class HabitatMentorshipComponent {
     private userService: UserService,
     // private searchService: SearchService,
     private pagerService: PagerService,
-    private toast: ToastComponent) {
+    public toast: ToastComponent) {
     // let count;
     // get users
     this.userService.getUsers().subscribe((res) => {

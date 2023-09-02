@@ -16,8 +16,8 @@ import { TracklistService } from './tracklist-service';
 
 
 export { TracklistActions, TracklistService };
-export { createTrack, Track, TrackData, TrackRecord } from './models/track';
-export { Tracklist, TracklistRecord } from './models/tracklist';
+export { createTrack, Track, TrackData } from './models/track';
+export { Tracklist } from './models/tracklist';
 export { getCurrentTracklist, getTracks, getTracklists } from './reducers/selectors';
 export { TracklistsState, tracklistsReducer } from './reducers/tracklists-reducer';
 export { TracksState, tracksReducer } from './reducers/tracks-reducer';

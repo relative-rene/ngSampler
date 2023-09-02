@@ -1,5 +1,3 @@
-import { Record } from 'immutable';
-import { SearchStateRecord } from './search-state';
 
 
 describe('search', () => {

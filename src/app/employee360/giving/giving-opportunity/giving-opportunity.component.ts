@@ -16,16 +16,8 @@ import {
   UserService
 } from '../../_services/user.service';
 
-import {
-  Observable
-} from 'rxjs';
+import { timer } from 'rxjs';
 declare let $: any;
-import {
-  GivingSearchResultComponent
-} from '../giving-search-result/giving-search-result.component';
-import {
-  GivingDashboardResultComponent
-} from '../giving-dashboard-result/giving-dashboard-result.component';
 
 @Component({
   selector: 'app-giving-opportunity',
@@ -50,7 +42,7 @@ export class GivingOpportunityComponent implements OnInit, AfterViewInit {
     associates: []
   };
   loading: boolean = true;
-  userId: string;
+  userId: string = '';
   lastSave: string = '{}';
   editableFields = [
     'name', 'summary', 'description', 'backgroundImageUrl',
@@ -95,8 +87,8 @@ export class GivingOpportunityComponent implements OnInit, AfterViewInit {
     });
 
     var me = this;
-    let timer = Observable.timer(1000, 4000);
-    timer.subscribe(function(t) {
+    let timerSub = timer(1000, 4000);
+    timerSub.subscribe(function(t) {
       me.saveChanges()
     });
   }
@@ -127,7 +119,7 @@ export class GivingOpportunityComponent implements OnInit, AfterViewInit {
     });
   }
   ngAfterViewInit() {
-    this.users.getUserEmailList().subscribe(res => {
+    this.users.getUserEmailList().subscribe((res:any) => {
       this.userSuggestions = res;
       var local_bh = new window['Bloodhound']({
         initialize: false,
@@ -210,14 +202,12 @@ export class GivingOpportunityComponent implements OnInit, AfterViewInit {
     this.opportunity.type = newType;
     this.saveChanges();
   }
-  updateFormField(field, event, checkbox) {
+  updateFormField(field, event, checkbox?) {
 
     if (this.dateFields.indexOf(field) !== -1) {
       var newDate: any = Date.parse($(event.target).val());
-      if (newDate === NaN)
-        return;
-      if (newDate === '')
-        return;
+      if (Number.isNaN(newDate)) return;
+      if (newDate === '') return;
       this.opportunity[field] = new Date(newDate).toISOString();
       //event.target.value = this.format(this.opportunity[field]);
       return;

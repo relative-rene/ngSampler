@@ -3,11 +3,11 @@ import { AuthenticationService } from './services/authentication.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-root',
+  selector: 'credible',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class CredibleComponent {
   public hList = ['https://angular.io/guide/animations', 'https://augury.rangle.io/', 'https://www.protractortest.org/', 'https://www.meetup.com/find/?keywords=angular', 'https://gitter.im/angular/angular'];
   public selectionsOptions = [
     { label: "New Component", selectableValue: 'component' },

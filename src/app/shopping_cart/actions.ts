@@ -15,10 +15,10 @@ export function addContact(name: string, id: number): IContactAction {
 }
 
 export function removeContact(id: number): IContactAction {
-  return {
+  return Object.assign({
     type: 'REMOVE',
     id
-  };
+  });
 }
 
 export function starContact(id: number): IContactAction {

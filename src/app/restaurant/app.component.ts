@@ -6,7 +6,7 @@ import { Router, ActivatedRoute } from '@angular/router';
   templateUrl: './app.component.html'
 })
 
-export class AppComponent implements OnInit {
+export class RestaurantComponent implements OnInit {
 
   constructor(
     public navIsFixed: boolean = false,

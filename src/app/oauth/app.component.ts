@@ -3,12 +3,12 @@ import { ROUTER_DIRECTIVES, Router } from '@angular/router';
 import { SecurityService } from './services/SecurityService';
 
 @Component({
-    selector: 'my-app',
+    selector: 'oauth',
     directives: [ROUTER_DIRECTIVES],
     templateUrl: 'app/app.component.html'
 })
 
-export class AppComponent implements OnInit, AfterViewInit {
+export class OauthComponent implements OnInit, AfterViewInit {
     settings: any;
     hash: string;
 

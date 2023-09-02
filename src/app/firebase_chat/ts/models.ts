@@ -10,14 +10,10 @@ export class User {
 }
 
 export class Thread {
-  constructor(public id: string,
-              public name: string,
-              public avatarSrc: string,
-              public lastMessage?:Message) {
-    this.id = id || uuid();
-    this.name = name;
-    this.avatarSrc = avatarSrc;
-  }
+  constructor(public id:string =  uuid(),
+              public name: string = '',
+              public avatarSrc: string = '',
+              public lastMessage?:Message) { }
 }
 
 export class Message {

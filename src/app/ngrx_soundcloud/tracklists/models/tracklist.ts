@@ -1,7 +1,6 @@
-import { List, Map, Record } from 'immutable';
 
 
-export interface Tracklist extends Map<string,any> {
+export interface Tracklist {
   currentPage: number;
   hasNextPage: boolean;
   hasNextPageInStore: boolean;
@@ -10,17 +9,19 @@ export interface Tracklist extends Map<string,any> {
   isPending: boolean;
   nextUrl: string;
   pageCount: number;
-  trackIds: List<number>;
+  trackIds:Array<number>;
 }
 
-export const TracklistRecord = Record({
-  currentPage: 0,
-  hasNextPage: null,
-  hasNextPageInStore: null,
-  id: null,
-  isNew: true,
-  isPending: false,
-  nextUrl: null,
-  pageCount: 0,
-  trackIds: List()
-});
+export function createTracklistRecord():Tracklist{
+  return Object.create({
+    currentPage: 0,
+    hasNextPage: null,
+    hasNextPageInStore: null,
+    id: null,
+    isNew: true,
+    isPending: false,
+    nextUrl: null,
+    pageCount: 0,
+    trackIds: []
+  });
+}

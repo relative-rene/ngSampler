@@ -27,7 +27,7 @@ import { TracklistScrollService } from './tracklist-scroll-service';
   `
 })
 export class TracklistComponent implements OnDestroy, OnInit {
-  @Input() layout: string;
+  @Input() layout!: string;
 
   ngOnDestroy$ = new Subject<boolean>();
 

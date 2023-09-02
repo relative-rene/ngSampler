@@ -1,15 +1,11 @@
-import { Action, ActionReducer } from '@ngrx/store';
 import { SearchActions } from '../search-actions';
-import { SearchState, SearchStateRecord } from './search-state';
+import { SearchState } from './search-state';
+import { ActionPayload } from '../../core';
 
-
-const initialState: SearchState = new SearchStateRecord() as SearchState;
-
-
-export const searchReducer: ActionReducer<SearchState> = (state: SearchState = initialState, action: Action) => {
+export const searchReducer = (state: SearchState = {query:null}, action: ActionPayload) => {
   switch (action.type) {
     case SearchActions.LOAD_SEARCH_RESULTS:
-      return state.set('query', action.payload.query) as SearchState;
+      return Object.assign({}, {query: action.payload.query}) as SearchState;
 
     default:
       return state;

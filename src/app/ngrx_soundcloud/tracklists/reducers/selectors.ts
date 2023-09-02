@@ -4,7 +4,6 @@ import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/withLatestFrom';
 
-import { List } from 'immutable';
 import { AppState } from '../../app';
 import { TRACKS_PER_PAGE } from '../../constants';
 import { Selector } from '../../core';
@@ -35,7 +34,7 @@ export function getCurrentTracklist(): Selector<AppState,Tracklist> {
     distinctUntilChanged());
 }
 
-export function getTracksForCurrentTracklist(): Selector<AppState,List<Track>> {
+export function getTracksForCurrentTracklist(): Selector<AppState,Array<Track>> {
   return state$ => state$.pipe(
     (getCurrentTracklist()),
     distinctUntilChanged((previous, next) => {
@@ -45,6 +44,6 @@ export function getTracksForCurrentTracklist(): Selector<AppState,List<Track>> {
     withLatestFrom(state$.pipe(getTracks()), (tracklist, tracks) => {
       return tracklist.trackIds
         .slice(0, tracklist.currentPage * TRACKS_PER_PAGE)
-        .map(id => tracks.get(id)) as List<Track>;
-    }));
+        .map(id => tracks.get(id) as Track)}));
+
 }

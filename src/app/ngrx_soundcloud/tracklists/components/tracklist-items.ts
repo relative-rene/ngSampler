@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
-import { List } from 'immutable';
 import { Observable } from 'rxjs';
 import { MediaQueryResults } from '../../core';
 import { PlayerState, TimesState } from '../../player';
@@ -16,8 +15,8 @@ import { Track } from '../models/track';
       <track-card
         *ngFor="let track of tracks | async"
         class="g-col"
-        [ngClass]="{'sm-2/4 md-1/3 lg-1/4': !media.large || layout === 'compact'}"
-        [compact]="!media.large || layout === 'compact'"
+        [ngClass]="{'sm-2/4 md-1/3 lg-1/4': !media['large'] || layout === 'compact'}"
+        [compact]="!media['large'] || layout === 'compact'"
         [isPlaying]="track.id === player.trackId && player.isPlaying"
         [isSelected]="track.id === player.trackId"
         [times]="times"
@@ -36,7 +35,7 @@ export class TracklistItemsComponent {
   @Input() player!: PlayerState;
   @Input() times!: Observable<TimesState>;
   @Input() tracklist!: Tracklist;
-  @Input() tracks!: Observable<List<Track>>;
+  @Input() tracks!: Observable<Array<Track>>;
 
   @Output() pause = new EventEmitter(false);
   @Output() play = new EventEmitter(false);

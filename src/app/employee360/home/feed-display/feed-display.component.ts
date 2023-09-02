@@ -11,9 +11,9 @@ import { CommentDisplayComponent } from '../../shared/comment-display/comment-di
   providers: [FeedService, NotificationsService]
 })
 export class FeedDisplayComponent implements OnInit {
-  posts: Object[];
-  commentsShown: Object = {};
-  userId: string;
+  public posts: null | any[] = null;
+  public commentsShown: null | any = null
+  public userId: string = '';
 
   constructor(private service: FeedService, private notificationsService: NotificationsService) {
   }
@@ -30,7 +30,7 @@ export class FeedDisplayComponent implements OnInit {
   }
   reloadData() {
     this.service.listAll()
-      .subscribe(res => {
+      .subscribe((res: any) => {
         this.posts = res;
       });
   }

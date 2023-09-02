@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 
 @Component({
-  selector: 'app',
+  selector: 'soundcloud',
   styles: [`
     .main {
       padding-bottom: 200px;
@@ -18,4 +18,4 @@ import { Component } from '@angular/core';
     <player></player>
   `
 })
-export class AppComponent {}
+export class SoundCloudComponent {}
