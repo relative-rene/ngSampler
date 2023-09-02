@@ -1,11 +1,9 @@
 import { AirlinesService } from './data-access/airlines.service';
-import { RouterModule } from '@angular/router';
 import { PassengerService } from './data-access/passenger.service';
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AppComponent } from './app.component';
+import { ScrollOptionsComponent } from './app.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
@@ -20,13 +18,12 @@ import { VirtualScrollComponent } from './virtual-scroll/virtual-scroll.componen
 import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
-    AppComponent,
+    ScrollOptionsComponent,
     HomepageComponent,
     AirlinesComponent,
     VirtualScrollComponent
   ],
   imports: [
-    BrowserModule,
     BrowserAnimationsModule,
     MatToolbarModule,
     ScrollingModule,
@@ -38,9 +35,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatMenuModule,
     MatProgressSpinnerModule,
     HttpClientModule,
-    RouterModule.forRoot([])
   ],
   providers: [PassengerService, AirlinesService],
-  bootstrap: [AppComponent]
+  bootstrap: [ScrollOptionsComponent]
 })
 export class ScrollOptionsModule { }

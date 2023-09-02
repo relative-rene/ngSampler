@@ -1,6 +1,5 @@
 import { APP_BASE_HREF } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
 import { CoreModule } from '../core';
@@ -11,7 +10,7 @@ import { SharedModule } from '../shared';
 import { TracklistsModule, tracklistsReducer, tracksReducer } from '../tracklists';
 import { UsersModule, usersReducer } from '../users';
 
-import { AppComponent } from './components/app';
+import { SoundCloudComponent } from './components/app';
 import { AppHeaderComponent } from './components/app-header';
 
 
@@ -20,9 +19,8 @@ export { AppState } from './interfaces';
 
 @NgModule({
   imports: [
-    BrowserModule,
     RouterModule,
-    StoreModule.provideStore({
+    StoreModule.forRoot({
       player: playerReducer,
       search: searchReducer,
       times: timesReducer,

@@ -1,14 +1,12 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { AppComponent } from './app.component';
+import { GoogleMapsComponent } from './app.component';
 
 // import { AgmCoreModule } from 'angular2-google-maps/core';
 
 @NgModule({
   imports: [
-    BrowserModule,
     CommonModule,
     FormsModule,
     // AgmCoreModule.forRoot({
@@ -16,7 +14,7 @@ import { AppComponent } from './app.component';
     // })
   ],
   providers: [],
-  declarations: [ AppComponent ],
-  bootstrap: [ AppComponent ]
+  declarations: [ GoogleMapsComponent ],
+  bootstrap: [ GoogleMapsComponent ]
 })
 export class GoogleMapModule {}

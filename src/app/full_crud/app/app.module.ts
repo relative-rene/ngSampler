@@ -1,30 +1,28 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
-import { AppComponent } from './app.component';
+import {  FullCrudComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { DataService } from './services/data.service';
 
 import { ToastComponent } from './shared/toast/toast.component';
 
-const routing = RouterModule.forRoot([
+const routing = RouterModule.forChild([
     { path: '',      component: HomeComponent },
     { path: 'about', component: AboutComponent }
 ]);
 
 @NgModule({
   declarations: [
-    AppComponent,
+    FullCrudComponent,
     HomeComponent,
     AboutComponent,
     ToastComponent
   ],
   imports: [
-    BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
@@ -35,7 +33,7 @@ const routing = RouterModule.forRoot([
     ToastComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  bootstrap: [AppComponent]
+  bootstrap: [FullCrudComponent]
 })
 
 export class FullCrudModule { }

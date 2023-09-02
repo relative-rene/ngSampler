@@ -1,21 +1,19 @@
 import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { APP_BASE_HREF } from '@angular/common';
 
-import { AppComponent } from './app.component';
+import { RestaurantComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MenuModule } from './modmenu/menu.module';
 import { HttpClientModule } from '@angular/common/http';
-import { BrowserModule, By } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { MapComponent } from './cmpmap/map.component';
 import { InfoComponent } from './cmpinfo/info.component';
 import { ContactUsComponent } from './cmpcontact-us/contact-us.component';
-import { AgmCoreModule } from '@agm/core';
 
-describe('AppComponent', () => {
-    let fixture: ComponentFixture<AppComponent>;
-    let app: AppComponent;
+describe('RestaurantComponent', () => {
+    let fixture: ComponentFixture<RestaurantComponent>;
+    let app: RestaurantComponent;
     let path: string;
     let fixedNav: boolean;
 
@@ -23,16 +21,16 @@ describe('AppComponent', () => {
         TestBed.configureTestingModule({
             imports: [
                 BrowserAnimationsModule,
-                BrowserModule,
                 FormsModule,
                 ReactiveFormsModule,
                 HttpClientModule,
                 MenuModule,
-                AppRoutingModule,
-                AgmCoreModule.forRoot({
-                    apiKey: 'AIzaSyBWZSPWwSlUyymW8yy3zrrcemAUC6e2NrY'
-                })],
-            declarations: [AppComponent,
+                AppRoutingModule
+                // AgmCoreModule.forRoot({
+                //     apiKey: 'AIzaSyBWZSPWwSlUyymW8yy3zrrcemAUC6e2NrY'
+                // })
+            ],
+            declarations: [RestaurantComponent,
                 InfoComponent,
                 ContactUsComponent,
                 MapComponent],
@@ -43,16 +41,16 @@ describe('AppComponent', () => {
     }));
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(AppComponent);
+        fixture = TestBed.createComponent(RestaurantComponent);
         app = fixture.componentInstance;
     });
 
     it('should create the app', () => {
-        let component = new AppComponent();
+        let component = new RestaurantComponent();
         expect(app).toEqual(component);
     });
 
-    it('OnInit, should set default properties for AppComponent', () => {
+    it('OnInit, should set default properties for RestaurantComponent', () => {
         // Arrange
         expect(app.navIsFixed).toBeUndefined();
         expect(app.googleLinkPath).toBeUndefined();

@@ -1,3 +1,3 @@
 <ul>
-    <li *ngFor="let projectName of applicationsList">{{projectName}}</li>
+    <li *ngFor="let project of applicationsList" (click)="navigateTo(project.path)" >{{project.name}}</li>
 </ul>

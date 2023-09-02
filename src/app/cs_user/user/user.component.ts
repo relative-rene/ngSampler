@@ -15,7 +15,7 @@ export class UserComponent {
   posts!: Post[];
 
 
-  constructor(private postsService: PostService) {
+  constructor(public postsService: PostService) {
     this.name = "Robert",
       this.email = "roberts@gmail.com",
       this.address = {

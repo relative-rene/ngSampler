@@ -25,12 +25,10 @@ import * as _ from 'underscore';
 })
 
 export class ChatNavBar implements OnInit {
-  
 
   constructor(public unreadMessagesCount: number,
               public messagesService: MessagesService,
-              public threadsService: ThreadsService) {
-  }
+              public threadsService: ThreadsService) { }
 
   ngOnInit(): void {
     this.messagesService.messages

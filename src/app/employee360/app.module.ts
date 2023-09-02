@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -176,7 +175,7 @@ import { MessengerViewFilesComponent } from './messenger/messenger-view-files/me
 @NgModule({
   // Declarables are the class types — components, directives, and pipes — that you can add to a module's declarations list. They're the only classes that you can add to declarations.
   declarations: [
-    AppComponent,
+    Employee360Component,
     LayoutComponent,
     NavbarComponent,
     FooterComponent,
@@ -303,7 +302,6 @@ import { MessengerViewFilesComponent } from './messenger/messenger-view-files/me
   ],
   imports: [
     // Import modules whose public (exported) declarable classes you need to reference in this module's component templates.
-    BrowserModule,
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
@@ -312,6 +310,6 @@ import { MessengerViewFilesComponent } from './messenger/messenger-view-files/me
   // Providers of a bootstrapped module have application scope.
   // Adding a service provider to @NgModule.providers effectively publishes the service to the entire application.
   providers: [ToastComponent, HttpClient],
-  bootstrap: [AppComponent]
+  bootstrap: [Employee360Component]
 })
 export class Employee360Module { }

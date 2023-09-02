@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './cs_user.component.html',
   styleUrls: ['./cs_user.component.scss']
 })
-export class CSUser implements OnInit {
+export class CSUserComponent implements OnInit {
   title = 'app works!';
   files = [];
   ngOnInit() {

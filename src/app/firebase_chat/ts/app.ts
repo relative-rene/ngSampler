@@ -2,7 +2,6 @@ import {
   NgModule,
   Component
 } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import {
   FormsModule
@@ -55,7 +54,7 @@ import '../css/styles.css';
   </div>
   `
 })
-class ChatAppComponent {
+export class ChatAppComponent {
   constructor(public messagesService: MessagesService,
               public threadsService: ThreadsService,
               public userService: UserService) {
@@ -74,10 +73,9 @@ class ChatAppComponent {
     utilInjectables
   ],
   imports: [
-    BrowserModule,
-    FormsModule
+   FormsModule
   ],
-  bootstrap: [ ChatApp ],
+  bootstrap: [ ChatAppComponent ],
   providers: [ servicesInjectables ]
 })
 export class ChatAppModule {}

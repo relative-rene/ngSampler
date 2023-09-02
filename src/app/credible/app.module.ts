@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
-import { AppComponent } from './app.component';
+import { CredibleComponent } from './app.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { HighlightCardComponent } from './highlight-card/highlight-card.component';
 import { SmallCardComponent } from './small-card/small-card.component';
@@ -24,7 +23,7 @@ import { AuthGuard } from './services/authguard.service';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    CredibleComponent,
     ToolbarComponent,
     HighlightCardComponent,
     SmallCardComponent,
@@ -39,7 +38,6 @@ import { AuthGuard } from './services/authguard.service';
     AlertComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule
@@ -49,6 +47,6 @@ import { AuthGuard } from './services/authguard.service';
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     AuthGuard
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [CredibleComponent]
 })
 export class CredibleModule { }
