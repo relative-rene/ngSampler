@@ -33,7 +33,6 @@ const routing = RouterModule.forChild([
     ToastComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  bootstrap: [FullCrudComponent]
 })
 
 export class FullCrudModule { }

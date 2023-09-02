@@ -32,6 +32,5 @@ import { DlayoutComponent } from './dlayout/dlayout.component';
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: true })
   ],
   providers: [],
-  bootstrap: [ArsenalComponent]
 })
 export class ArsenalModule { }

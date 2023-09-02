@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 import { User } from './models/user';
 import { getCurrentUser } from './reducers/selectors';
 import { UserActions } from './user-actions';
-import { AppState } from '../app';
+import { AppState } from '../app/app.module';
 
 
 @Injectable()

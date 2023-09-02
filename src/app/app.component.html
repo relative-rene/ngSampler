@@ -1,3 +1,48 @@
-<ul>
-    <li *ngFor="let project of applicationsList" (click)="navigateTo(project.path)" >{{project.name}}</li>
-</ul>
+    <header>
+        <div class="logo">Logo</div>
+        <ul class="sm-stack">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </ul>
+        <ul class="nav-list">
+            <li>
+                <a href="#">click</a>
+            </li>
+            <li>
+                <a href="#">bait</a>
+            </li>
+            <li>
+                <a href="#">random</a>
+            </li>
+        </ul>
+    </header>
+    <main>
+   <router-outlet></router-outlet>
+        <aside>
+            <ul>
+                <li class="card">me</li>
+                <li class="card">you</li>
+                <li class="card">everyone</li>
+            </ul>
+        </aside>
+    </main>
+    <footer>
+        <div class="services">
+            <h5>For you</h5>
+            <ul>
+                <li>things</li>
+                <li>for</li>
+                <li>you</li>
+            </ul>
+        </div>
+        <div class="services">
+            <h5>Not for you</h5>
+            <ul>
+                <li>not</li>
+                <li>for</li>
+                <li>you</li>
+            </ul>
+        </div>
+    </footer>
+

@@ -2,7 +2,7 @@ import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/operator/let';
 import 'rxjs/add/operator/map';
 
-import { AppState } from '../../app';
+import { AppState } from '../../app/app.module';
 import { Selector } from '../../core';
 import { User } from '../models/user';
 import { UsersState } from './users-reducer';

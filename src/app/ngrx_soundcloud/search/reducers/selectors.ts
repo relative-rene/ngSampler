@@ -1,7 +1,7 @@
 import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/operator/map';
 
-import { AppState } from '../../app';
+import { AppState } from '../../app/app.module';
 import { Selector } from '../../core';
 import { distinctUntilChanged, map } from 'rxjs';
 

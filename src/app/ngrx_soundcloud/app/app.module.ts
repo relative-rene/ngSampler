@@ -37,10 +37,9 @@ export { AppState } from './interfaces';
     UsersModule
   ],
   declarations: [
-    AppComponent,
+    SoundCloudComponent,
     AppHeaderComponent
   ],
   providers: [ {provide: APP_BASE_HREF, useValue: '/'}],
-  bootstrap: [ AppComponent ],
 })
 export class SoundCloudModule {}

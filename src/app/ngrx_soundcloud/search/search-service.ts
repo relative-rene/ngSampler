@@ -3,7 +3,7 @@ import 'rxjs/add/operator/let';
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { AppState } from '../app';
+import { AppState } from '../app/app.module';
 import { getSearchQuery } from './reducers/selectors';
 import { SearchActions } from './search-actions';
 

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import {  catchError, filter, map, of, switchMap, withLatestFrom } from 'rxjs';
-import { AppState } from '../app';
+import { AppState } from '../app/app.module';
 import { ApiService } from '../core';
 import { getCurrentTracklist, TracklistActions } from '../tracklists';
 import { SearchActions } from './search-actions';

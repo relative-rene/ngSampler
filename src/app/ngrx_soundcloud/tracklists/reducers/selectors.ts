@@ -4,7 +4,7 @@ import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/withLatestFrom';
 
-import { AppState } from '../../app';
+import { AppState } from '../../app/app.module';
 import { TRACKS_PER_PAGE } from '../../constants';
 import { Selector } from '../../core';
 import { Tracklist } from '../models/tracklist';

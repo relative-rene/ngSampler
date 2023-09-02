@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { PostService } from './cs_user/services/post.service';
 import { CommonModule } from '@angular/common';
+import { MenuComponent } from './menu/menu.component';
 // import { HttpClientModule } from '@angular/common/http';
 // import { Employee360Module } from './employee360';
 // import { ArsenalModule } from './arsenal/app.module';
@@ -24,7 +25,8 @@ import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
-    AppComponent   
+    AppComponent,
+    MenuComponent   
   ],
   imports: [
     BrowserModule,

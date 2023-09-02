@@ -37,6 +37,5 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
   ],
   providers: [PassengerService, AirlinesService],
-  bootstrap: [ScrollOptionsComponent]
 })
 export class ScrollOptionsModule { }

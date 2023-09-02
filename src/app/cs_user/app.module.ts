@@ -21,6 +21,5 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
   ],
   providers: [PostService],
-  bootstrap: [CSUserComponent]
 })
 export class CSUserModule { }

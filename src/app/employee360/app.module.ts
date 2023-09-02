@@ -310,6 +310,5 @@ import { MessengerViewFilesComponent } from './messenger/messenger-view-files/me
   // Providers of a bootstrapped module have application scope.
   // Adding a service provider to @NgModule.providers effectively publishes the service to the entire application.
   providers: [ToastComponent, HttpClient],
-  bootstrap: [Employee360Component]
 })
 export class Employee360Module { }

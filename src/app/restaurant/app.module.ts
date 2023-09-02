@@ -35,7 +35,6 @@ import { GOOGLE_MAP_KEY } from './constants/variables';
     MapComponent
   ],
   providers: [MessageService, DrinksService],
-  bootstrap: [RestaurantComponent]
 })
 
 export class RestaurantModule { }

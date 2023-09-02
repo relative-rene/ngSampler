@@ -47,6 +47,5 @@ import { AuthGuard } from './services/authguard.service';
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     AuthGuard
   ],
-  bootstrap: [CredibleComponent]
 })
 export class CredibleModule { }

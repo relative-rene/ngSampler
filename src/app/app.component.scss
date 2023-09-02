@@ -1,13 +1,131 @@
-ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    grid-auto-rows: 200px;
-    grid-gap: 1rem;    
+
+:root {
+    --dark: #011627;
+    --cerulen: #0081AF;
+    --turquoise: #41ead4;
+    --powder: #fdfffc;
+    --violet: #cd7fab;
 }
 
-li {
-    display:flex;
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: minmax(5rem, auto);
+    background-color: var(--cerulen);
+
+}
+
+div.logo {
+    display: grid;
     align-items: center;
-    justify-content: center;
-    border: solid 2px black;
+    padding: 2rem;
+}
+
+ul.sm-stack {
+    display: none;
+}
+
+ul.nav-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;
+}
+
+li>a {
+    padding: .7rem;
+    text-transform: uppercase;
+    color: var(--dark);
+    text-decoration: none;
+    background-color: cornsilk;
+
+}
+
+li a:hover,
+li>a:active {
+    background-color: var(--turquoise);
+    color: var(--dark);
+    text-decoration: none;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-auto-rows: minmax(10rem, auto);
+    background-color: cornsilk;
+
+}
+
+div.content {
+    grid-row: 1/3;
+    border: 1px black solid;
+    padding: 2rem;
+}
+
+aside {
+    padding: 2rem;
+
+}
+
+footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: minmax(8rem, auto);
+    background-color: var(--violet);
+}
+
+div.services {
+    display: grid;
+    justify-content: space-evenly;
+    list-style: none;
+}
+
+li.card {
+    width: 5rem;
+    height: 5rem;
+    border: 1px outset var(--violet);
+    box-shadow: 2px 3px 1px var(--turquoise);
+    padding: 1rem;
+    margin: .5rem 0;
+}
+
+@media(max-width:550px) {
+    main {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: minmax(10rem, auto);
+        background-color: cornsilk;
+    }
+    li.card {
+        width: 80%;
+        height: 10rem;
+        border: 1px outset var(--violet);
+        box-shadow: 2px 3px 1px var(--turquoise);
+        padding: 1rem;
+        margin: .5rem 3rem;
+    }
+}
+span.icon-bar {
+        width: .3rem;
+        height: .1rem;
+        background-color: var(--powder);
+        margin:.1em;
+        z-index: 200;
+    }
+
+@media(max-width:445px) {
+    ul.nav-list {
+        display: none;
+    }
+    ul.sm-stack {
+        visibility: visible;
+        display:inline-block;
+        z-index:100;
+    }
 }

@@ -7,7 +7,7 @@ import 'rxjs/add/operator/map';
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
-import { AppState } from '../app';
+import { AppState } from '../app/app.module';
 import { getPlayerTracklistCursor } from './reducers/selectors';
 import { PlayerActions } from './player-actions';
 import { playerStorage } from './player-storage';

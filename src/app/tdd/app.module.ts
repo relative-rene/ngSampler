@@ -20,6 +20,5 @@ import {  ReactiveFormsModule } from '@angular/forms';
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [TaskService],
-  bootstrap: [TDDComponent]
 })
 export class TDDModule { }
