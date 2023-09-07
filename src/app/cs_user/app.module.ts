@@ -12,7 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AboutComponent,
     UserComponent,
-    CSUserComponent,    
+    CSUserComponent,
   ],
   imports: [
     AppRoutingModule,

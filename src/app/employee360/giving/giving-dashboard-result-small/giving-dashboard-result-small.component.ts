@@ -1,4 +1,4 @@
-import {  Input, Component, OnInit, EventEmitter, Output } from '@angular/core';
+import {  Input, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'giving-dashboard-result-small',

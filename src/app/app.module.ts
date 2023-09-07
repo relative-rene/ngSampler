@@ -1,19 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from './app-routing.module';
 
 // import { ScrollOptionsModule } from './scroll_options/app.module';
 // import { GoogleMapModule } from './google_maps/app.module';
 // import { CSUserModule } from './cs_user/app.module';
 // import { HackerNewsModule } from './hacker_news/app.module';
 // import { RestaurantModule } from './restaurant/app.module';
-import { AppRoutingModule } from './app-routing.module';
 
 
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-import { PostService } from './cs_user/services/post.service';
 import { CommonModule } from '@angular/common';
 import { MenuComponent } from './menu/menu.component';
+import { RouterModule } from '@angular/router';
+import { RecentComponent } from './recent/recent.component';
 // import { HttpClientModule } from '@angular/common/http';
 // import { Employee360Module } from './employee360';
 // import { ArsenalModule } from './arsenal/app.module';
@@ -26,27 +27,30 @@ import { MenuComponent } from './menu/menu.component';
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent   
+    MenuComponent,
+    RecentComponent   
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    RouterModule,
     FormsModule,
     CommonModule,
-    // ChatAppModule,
-    // FullCrudModule,
-    // SoundCloudModule,
-    // HttpClientModule,
-    // GoogleMapModule,
-    // CSUserModule,
-    // HackerNewsModule,
-    // RestaurantModule,
-    // ScrollOptionsModule,
-    // ArsenalModule,
-    // CredibleModule,
-    // Employee360Module
+    AppRoutingModule
   ],
-  providers: [PostService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+// ChatAppModule,
+// FullCrudModule,
+// SoundCloudModule,
+// HttpClientModule,
+// GoogleMapModule,
+// CSUserModule,
+// HackerNewsModule,
+// RestaurantModule,
+// ScrollOptionsModule,
+// ArsenalModule,
+// CredibleModule,
+// Employee360Module
