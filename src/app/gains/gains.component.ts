@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-gains',
+  selector: 'gains',
   templateUrl: './gains.component.html',
   styleUrls: ['./gains.component.scss']
 })
+
 export class GainsComponent {
+  constructor() { }
 
 }

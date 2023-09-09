@@ -1,7 +1,4 @@
-
-    $font: #011627;
-    $primary: #3462B3;
-    $secondary: #8AADEA;
+@import 'src/styles/_variables';
 
 header {
     display: grid;
@@ -9,6 +6,8 @@ header {
     grid-auto-rows: minmax(5rem, auto);
     background-color: $primary;
     color: white;
+    position: sticky;
+    top:0;
 }
 
 div.logo {
@@ -46,9 +45,13 @@ li>a:active {
 main {
     display: grid;
     grid-template-columns: 3fr 1fr;
-    grid-auto-rows: minmax(10rem, auto);
+    grid-auto-rows: minmax(50rem, auto);
     background-color: rgb(253, 250, 236);
     padding: 1em;
+}
+
+.mainContent {
+    padding: 2em;
 }
 
 div.content {

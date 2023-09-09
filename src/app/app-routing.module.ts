@@ -1,29 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MenuComponent } from './menu/menu.component';
-// import { SoundCloudModule } from './ngrx_soundcloud/app/app.module';
-// import { Employee360Module } from './employee360/app.module';
-// import { CSUserModule } from './cs_user/app.module';
-// import { CSUserComponent } from './cs_user/cs_user.component';
-// import { AppComponent } from './app.component';
-// import { CredibleComponent } from './credible/app.component';
-// import { ArsenalComponent } from './arsenal/app.component';
-// import { Employee360Component } from './employee360';
-// import { GoogleMapsComponent } from './google_maps';
-// import { HackerNewsComponent } from './hacker_news/app.component';
-// import { SoundCloudComponent } from './ngrx_soundcloud/app/components/app';
-// import { FullCrudComponent } from './full_crud/app.component';
-// import { OauthComponent } from './oauth/app.component';
-// import { RestaurantComponent } from './restaurant/app.component';
-// import { ScrollOptionsComponent } from './scroll_options/app.component';
-// import { TDDComponent } from './tdd/app.component';
-
 
 const routes: Routes = [
   { path: '', component: MenuComponent},
   {
     path: 'arsenal',
     loadChildren: () => import('../../src/app/cs_user/app.module').then(x => x.CSUserModule)
+  },
+  {
+    path: 'gains',
+    loadChildren: () => import('../../src/app/gains/app.module').then(x => x.GainsModule)
   },
   {
     path: 'credible',

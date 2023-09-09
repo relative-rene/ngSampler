@@ -1,0 +1,13 @@
+@import 'src/styles/_variables';
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    div {
+        border-radius: 8%;
+        background-color: $secondary;
+        padding:1em;
+        font-size:large;
+    }
+}

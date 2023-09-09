@@ -12,6 +12,7 @@ export class MenuComponent {
   constructor(public router: Router, public dashboardService: DashboardService) { }
   public applicationsList = [
     { name: 'Arsenal', path: 'arsenal' },
+    { name: 'Gains', path: 'gains' },
     { name: 'Credible', path: 'credible' },
     { name: 'CS User', path: 'cs_user' },
     { name: 'Employee 360', path: 'employee_360' },
@@ -24,7 +25,8 @@ export class MenuComponent {
     { name: 'Restaurant', path: 'restaurant' },
     { name: 'Scroll Options', path: 'scroll_options' },
     { name: 'Shopping Cart', path: 'shopping_cart' },
-    { name: 'TDD', path: 'tdd' }];
+    { name: 'TDD', path: 'tdd' }
+  ];
 
   navigateTo(path) {
     this.router.navigate([path]);

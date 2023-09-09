@@ -1,0 +1,25 @@
+<form (ngSubmit)="addLog()">
+    <div class="form-group">
+      <label>Set For Session<label>
+      <input class="form-control" type="text" formControlName="set_for_session" required>
+    </div>
+    <div class="form-group">
+      <label>Total Reps for Session</label>
+      <input class="form-control" type="text" formControlName="total_reps_for_session" required>
+    </div>
+    <div class="form-group">
+      <label>Session Weight</label>
+      <input class="form-control" type="text" formControlName="session_weight" required>
+    </div>
+    <div class="form-group">
+      <label>Date of Session</label>
+      <input class="form-control" type="text" formControlName="date_of_session">
+    </div>
+    <div class="form-group">
+      <label>Exercise PR</label>
+      <input class="form-control" type="text" formControlName="exercise_pr">
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-upload" style="color:#0b80b1;font-family:Gotham book;font-weight:bold;font-size:26px;margin-top: 30px;">SUBMIT LOG</button>
+    </div>
+  </form>
