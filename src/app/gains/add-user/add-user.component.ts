@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { GainsService } from 'src/app/services/gains.service';
 
 @Component({
   selector: 'add-users',
@@ -8,14 +9,30 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class AddUserComponent {
   public addUser: FormGroup;
-  constructor(public formBuilder: FormBuilder) {
+  public isLoading: Boolean = false;
+
+  constructor(
+    private formBuilder: FormBuilder, 
+    private gainService: GainsService) {
     this.addUser = this.formBuilder.group({
-      name: ['', Validators.required],
-      movement: ['', Validators.required],
-      muscle_group: ['', Validators.required]
+      first_name: ['', Validators.required],
+      last_name: ['', Validators.required],
+      age: ['', Validators.required],
+      exercise_list: ['', Validators.required],
+      exercise_log: ['', Validators.required],
+      weight: ['', Validators.required],
+      height: ['', Validators.required],
+      body_fat_percent: ['', Validators.required],
+      lean_body_mass: ['', Validators.required],
+      fat_free_mass_index: ['', Validators.required]
     });
   }
 
-  ngOnInit(): void {  }
+  onSubmitProfile() {
+    console.log(this.addUser.value);
+    // this.gainService.addProfile(this.addUser.value)
+  }
+
+  ngOnInit(): void { }
 
 }

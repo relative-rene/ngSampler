@@ -15,11 +15,10 @@ const profileSchema = new Schema({
 
 const exerciseSchema = new Schema({
     name: String,
-    movement: {
-        type: String, enum: ['Isometric', 'Concentric', 'Eccentric'],
-        muscle_group: { type: String, enum: ['Chest', 'Back', 'Core', 'Legs', 'Sub'] }
+    movement: { type: String, enum: ['Isometric', 'Concentric', 'Eccentric']},
+    muscle_group: { type: String, enum: ['Chest', 'Back', 'Core', 'Legs', 'Sub']}
     }
-});
+);
 
 const exerciseLogSchema = new Schema({
     exercise_id: String,

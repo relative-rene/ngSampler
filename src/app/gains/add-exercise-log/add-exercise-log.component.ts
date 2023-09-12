@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { GainsService } from 'src/app/services/gains.service';
 
 @Component({
   selector: 'add-exercise-log',
@@ -9,7 +10,9 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 export class AddExerciseLogComponent {
   public exerciseLog: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private gainsService: GainsService) {
+  constructor(
+    private formBuilder: FormBuilder, 
+    private gainsService: GainsService) {
     this.exerciseLog = this.formBuilder.group({
       set_for_session: ['', Validators.required],
       total_reps_for_session: ['', Validators.required],
@@ -21,8 +24,9 @@ export class AddExerciseLogComponent {
 
   ngOnInit(): void { }
 
-  addLog() {
-    this.exerciseLog;
+  onSubmitLog() {
+    console.log(this.exerciseLog.value)
+    // this.gainsService.logExercise(this.exerciseLog.value);
   }
 
 }

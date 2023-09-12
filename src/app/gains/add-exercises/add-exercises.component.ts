@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { GainsService } from 'src/app/services/gains.service';
 
 @Component({
   selector: 'add-exercises',
@@ -8,18 +9,21 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class AddExercisesComponent {
   public addForm: FormGroup;
+  public isLoading: Boolean = false;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(
+    private formBuilder: FormBuilder, 
+    private gainsService: GainsService) {
     this.addForm = this.formBuilder.group({
-      first_name: ['', Validators.required],
-      last_name: ['', Validators.required],
-      age: ['', Validators.required],
-      weight: ['', Validators.required],
-      height: ['', Validators.required],
-      body_fat_percent: ['', Validators.required],
-      lean_body_mass: ['', Validators.required],
-      fat_free_mass_index: ['', Validators.required]
+      name: ['', Validators.required],
+      movement: ['', Validators.required],
+      muscle_group: ['', Validators.required]
     });
+  }
+
+  onSubmitExercise() {
+    console.log(this.addForm.value)
+    // this.gainsService.addExercise();
   }
 
   ngOnInit(): void { }

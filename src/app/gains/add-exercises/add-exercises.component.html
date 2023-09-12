@@ -1,1 +1,42 @@
-<p>add-exercises works!</p>
+<h2>Add Exercise</h2>
+<form [formGroup]="addForm" (ngSubmit)="onSubmitExercise()">
+    <div class="row">
+        <div class="column">
+
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input id="name" type="last_name" formControlName="name" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="movement">Movement</label>
+                <select id="movement" type="text" formControlName="movement" class="form-control">
+                    <option value="Isometric">Isometric</option>
+                    <option value="Concentric">Concentric</option>
+                    <option value="Eccentric">Eccentric</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="muscle_group">Muscle Group</label>
+                <select id="muscle_group" type="text" formControlName="muscle_group" class="form-control">
+                    <option value="Chest">Chest</option>
+                    <option value="Back">Back</option>
+                    <option value="Core">Core</option>
+                    <option value="Legs">Legs</option>
+                    <option value="Sub">Sub</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button [disabled]="isLoading" class="btn btn-primary">
+                    <span *ngIf="isLoading" class="spinner-border">
+                    </span>
+                    Cancel
+                </button>
+                <button [disabled]="isLoading" class="btn btn-primary">
+                    <span *ngIf="isLoading" class="spinner-border">
+                    </span>
+                    Submit
+                </button>
+            </div>
+        </div>
+    </div>
+</form>

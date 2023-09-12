@@ -1,6 +1,6 @@
-<form (ngSubmit)="addLog()">
+<form [formGroup]="exerciseLog"  (ngSubmit)="onSubmitLog()">
     <div class="form-group">
-      <label>Set For Session<label>
+      <label>Set For Session</label>
       <input class="form-control" type="text" formControlName="set_for_session" required>
     </div>
     <div class="form-group">

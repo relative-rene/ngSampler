@@ -8,7 +8,6 @@ export class DashboardService {
 
   constructor() { }
   getHistory(){
-    console.log('projectHistory ', this.projectHistory)
     return this.projectHistory;
   }
   getLastVisit(){

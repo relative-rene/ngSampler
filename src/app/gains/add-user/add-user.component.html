@@ -1,1 +1,47 @@
-<p>users works!</p>
+<h2>Add Profile</h2>
+<form [formGroup]="addUser" (ngSubmit)="onSubmitProfile()">
+    <div class="form-group">
+        <label for="first_name"> First Name</label>
+        <input id="first_name" type="text" formControlName="first_name" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="last_name">Last Name</label>
+        <input id="last_name" type="last_name" formControlName="last_name" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="age">Age</label>
+        <input id="age" type="text" formControlName="age" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="weight">Weight</label>
+        <input id="weight" type="last_name" formControlName="weight" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="height">Height</label>
+        <input id="height" type="text" formControlName="height" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="body_fat_percent">Body Fat Percent</label>
+        <input id="body_fat_percent" type="body_fat_percent" formControlName="body_fat_percent" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="lean_body_mass"> Lean Body Mass</label>
+        <input id="lean_body_mass" type="text" formControlName="lean_body_mass" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="fat_free_mass_index">Fat Free Mass Index</label>
+        <input id="fat_free_mass_index" formControlName="fat_free_mass_index" class="form-control">
+    </div>
+    <div class="form-group">
+        <button [disabled]="isLoading">
+            <span *ngIf="isLoading">
+            </span>
+            Cancel
+        </button>
+        <button [disabled]="isLoading">
+            <span *ngIf="isLoading">
+            </span>
+            Submit
+        </button>
+    </div>
+</form>

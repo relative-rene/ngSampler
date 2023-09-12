@@ -22,19 +22,13 @@ import { MenuComponent } from './menu/menu.component';
 import { RouterModule } from '@angular/router';
 import { RecentComponent } from './recent/recent.component';
 import { GainsModule } from './gains/app.module';
-import { FfmiComponent } from './gains/ffmi/ffmi.component';
-import { UserComponent } from './user/user.component';
-import { AddExerciseLogComponent } from './gains/add-exercise-log/add-exercise-log.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    RecentComponent,
-    FfmiComponent,
-    UserComponent,
-    AddExerciseLogComponent
+    RecentComponent
   ],
   imports: [
     BrowserModule,
