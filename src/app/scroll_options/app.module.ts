@@ -1,7 +1,6 @@
 import { AirlinesService } from './data-access/airlines.service';
 import { PassengerService } from './data-access/passenger.service';
 import { NgModule } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ScrollOptionsComponent } from './app.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -24,7 +23,6 @@ import { HttpClientModule } from '@angular/common/http';
     VirtualScrollComponent
   ],
   imports: [
-    BrowserAnimationsModule,
     MatToolbarModule,
     ScrollingModule,
     MatToolbarModule,

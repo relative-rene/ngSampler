@@ -2,7 +2,6 @@ import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { APP_BASE_HREF } from '@angular/common';
 
 import { RestaurantComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MenuModule } from './modmenu/menu.module';
 import { HttpClientModule } from '@angular/common/http';
@@ -20,7 +19,6 @@ describe('RestaurantComponent', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             imports: [
-                BrowserAnimationsModule,
                 FormsModule,
                 ReactiveFormsModule,
                 HttpClientModule,

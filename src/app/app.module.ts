@@ -1,3 +1,4 @@
+import { DashboardService } from './application_services/dashboard.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -21,24 +22,25 @@ import { CommonModule } from '@angular/common';
 import { MenuComponent } from './menu/menu.component';
 import { RouterModule } from '@angular/router';
 import { RecentComponent } from './recent/recent.component';
-import { GainsModule } from './gains/app.module';
+import { ExerciseComponent } from './exercise/exercise.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    RecentComponent
+    RecentComponent,
+    ExerciseComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserAnimationsModule,
     RouterModule,
     FormsModule,
     CommonModule,
     AppRoutingModule,
-    GainsModule
   ],
-  providers: [],
+  providers: [DashboardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
