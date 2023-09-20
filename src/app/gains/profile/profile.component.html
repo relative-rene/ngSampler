@@ -1,0 +1,30 @@
+<div class="profile">
+    <h5>{{profile.first_name + ' ' + profile.last_name}}</h5>
+    <h5>Age:{{profile.age}}</h5>
+    <div>Exercise List:<button (click)="addExercise(profile._id)">add exercise</button>
+        <ul>
+            <li *ngFor="let exercise of profile.exercise_list">{{exercise}}</li>
+        </ul>
+    </div>
+    <div>Exercise Log: <button (click)="addLog(profile._id)">log session</button>
+        <ul>
+            <li *ngFor="let log of profile.exercise_log">{{log}}</li>
+        </ul>
+    </div>
+    <h5>Weight: {{profile.weight}}</h5>
+    <h5>Height: {{profile.height}}</h5>
+    <h5>Body Fat%: {{profile.body_fat_percent}}</h5>
+    <h5>Lean Body Mass: {{profile.lean_body_mass}}</h5>
+    <h5>FFMI: {{profile.fat_free_mass_index}}</h5>
+    <button class="btn primary" (click)="selectUser(profile._id)">Select User</button>
+</div>
+
+<modal id="modal-1" [isVisible]="showModal">
+    <p class="closing-x" (click)="modalService.close()">X</p>
+    <h1 class="modal-title">Add Exercises to Program</h1>
+    <ul>
+        <li *ngFor="let exercise of $exerciseList | async"><button class="modal-btn primary"
+                (click)="addExerciseToUserProgram()">+</button>{{exercise.name}}</li>
+    </ul>
+    <button class="btn secondary" (click)="modalService.close()">Close</button>
+</modal>

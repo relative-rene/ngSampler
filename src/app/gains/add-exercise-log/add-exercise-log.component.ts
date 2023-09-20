@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { GainsService } from 'src/app/services/gains.service';
+import { GainsService } from 'src/app/gains/services/gains.service';
 
 @Component({
   selector: 'add-exercise-log',
@@ -25,8 +25,7 @@ export class AddExerciseLogComponent {
   ngOnInit(): void { }
 
   onSubmitLog() {
-    console.log(this.exerciseLog.value)
-    // this.gainsService.logExercise(this.exerciseLog.value);
+    this.gainsService.addExerciseLog(this.exerciseLog.value);
   }
 
 }

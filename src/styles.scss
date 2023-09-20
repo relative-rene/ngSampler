@@ -8,44 +8,21 @@
     font-family: $sansFont;
 }
 
+.btn {
+    border-radius: 6%;
+    width: 7rem;
+    height: 2.4rem;
+    font-size: 1.2rem;
+    border:none;
+}
 
-form {
-    display: flex;
-    flex-direction: column;
-    border:3px solid $primary;
-    outline: 1px solid $secondary;
-    border-radius: 3px;
-    padding: 1em;
-  }
-  
-  .row {
-    display: flex;
-    justify-content: center;
-  }
-  .column {
-    display: flex;
-    flex-direction: column;
-    padding: 1em;
-  }
-  .form-group {
-   	display: flex;
-  }
-  .form-group > label {
-    margin-right: 1em; 
-    padding: .5em 0;
-  }
-  form input,
-  form select {
-    flex: 6; 
-    padding: .5em;
-    margin-bottom: 1em;
-  }
-  form button {
-   padding: 1em; 
-    background: gray;
+.primary {
+    background-color: $primary;
     color: white;
-    border: 0;
-  }
-  form fieldset {
-   	border: 0; 
-  }
+}
+
+.secondary {
+    outline: 1px solid $secondary;
+    border:none;
+    background-color:white;
+}

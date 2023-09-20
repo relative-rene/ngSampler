@@ -1,0 +1,16 @@
+// :host {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     flex-flow: column nowrap;
+// }
+
+.exercises {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    padding: 1em;
+}
+
+.exercise-details { }

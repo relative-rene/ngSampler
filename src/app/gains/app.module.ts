@@ -9,6 +9,10 @@ import { AddExerciseLogComponent } from './add-exercise-log/add-exercise-log.com
 import { AddUserComponent } from './add-user/add-user.component';
 import { FfmiComponent } from './ffmi/ffmi.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ProfilesComponent } from './profiles/profiles.component';
+import { ProfileComponent } from './profile/profile.component';
+import { UIModule } from '../ui/ui.module';
+import { GainsService } from './services/gains.service';
 
 @NgModule({
   declarations: [
@@ -18,15 +22,19 @@ import { HttpClientModule } from '@angular/common/http';
     AddUserComponent,
     AddExerciseLogComponent,
     ExercisesComponent,
-    FfmiComponent
+    FfmiComponent,
+    ProfilesComponent,
+    ProfileComponent
   ],
   imports: [
     CommonModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
-  ]
+    HttpClientModule,
+    UIModule
+  ],
+  providers:[GainsService]
 })
 
 export class GainsModule { }

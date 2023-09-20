@@ -1,5 +1,5 @@
 <h2>Add Profile</h2>
-<form [formGroup]="addUser" (ngSubmit)="onSubmitProfile()">
+<form class="addUserForm" [formGroup]="addUser" (ngSubmit)="onSubmitProfile()">
     <div class="form-group">
         <label for="first_name"> First Name</label>
         <input id="first_name" type="text" formControlName="first_name" class="form-control">
@@ -32,16 +32,18 @@
         <label for="fat_free_mass_index">Fat Free Mass Index</label>
         <input id="fat_free_mass_index" formControlName="fat_free_mass_index" class="form-control">
     </div>
-    <div class="form-group">
-        <button [disabled]="isLoading">
+    <div class="action-container">
+        <button class="btn secondary" [disabled]="isLoading">
             <span *ngIf="isLoading">
             </span>
             Cancel
         </button>
-        <button [disabled]="isLoading">
+        <button class="btn primary" [disabled]="isLoading">
             <span *ngIf="isLoading">
             </span>
             Submit
         </button>
     </div>
 </form>
+
+<profiles></profiles>

@@ -1,0 +1,9 @@
+@import 'src/styles/_forms.scss';
+
+:host {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column nowrap;
+}
+

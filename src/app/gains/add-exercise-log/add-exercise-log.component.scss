@@ -1,0 +1,14 @@
+@import './src/styles/_forms';
+:host {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    flex-flow: column nowrap;
+
+}
+
+h2 {
+    display:grid;
+    justify-self:start;
+}

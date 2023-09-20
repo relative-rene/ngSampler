@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { GainsService } from 'src/app/services/gains.service';
+import { GainsService } from 'src/app/gains/services/gains.service';
+import { IprofileCollection } from '../annotations/gains.interface';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'add-users',
@@ -10,6 +12,7 @@ import { GainsService } from 'src/app/services/gains.service';
 export class AddUserComponent {
   public addUser: FormGroup;
   public isLoading: Boolean = false;
+  public $profiles!: Observable<IprofileCollection[]>;
 
   constructor(
     private formBuilder: FormBuilder, 
@@ -29,10 +32,11 @@ export class AddUserComponent {
   }
 
   onSubmitProfile() {
-    console.log(this.addUser.value);
-    // this.gainService.addProfile(this.addUser.value)
+    this.gainService.addProfile(this.addUser.value)
+      .subscribe(res => console.log('res', res))
   }
-
-  ngOnInit(): void { }
-
+  
+  ngOnInit(): void { 
+    this.$profiles = this.gainService.getProfiles();
+  }
 }
