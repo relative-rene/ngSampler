@@ -4,6 +4,7 @@ import { GainsService } from 'src/app/gains/services/gains.service';
 import { IprofileCollection } from '../annotations/gains.interface';
 import { Observable } from 'rxjs';
 
+
 @Component({
   selector: 'add-users',
   templateUrl: './add-user.component.html',
@@ -13,9 +14,8 @@ export class AddUserComponent {
   public addUser: FormGroup;
   public isLoading: Boolean = false;
   public $profiles!: Observable<IprofileCollection[]>;
-
   constructor(
-    private formBuilder: FormBuilder, 
+    private formBuilder: FormBuilder,
     private gainService: GainsService) {
     this.addUser = this.formBuilder.group({
       first_name: ['', Validators.required],
@@ -35,8 +35,8 @@ export class AddUserComponent {
     this.gainService.addProfile(this.addUser.value)
       .subscribe(res => console.log('res', res))
   }
-  
-  ngOnInit(): void { 
+
+  ngOnInit(): void {
     this.$profiles = this.gainService.getProfiles();
   }
 }

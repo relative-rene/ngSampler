@@ -12,8 +12,8 @@
     border-radius: 6%;
     width: 7rem;
     height: 2.4rem;
-    font-size: 1.2rem;
-    border:none;
+    text-transform: uppercase;
+    border: none;
 }
 
 .primary {
@@ -23,6 +23,22 @@
 
 .secondary {
     outline: 1px solid $secondary;
-    border:none;
-    background-color:white;
+    border: none;
+    background-color: white;
+}
+
+.fa-trash:hover {
+    color: red;
+    font-size:1.3em;
+    transition: font-size 1s ease-in-out, color 1s ease-in-out;
+}
+
+.fa-circle-plus:hover {
+    color: blue;
+    font-size:1.3em;
+    transition: font-size 1s ease-in-out, color 1s ease-in-out;
+}
+
+li > i {
+    margin:1em;
 }

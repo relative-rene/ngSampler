@@ -1,8 +1,3 @@
-import { DashboardService } from './application_services/dashboard.service';
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module';
-
 // import { ScrollOptionsModule } from './scroll_options/app.module';
 // import { GoogleMapModule } from './google_maps/app.module';
 // import { CSUserModule } from './cs_user/app.module';
@@ -16,29 +11,30 @@ import { AppRoutingModule } from './app-routing.module';
 // import { SoundCloudModule } from './ngrx_soundcloud/app';
 // import { RestaurantModule } from './restaurant/app.module';
 
+import { DashboardService } from './application_services/dashboard.service';
+import { NgModule } from '@angular/core';
+import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MenuComponent } from './menu/menu.component';
 import { RouterModule } from '@angular/router';
 import { RecentComponent } from './recent/recent.component';
-import { ExerciseComponent } from './exercise/exercise.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     RecentComponent,
-    ExerciseComponent
   ],
   imports: [
     BrowserAnimationsModule,
     RouterModule,
     FormsModule,
     CommonModule,
-    AppRoutingModule,
+    AppRoutingModule
   ],
   providers: [DashboardService],
   bootstrap: [AppComponent]

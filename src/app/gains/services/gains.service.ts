@@ -1,8 +1,8 @@
-import { IprofileCollection } from './../annotations/gains.interface';
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, catchError, throwError } from 'rxjs';
-import { IexerciseCollection, IlogCollection } from '../annotations/gains.interface';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { BehaviorSubject, Observable, catchError, of, throwError } from 'rxjs';
+import { IprofileCollection } from './../annotations/gains.interface';
+import { IexerciseCollection } from '../annotations/gains.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -11,14 +11,16 @@ export class GainsService {
 
   static urlBase = 'http://localhost:4000/api/gains';
   static headers = new HttpHeaders().set('Content-Type', 'application/json');
-  private $currentProfile = new BehaviorSubject<IprofileCollection|null>(null);
-  constructor(private httpClient: HttpClient) { }
+  public $currentProfile = new BehaviorSubject<IprofileCollection | null>(null);
+  private $exercisesList = new BehaviorSubject<IexerciseCollection[] | null>(null);
+  constructor(private httpClient: HttpClient) {
+    this.getExercises().subscribe(res => this.$exercisesList.next(res))
+  }
 
   // Log Collection
   getExerciseLog(id) {
     return this.httpClient.get(`${GainsService.urlBase}/profile/${id}/logs`);
   }
-
 
   getExerciseLogs(profileId: string) {
     return this.httpClient.get(`${GainsService.urlBase}/profiles/${profileId}/logs`)
@@ -37,22 +39,39 @@ export class GainsService {
       .pipe(catchError(this.errorMgmt))
   }
 
-  getProfiles():Observable<IprofileCollection[]> | any {
+  getProfiles(): Observable<IprofileCollection[]> | any {
     return this.httpClient.get(`${GainsService.urlBase}/profiles`);
   }
 
-  getProfile(id) {
-    return this.$currentProfile.subscribe(profile=> profile)
+  getCurrentProfile() {
+    return this.$currentProfile;
   }
 
-  getProfileExercises(id):Observable<any>{
-    return this.httpClient.get<Observable<IlogCollection[]>>(`${GainsService.urlBase}/profile/${id}/exercises`)
+  updateExerciseProgramList(name, isRemoving) {
+    let updatedExerciseList, id, newData;
+    this.$currentProfile.subscribe((res) => {
+      updatedExerciseList = isRemoving?res!.exercise_list.filter((toRemove)=> toRemove !== name): [...res!.exercise_list, name];
+      id = res!._id;
+      newData = Object.assign({ ...res }, { exercise_list: updatedExerciseList });
+    });
+
+    const url = `${GainsService.urlBase}/profiles/${id}`;
+    return this.httpClient.put(url, newData,{responseType: 'text'}).pipe(catchError(this.errorMgmt));
   }
 
   // ExerciseCollection
   addExercise(data): Observable<IexerciseCollection> | any {
-    let url = `${GainsService.urlBase}/exercises/create`;
-    return this.httpClient.post(url, data).pipe(catchError(this.errorMgmt))
+    let url = `${GainsService.urlBase}/exercises/create`, isNewName;
+    this.$exercisesList.subscribe((res) => {
+      let lowerCaseName = data.name.toLowerCase()
+      isNewName = res?.every(v => v.name.toLowerCase() !== lowerCaseName)
+    })
+    if (isNewName) {
+      return this.httpClient.post(url, data).pipe(catchError(this.errorMgmt))
+    } else {
+      console.error('Exercise name exist');
+      return of('Duplicate Name Error')
+    }
   }
 
   getExercises(): Observable<any> {
@@ -60,10 +79,10 @@ export class GainsService {
     return this.httpClient.get<Observable<IexerciseCollection[]>>(url);
   }
 
-  setCurrentUser(id):void{
-    const url = GainsService.urlBase+'/profiles/'+id
+  setCurrentUser(id): void {
+    const url = GainsService.urlBase + '/profiles/' + id
     this.httpClient.get<IprofileCollection>(url)
-      .subscribe(res =>  {
+      .subscribe(res => {
         console.log('setCurrentUser ', res);
         this.$currentProfile.next(res);
       })
@@ -88,6 +107,5 @@ export class GainsService {
       return errorMessage;
     });
   }
-
 }
 

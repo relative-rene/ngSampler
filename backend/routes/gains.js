@@ -36,14 +36,14 @@ gainsRouter.route('/profiles/:id/exercises').get((req, res) => {
 });
 
 // update by id
-gainsRouter.route('/profiles/update/:id').put((req, res) => {
+gainsRouter.route('/profiles/:id').put((req, res) => {
   Profile.findOneAndUpdate({ _id: req.params.id }, req.body, function (err) {
     if (err) return console.error(err);
     res.sendStatus(200);
   });
 });
 // update user program or add exercise to list
-gainsRouter.route('/profiles/update/:id').put((req, res) => {
+gainsRouter.route('/profiles/:id').put((req, res) => {
   Profile.findOneAndUpdate({ _id: req.params.id }, req.body, function (err) {
     if (err) return console.error(err);
     res.sendStatus(200);
@@ -59,6 +59,7 @@ gainsRouter.route('/profiles/delete/:id').delete((req, res, next) => {
     res.sendStatus(200).json({ msg: data });
   });
 });
+
 
 ////// Exercises api //////////
 

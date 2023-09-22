@@ -22,6 +22,7 @@ header {
     color: white;
     position: sticky;
     top:0;
+    border-bottom: 2px ridge $font;
 }
 
 div.logo {
@@ -83,13 +84,15 @@ footer {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-auto-rows: minmax(8rem, auto);
-    background-color: var(--violet);
+    background-color: $secondary;
+    border-top: 2px ridge $primary;
 }
 
 div.services {
     display: grid;
     justify-content: space-evenly;
     list-style: none;
+    margin:1em;
 }
 
 li.card {

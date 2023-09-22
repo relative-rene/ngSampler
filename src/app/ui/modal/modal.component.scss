@@ -35,12 +35,22 @@ body.modal-open {
     font-weight: bolder;
     clear: both;
 }
+
 .modal-title {
+    text-align: center;
     clear:both;
+    margin-bottom: 1em;
 }
+
 .modal-btn {
     padding: .3em .5em;
     margin:1em;
     border-radius: 50%;
     border:none;
+}
+
+.modal-content {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
 }

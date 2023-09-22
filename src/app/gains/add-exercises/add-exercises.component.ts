@@ -25,7 +25,6 @@ export class AddExercisesComponent {
     });
   }
   handleMovementChanges(e:any){
-    console.log(e)
     let movemoventArr = this.addForm.get('movements') as FormArray;
     if(e.target.checked){
       movemoventArr.push(new FormControl(e.target.value));
@@ -40,7 +39,6 @@ export class AddExercisesComponent {
     }
   }
   onSubmitExercise() {
-    console.log(this.movementList)
     this.gainsService
     .addExercise(this.addForm.value)
       .subscribe(res => console.log('res', res))

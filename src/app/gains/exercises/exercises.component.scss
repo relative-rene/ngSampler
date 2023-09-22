@@ -1,3 +1,4 @@
+
 // :host {
 //     display: flex;
 //     align-items: center;
@@ -7,10 +8,15 @@
 
 .exercises {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
     gap: 1em;
     padding: 1em;
 }
 
-.exercise-details { }
+.exercise-details { 
+    flex: 1 2 30%;
+    box-shadow:2px 1px 2px 2px grey;
+    padding: 1em;
+}

@@ -12,12 +12,14 @@ import { Observable } from 'rxjs';
 
 export class ProfileComponent {
   @Input() profile!: IprofileCollection;
-  $currentList!: Observable<any[]>;
-  $exerciseList!: Observable<any[]>;
+  public $currentList!: Observable<any[]>;
+  public $exerciseList!: Observable<any[]>;
+  public selectdExercises!: string[];
 
-  showModal: boolean = false;
+  public isAdmin:boolean = true;
+  public showModal: boolean = false;
   constructor(
-    private gainsService: GainsService,
+    public gainsService: GainsService,
     public modalService: ModalService) { }
 
   ngOnInit() {
@@ -25,34 +27,28 @@ export class ProfileComponent {
     this.$exerciseList = this.gainsService.getExercises();
     // this.$currentProfile = this.gainsService.getProfile(id)
   }
-
+  
   addLog(profileId) {
     console.log(profileId)
     // this.gainsService.addLog(profileId)
   }
-
-  addExercise(profileId) {
+  
+  addExercise() {
+    this.gainsService.$currentProfile.subscribe(res => this.selectdExercises = res!.exercise_list); 
+    console.log('selectdExercises', this.selectdExercises)
     this.modalService.open('modal-1');
-    setTimeout(() => {
-      this.showModal = true;
-    }, 2000)
-    // this.gainsService.addExercise(profileId);
   }
 
-  addExerciseToUserProgram() {
-
-  }
-
-  getProfile(id){
-    this.gainsService.getProfile(id)
-  }
-
-  getProfileExercises(id){
-    this.gainsService.getProfileExercises(id)
+  updateUserProgram(newExercise, isRemoving) {
+    return this.gainsService.updateExerciseProgramList(newExercise, isRemoving).subscribe(res=>res)
   }
 
   selectUser(id){
     this.gainsService.setCurrentUser(id);
+  }
+
+  displayEditPage(){
+    
   }
 
 }

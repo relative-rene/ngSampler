@@ -14,7 +14,7 @@ export interface IprofileCollection {
 
 export interface IexerciseCollection {
     name:string;
-    movement: MovementEnum;
+    movements: MovementEnum;
     muscle_group:MuscleGroupEnum;
 }
 
