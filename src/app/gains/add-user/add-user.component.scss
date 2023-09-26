@@ -1,11 +1,6 @@
-@import 'src/styles/_forms';
-
 :host {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-flow: column nowrap;
 }
- .addUserForm {
-    flex-basis: 80%;
- }

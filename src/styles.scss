@@ -27,18 +27,25 @@
     background-color: white;
 }
 
+.fa-trash:hover,
+.fa-circle-plus:hover,
+.fa-pencil:hover {
+    font-size: 1.3em;
+    transition: font-size 1s ease-in-out, color 1s ease-in-out;
+}
+
 .fa-trash:hover {
     color: red;
-    font-size:1.3em;
-    transition: font-size 1s ease-in-out, color 1s ease-in-out;
 }
 
 .fa-circle-plus:hover {
     color: blue;
-    font-size:1.3em;
-    transition: font-size 1s ease-in-out, color 1s ease-in-out;
 }
 
-li > i {
-    margin:1em;
+.fa-pencil:hover {
+    color: gold;
+}
+
+li>i {
+    margin: 1em;
 }

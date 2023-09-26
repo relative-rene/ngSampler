@@ -27,7 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   declarations: [
     AppComponent,
     MenuComponent,
-    RecentComponent,
+    RecentComponent
   ],
   imports: [
     BrowserAnimationsModule,

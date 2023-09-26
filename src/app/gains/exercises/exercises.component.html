@@ -1,5 +1,7 @@
 <div class="exercises">
     <div class="exercise-details" *ngFor="let exercise of $exerciseList | async">
+        <i class="fa fa-pencil"></i>
+        <i class="fa fa-trash"></i>
         <h5>{{exercise.name}}</h5>
         <h6>Muscle Group: {{exercise.muscle_group}}</h6>
         <h6>Movement: {{exercise.movements}}</h6>
