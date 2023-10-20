@@ -5,15 +5,14 @@ const { Profile, Exercise, ExerciseLog } = require('../models/gains.model');
 
 // create
 gainsRouter.route('/profiles/create').post((req, res, next) => {
-  console.log('req.body', req.body)
   Profile.create(req.body, (error, data) => {
     if (error) return next(error)
-      res.json(data);
+    res.json(data);
   });
 });
 
 // get all
-gainsRouter.route('/profiles').get((req, res) => {
+gainsRouter.route('/profiles').get((req, res, next) => {
   Profile.find((err, data) => {
     if (err) return next(err);
     res.json(data);
@@ -21,14 +20,15 @@ gainsRouter.route('/profiles').get((req, res) => {
 });
 
 // find by id
-gainsRouter.route('/profiles/:id').get((req, res) => {
+gainsRouter.route('/profiles/:id').get((req, res, next) => {
   Profile.findById(req.params.id, (err, obj) => {
     if (err) return next(err);
     res.json(obj);
   });
 });
+
 // find by id
-gainsRouter.route('/profiles/:id/exercises').get((req, res) => {
+gainsRouter.route('/profiles/:id/exercises').get((req, res, next) => {
   Profile.findById(req.params.id, (err, obj) => {
     if (err) return next(err);
     res.json(obj.exercise_list);
@@ -50,8 +50,6 @@ gainsRouter.route('/profiles/:id').put((req, res) => {
   });
 });
 
-
-
 // delete by id
 gainsRouter.route('/profiles/delete/:id').delete((req, res, next) => {
   Profile.findOneAndRemove(req.params.id, (error, data) => {
@@ -60,20 +58,18 @@ gainsRouter.route('/profiles/delete/:id').delete((req, res, next) => {
   });
 });
 
-
 ////// Exercises api //////////
 
 // create
 gainsRouter.route('/exercises/create').post((req, res, next) => {
-  console.log('body', req.body);
   Exercise.create(req.body, (error, data) => {
     if (error) return next(error)
-      res.json(data);
+    res.json(data);
   });
 });
 
 // get all
-gainsRouter.route('/exercises').get((req, res) => {
+gainsRouter.route('/exercises').get((req, res, next) => {
   Exercise.find((err, data) => {
     if (err) return next(err);
     res.json(data);
@@ -82,7 +78,7 @@ gainsRouter.route('/exercises').get((req, res) => {
 
 
 // find by id
-gainsRouter.route('/exercises/read/:id').get((req, res) => {
+gainsRouter.route('/exercises/read/:id').get((req, res, next) => {
   Exercise.findById(req.params.id, (err, obj) => {
     if (err) return next(err);
     res.json(obj);

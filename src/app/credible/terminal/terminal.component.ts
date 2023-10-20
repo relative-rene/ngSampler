@@ -1,4 +1,3 @@
-import { FormsModule } from '@angular/forms';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -7,7 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./terminal.component.scss']
 })
 export class TerminalComponent implements OnInit {
-  @Input() userChoice: string;
+  @Input() userChoice!: string;
   constructor() { }
 
   ngOnInit(): void {

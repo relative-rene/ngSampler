@@ -1,4 +1,4 @@
-<form class="addUserForm" [formGroup]="addUser" (ngSubmit)="onSubmitProfile()">
+<form class="addUserForm" (ngSubmit)="onSubmitProfile($event)"[formGroup]="userForm">
     <div class="form-group">
         <label for="first_name"> First Name</label>
         <input id="first_name" type="text" formControlName="first_name" class="form-control">
@@ -32,12 +32,13 @@
         <input id="fat_free_mass_index" formControlName="fat_free_mass_index" class="form-control">
     </div>
     <div class="action-container">
-        <button class="btn secondary" [disabled]="isLoading">
+        <button class="btn secondary" (click)="modalService.close()" [disabled]="isLoading">
             <span *ngIf="isLoading">
             </span>
             Cancel
         </button>
-        <button class="btn primary" [disabled]="isLoading">
+        <button type="submit" class="btn primary" 
+            [disabled]="isLoading">
             <span *ngIf="isLoading">
             </span>
             Submit

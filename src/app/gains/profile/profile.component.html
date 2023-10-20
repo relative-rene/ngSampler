@@ -1,7 +1,7 @@
 <div class="profile">
     <div class="username">
         <h5>{{profile.first_name + ' ' + profile.last_name}}</h5>
-        <i (click)="displayEditPage()" *ngIf="isAdmin" class="fa-solid fa-pencil fa-lg"></i>
+        <i (click)="displayEditPage(profile)" *ngIf="isAdmin" class="fa-solid fa-pencil fa-lg"></i>
     </div>
     <h5>Age:{{profile.age}}</h5>
     <div>Exercise List:<button class="btn" [disabled]="(gainsService.$currentProfile | async)?._id !== profile._id"
@@ -33,9 +33,14 @@
         </ul>
 
         <ul class="current-exercises">
-            <li class="exercise" *ngFor="let move of (gainsService.$currentProfile| async)?.exercise_list"><i class="fa-solid fa-trash fa-lg"
-                    (click)="updateUserProgram(move, true)"></i>{{move}}</li>
+            <li class="exercise" *ngFor="let move of (gainsService.$currentProfile| async)?.exercise_list"><i
+                    class="fa-solid fa-trash fa-lg" (click)="updateUserProgram(move, true)"></i>{{move}}</li>
         </ul>
     </div>
     <button class="btn secondary" (click)="modalService.close()">Close</button>
+</modal>
+
+<modal id="editProfileModal">
+    <p class="closing-x" (click)="modalService.close()">X</p>
+    <add-user-form [editUser]="editUser"></add-user-form>
 </modal>

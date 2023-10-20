@@ -50,13 +50,13 @@ export class GainsService {
   updateExerciseProgramList(name, isRemoving) {
     let updatedExerciseList, id, newData;
     this.$currentProfile.subscribe((res) => {
-      updatedExerciseList = isRemoving?res!.exercise_list.filter((toRemove)=> toRemove !== name): [...res!.exercise_list, name];
+      updatedExerciseList = isRemoving ? res!.exercise_list.filter((toRemove) => toRemove !== name) : [...res!.exercise_list, name];
       id = res!._id;
       newData = Object.assign({ ...res }, { exercise_list: updatedExerciseList });
     });
 
     const url = `${GainsService.urlBase}/profiles/${id}`;
-    return this.httpClient.put(url, newData,{responseType: 'text'}).pipe(catchError(this.errorMgmt));
+    return this.httpClient.put(url, newData, { responseType: 'text' }).pipe(catchError(this.errorMgmt));
   }
 
   // ExerciseCollection
@@ -67,7 +67,7 @@ export class GainsService {
       isNewName = res?.every(v => v.name.toLowerCase() !== lowerCaseName)
     })
     if (isNewName) {
-      return this.httpClient.post(url, data).pipe(catchError(this.errorMgmt))
+      return this.httpClient.post(url, data, { responseType: 'text' }).pipe(catchError(this.errorMgmt))
     } else {
       console.error('Exercise name exist');
       return of('Duplicate Name Error')
@@ -82,10 +82,7 @@ export class GainsService {
   setCurrentUser(id): void {
     const url = GainsService.urlBase + '/profiles/' + id
     this.httpClient.get<IprofileCollection>(url)
-      .subscribe(res => {
-        console.log('setCurrentUser ', res);
-        this.$currentProfile.next(res);
-      })
+      .subscribe(res => this.$currentProfile.next(res))
   }
 
   addLog(data) {

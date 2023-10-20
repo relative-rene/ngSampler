@@ -15,40 +15,39 @@ export class ProfileComponent {
   public $currentList!: Observable<any[]>;
   public $exerciseList!: Observable<any[]>;
   public selectdExercises!: string[];
+  public editUser: IprofileCollection | undefined;
 
-  public isAdmin:boolean = true;
+  public isAdmin: boolean = true;
   public showModal: boolean = false;
   constructor(
     public gainsService: GainsService,
     public modalService: ModalService) { }
 
   ngOnInit() {
-    // this.$currentList = this.gainsService.getProfileProgram('realId');
     this.$exerciseList = this.gainsService.getExercises();
-    // this.$currentProfile = this.gainsService.getProfile(id)
   }
-  
+
   addLog(profileId) {
     console.log(profileId)
-    // this.gainsService.addLog(profileId)
   }
-  
+
   addExercise() {
-    this.gainsService.$currentProfile.subscribe(res => this.selectdExercises = res!.exercise_list); 
+    this.gainsService.$currentProfile.subscribe(res => this.selectdExercises = res!.exercise_list);
     console.log('selectdExercises', this.selectdExercises)
     this.modalService.open('modal-1');
   }
 
   updateUserProgram(newExercise, isRemoving) {
-    return this.gainsService.updateExerciseProgramList(newExercise, isRemoving).subscribe(res=>res)
+    return this.gainsService.updateExerciseProgramList(newExercise, isRemoving).subscribe(res => res)
   }
 
-  selectUser(id){
+  selectUser(id) {
     this.gainsService.setCurrentUser(id);
   }
 
-  displayEditPage(){
-    
+  displayEditPage(profile) {
+    this.editUser = profile;
+    this.modalService.open('editProfileModal');
   }
 
 }

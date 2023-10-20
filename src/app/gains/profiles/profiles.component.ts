@@ -10,9 +10,9 @@ import { GainsService } from '../services/gains.service';
 })
 export class ProfilesComponent {
   $profiles!:Observable<IprofileCollection[]>;
-  constructor(public gainsService: GainsService){}
+  constructor(public gainsService: GainsService) { }
+
   ngOnInit(){
     this.$profiles = this.gainsService.getProfiles();
   }
-
 }

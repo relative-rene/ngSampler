@@ -25,6 +25,7 @@ export class AddExerciseFormComponent {
       movements: this.formBuilder.array([], Validators.required)
     });
   }
+
   handleMovementChanges(e: any) {
     let movemoventArr = this.addForm.get('movements') as FormArray;
     if (e.target.checked) {
@@ -39,6 +40,7 @@ export class AddExerciseFormComponent {
       })
     }
   }
+
   onSubmitExercise() {
     this.gainsService
       .addExercise(this.addForm.value)

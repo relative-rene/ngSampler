@@ -20,6 +20,7 @@ import { GiphyClientService } from './services/giphy-client.service';
 import { JwtInterceptor } from './services/jwt.service';
 import { ErrorInterceptor } from './services/error-interceptor.service';
 import { AuthGuard } from './services/authguard.service';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { AuthGuard } from './services/authguard.service';
   imports: [
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule
   ],
   providers: [GiphyClientService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

@@ -3,10 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { MenuComponent } from './menu/menu.component';
 
 const routes: Routes = [
-  { path: '', component: MenuComponent},
+  { path: '', component: MenuComponent },
   {
     path: 'arsenal',
-    loadChildren: () => import('../../src/app/cs_user/app.module').then(x => x.CSUserModule)
+    loadChildren: () => import('../../src/app/arsenal/app.module').then(x => x.ArsenalModule)
   },
   {
     path: 'gains',
@@ -14,7 +14,7 @@ const routes: Routes = [
   },
   {
     path: 'credible',
-    loadChildren: () => import('../../src/app/cs_user/app.module').then(x => x.CSUserModule)
+    loadChildren: () => import('../../src/app/credible/app.module').then(x => x.CredibleModule)
   },
   {
     path: 'cs_user',
@@ -61,9 +61,9 @@ const routes: Routes = [
     loadChildren: () => import('../../src/app/cs_user/app.module').then(x => x.CSUserModule)
   },
   {
-  path: 'tdd',
-  loadChildren: () => import('../../src/app/cs_user/app.module').then(x => x.CSUserModule)
-},
+    path: 'tdd',
+    loadChildren: () => import('../../src/app/cs_user/app.module').then(x => x.CSUserModule)
+  },
   // {
   //   path: 'credible',
   //   loadChildren: () => import('../../src/app/credible/app.module').then(x => x.CredibleModule)
@@ -72,7 +72,7 @@ const routes: Routes = [
   //   path: 'employee_360',
   //   loadChildren: () => import('../../src/app/employee360/app.module').then(x => x.Employee360Module)
   // },
-  
+
   // {
   //   path: 'hacker_news',
   //   loadChildren: () => import('../../src/app/hacker_news/app.module').then(x => x.HackerNewsModule)
