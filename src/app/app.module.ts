@@ -5,7 +5,7 @@
 // import { HttpClientModule } from '@angular/common/http';
 // import { Employee360Module } from './employee360';
 // import { ArsenalModule } from './arsenal/app.module';
-import { CredibleModule } from './credible/app.module';
+// import { CredibleModule } from './credible/app.module';
 // import { ChatAppModule } from './firebase_chat/ts/app';
 // import { FullCrudModule } from './full_crud/app';
 // import { SoundCloudModule } from './ngrx_soundcloud/app';
@@ -22,7 +22,6 @@ import { MenuComponent } from './menu/menu.component';
 import { RouterModule } from '@angular/router';
 import { RecentComponent } from './recent/recent.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ArsenalModule } from './arsenal/app.module';
 import { environment } from 'src/environments/environment.prod';
 import { ENVIRONMENT } from './application_services/environment.service';
 
@@ -37,9 +36,7 @@ import { ENVIRONMENT } from './application_services/environment.service';
     RouterModule,
     FormsModule,
     CommonModule,
-    AppRoutingModule,
-    CredibleModule,
-    ArsenalModule
+    AppRoutingModule
   ],
   providers: [DashboardService, { provide: ENVIRONMENT, useValue: environment }],
   bootstrap: [AppComponent]

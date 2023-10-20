@@ -4,18 +4,18 @@ import { MenuComponent } from './menu/menu.component';
 
 const routes: Routes = [
   { path: '', component: MenuComponent },
-  {
-    path: 'arsenal',
-    loadChildren: () => import('../../src/app/arsenal/app.module').then(x => x.ArsenalModule)
-  },
+  // {
+  //   path: 'arsenal',
+  //   loadChildren: () => import('../../src/app/arsenal/app.module').then(x => x.ArsenalModule)
+  // },
   {
     path: 'gains',
     loadChildren: () => import('../../src/app/gains/app.module').then(x => x.GainsModule)
   },
-  {
-    path: 'credible',
-    loadChildren: () => import('../../src/app/credible/app.module').then(x => x.CredibleModule)
-  },
+  // {
+  //   path: 'credible',
+  //   loadChildren: () => import('../../src/app/credible/app.module').then(x => x.CredibleModule)
+  // },
   {
     path: 'cs_user',
     loadChildren: () => import('../../src/app/cs_user/app.module').then(x => x.CSUserModule)

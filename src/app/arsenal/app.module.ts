@@ -12,6 +12,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { GuideComponent } from './guide/guide.component';
 import { FooterComponent } from './footer/footer.component';
 import { DlayoutComponent } from './dlayout/dlayout.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { DlayoutComponent } from './dlayout/dlayout.component';
     SignupComponent,
     GuideComponent,
     FooterComponent,
-    DlayoutComponent
+    DlayoutComponent,
   ],
   imports: [
     AppRoutingModule,
