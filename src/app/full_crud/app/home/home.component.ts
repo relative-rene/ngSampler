@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
   public cat:Cat = {};
   public isEditing = false;
 
-  public addCatForm: FormGroup;
+  public addCatForm!: FormGroup;
   private name = new FormControl("", Validators.required);
   private age = new FormControl("", Validators.required);
   private weight = new FormControl("", Validators.required);

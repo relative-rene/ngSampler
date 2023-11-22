@@ -12,6 +12,11 @@ export interface IprofileCollection {
     _id:string;
 }
 
+export interface ItaskListCollection {
+    task_name:string;
+    status: TaskStatusesEnum;
+}
+
 export interface IexerciseCollection {
     name:string;
     movements: MovementEnum;
@@ -40,4 +45,10 @@ enum MuscleGroupEnum {
     Core,
     Legs,
     Sub
+}
+
+enum TaskStatusesEnum {
+    Complete,
+    InProgress,
+    NotStarted
 }

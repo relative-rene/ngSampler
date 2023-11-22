@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable, catchError, of, throwError } from 'rxjs';
-import { IprofileCollection } from './../annotations/gains.interface';
+import { IprofileCollection, ItaskListCollection } from './../annotations/gains.interface';
 import { IexerciseCollection } from '../annotations/gains.interface';
 
 @Injectable({
@@ -12,7 +12,9 @@ export class GainsService {
   static urlBase = 'http://localhost:4000/api/gains';
   static headers = new HttpHeaders().set('Content-Type', 'application/json');
   public $currentProfile = new BehaviorSubject<IprofileCollection | null>(null);
+  public $taskList = new BehaviorSubject<ItaskListCollection | []>([]);
   private $exercisesList = new BehaviorSubject<IexerciseCollection[] | null>(null);
+
   constructor(private httpClient: HttpClient) {
     this.getExercises().subscribe(res => this.$exercisesList.next(res))
   }
@@ -45,6 +47,10 @@ export class GainsService {
 
   getCurrentProfile() {
     return this.$currentProfile;
+  }
+
+  getTaskList():Observable<ItaskListCollection | any>{
+    return this.httpClient.get(`${GainsService.urlBase}/task-list`);
   }
 
   updateExerciseProgramList(name, isRemoving) {
@@ -87,6 +93,10 @@ export class GainsService {
 
   addLog(data) {
     return this.httpClient.post(GainsService.urlBase + '/logs/create', data);
+  }
+
+  addTask(data) {
+    return this.httpClient.post(GainsService.urlBase + '/add/task', data);
   }
 
   // Error handling

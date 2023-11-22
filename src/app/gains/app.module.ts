@@ -15,6 +15,8 @@ import { GainsService } from './services/gains.service';
 import { AddExerciseFormComponent } from './add-exercise-form/add-exercise-form.component';
 import { AddUserFormComponent } from './add-user-form/add-user-form.component';
 import { AddUserPage } from './add-user/add-user.component';
+import { TasklistComponent } from './tasklist/tasklist.component';
+import { AddTaskFormComponent } from './add-taskform/add-taskform.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { AddUserPage } from './add-user/add-user.component';
     AddExerciseFormComponent,
     AddUserFormComponent,
     AddExercisesPage,
-    AddUserPage
+    AddUserPage,
+    TasklistComponent,
+    AddTaskFormComponent
   ],
   imports: [
     CommonModule,

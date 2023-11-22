@@ -64,6 +64,10 @@ const routes: Routes = [
     path: 'tdd',
     loadChildren: () => import('../../src/app/cs_user/app.module').then(x => x.CSUserModule)
   },
+  {
+    path: 'acg',
+    loadChildren: () => import('../../src/app/acg/app.module').then(x => x.AcgModule)
+  },
   // {
   //   path: 'credible',
   //   loadChildren: () => import('../../src/app/credible/app.module').then(x => x.CredibleModule)

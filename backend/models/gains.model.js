@@ -19,8 +19,7 @@ const exerciseSchema = new Schema({
     muscle_group: { type: String, enum: ['Chest', 'Back', 'Core', 'Legs', 'Sub'] }
 }, {
     collection: 'exercises'
-}
-);
+});
 
 const exerciseLogSchema = new Schema({
     exercise_id: String,

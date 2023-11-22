@@ -6,6 +6,7 @@ import { AddExercisesPage } from './add-exercises/add-exercises.component';
 import { AddExerciseLogComponent } from './add-exercise-log/add-exercise-log.component';
 import { ExercisesComponent } from './exercises/exercises.component';
 import { FfmiComponent } from './ffmi/ffmi.component';
+import { TasklistComponent } from './tasklist/tasklist.component';
 
 
 const routes: Routes = [
@@ -15,7 +16,9 @@ const routes: Routes = [
       { path: 'add_log', component: AddExerciseLogComponent },
       { path: 'add_exercises', component: AddExercisesPage },
       { path: 'exercises', component: ExercisesComponent },
-      { path: 'ffmi', component: FfmiComponent }
+      { path: 'ffmi', component: FfmiComponent },
+      { path: 'task', component: TasklistComponent}
+
     ]
   }
 ];

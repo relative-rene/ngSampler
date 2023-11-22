@@ -1,11 +1,10 @@
-import { User } from '../models/user';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class ACGService {
 
   constructor(private http: HttpClient) { }
 
