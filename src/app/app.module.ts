@@ -24,14 +24,12 @@ import { RecentComponent } from './recent/recent.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { environment } from 'src/environments/environment.prod';
 import { ENVIRONMENT } from './application_services/environment.service';
-import { AcgComponent } from './acg/app.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    RecentComponent,
-    AcgComponent
+    RecentComponent
   ],
   imports: [
     BrowserAnimationsModule,

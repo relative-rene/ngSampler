@@ -15,6 +15,7 @@ mongoose
   })
 // Setting up port with express js
 const gainsRoute = require('../backend/routes/gains')
+const acgRoute = require('../backend/routes/acg')
 const app = express();
 app.set('host', process.env.HOST || '0.0.0.0')
 app.set('port', process.env.PORT || 4000)
@@ -27,7 +28,9 @@ app.use(
 app.use(cors())
 app.use(express.static(path.join(__dirname, 'dist/ng-sampler')))
 app.use('/', express.static(path.join(__dirname, 'dist/ng-sampler')))
-app.use('/api/gains', gainsRoute)
+app.use('/api/gains', gainsRoute);
+app.use('/api/acg', acgRoute);
+
 // Create port
 
 const server = app.listen(app.get('port'), app.get('host'), error => {

@@ -43,7 +43,7 @@ import { AddTaskFormComponent } from './add-taskform/add-taskform.component';
     HttpClientModule,
     UIModule
   ],
-  providers:[GainsService]
+  providers: [GainsService]
 })
 
 export class GainsModule { }

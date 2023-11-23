@@ -13,7 +13,9 @@ acgRouter.route('/novels/create').post((req, res, next) => {
 
 // get all
 acgRouter.route('/novels').get((req, res, next) => {
+  console.log('res ', res);
   Novel.find((err, data) => {
+    console.log('data', data)
     if (err) return next(err);
     res.json(data);
   });
@@ -54,7 +56,7 @@ acgRouter.route('/novels/delete/:id').delete((req, res, next) => {
 ////////// Chapter API  //////
 
 // get all
-acgRouter.route('/novels').get((req, res, next) => {
+acgRouter.route('/chapters').get((req, res, next) => {
   Chapter.find((data) => {
     if (err) return next(err);
     res.json(data);
@@ -62,7 +64,7 @@ acgRouter.route('/novels').get((req, res, next) => {
 });
 
 // find by id
-acgRouter.route('/novel_id/').get((req, res, next) => {
+acgRouter.route('/chapters/:id').get((req, res, next) => {
   Chapter.findById(req.params.id, (err, obj) => {
     if (err) return next(err);
     res.json(obj);
@@ -70,7 +72,7 @@ acgRouter.route('/novel_id/').get((req, res, next) => {
 });
 
 // update by id
-acgRouter.route('/novels/:id').put((req, res) => {
+acgRouter.route('/chapters/:id').put((req, res) => {
   Chapter.findOneAndUpdate({ _id: req.params.id }, req.body, function (err) {
     if (err) return console.error(err);
     res.sendStatus(200);
@@ -78,7 +80,7 @@ acgRouter.route('/novels/:id').put((req, res) => {
 });
 
 // update user program or add exercise to list
-acgRouter.route('/novels/:id').put((req, res) => {
+acgRouter.route('/chapters/:id').put((req, res) => {
   Chapter.findOneAndUpdate({ _id: req.params.id }, req.body, function (err) {
     if (err) return console.error(err);
     res.sendStatus(200);
@@ -86,7 +88,7 @@ acgRouter.route('/novels/:id').put((req, res) => {
 });
 
 // delete by id
-acgRouter.route('/novels/delete/:id').delete((req, res, next) => {
+acgRouter.route('/chapters/delete/:id').delete((req, res, next) => {
   Chapter.findOneAndRemove(req.params.id, (error, data) => {
     if (error) return next(error);
     res.sendStatus(200).json({ msg: data });

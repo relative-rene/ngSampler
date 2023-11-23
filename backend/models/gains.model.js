@@ -1,6 +1,7 @@
-const { Schema, model } = require('mongoose');
+const mongooese = require('mongoose');
+const samplerConn = mongooese.createConnection('mongodb://127.0.0.1:27017/sampler');
 
-const profileSchema = new Schema({
+const profileSchema = new mongooese.Schema({
     first_name: { type: String, required: true },
     last_name: { type: String, required: true },
     age: String,
@@ -13,7 +14,7 @@ const profileSchema = new Schema({
     fat_free_mass_index: String
 }, { collection: 'profiles' });
 
-const exerciseSchema = new Schema({
+const exerciseSchema = new mongooese.Schema({
     name: String,
     movements: { type: [String], enum: ['Isometric', 'Concentric', 'Eccentric'] },
     muscle_group: { type: String, enum: ['Chest', 'Back', 'Core', 'Legs', 'Sub'] }
@@ -21,7 +22,7 @@ const exerciseSchema = new Schema({
     collection: 'exercises'
 });
 
-const exerciseLogSchema = new Schema({
+const exerciseLogSchema = new mongooese.Schema({
     exercise_id: String,
     profile_id: String,
     set_for_session: Number,
@@ -31,8 +32,8 @@ const exerciseLogSchema = new Schema({
     exercise_pr: Number,
 }, { collection: 'logs' });
 
-const Profile = model('Profile', profileSchema);
-const Exercise = model('Exercise', exerciseSchema);
-const ExerciseLog = model('ExerciseLog', exerciseLogSchema);
+const Profile = samplerConn.model('Profile', profileSchema);
+const Exercise = samplerConn.model('Exercise', exerciseSchema);
+const ExerciseLog = samplerConn.model('ExerciseLog', exerciseLogSchema);
 
 module.exports = { Exercise, ExerciseLog, Profile }
