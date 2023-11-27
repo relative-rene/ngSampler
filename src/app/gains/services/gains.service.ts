@@ -84,6 +84,10 @@ export class GainsService {
     const url = GainsService.urlBase + '/exercises';
     return this.httpClient.get<Observable<IexerciseCollection[]>>(url);
   }
+  
+  loadExercises(){
+    return this.$exercisesList;
+  }
 
   setCurrentUser(id): void {
     const url = GainsService.urlBase + '/profiles/' + id

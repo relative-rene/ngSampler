@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormArray, FormControl } from '@angular/forms';
-import { Observable } from 'rxjs';
 import { GainsService } from 'src/app/gains/services/gains.service';
-import { IexerciseCollection } from '../annotations/gains.interface';
 
 @Component({
   selector: 'add-exercise-form',
@@ -13,7 +11,6 @@ export class AddExerciseFormComponent {
 
   public addForm: FormGroup;
   public isLoading: Boolean = false;
-  public $exerciseList!: Observable<IexerciseCollection[]>;
   public movementList = ['Isometric', 'Eccentric', 'Concentric']
 
   constructor(
@@ -45,13 +42,5 @@ export class AddExerciseFormComponent {
     this.gainsService
       .addExercise(this.addForm.value)
       .subscribe(res => console.log('res', res))
-  }
-
-  getExercises() {
-    this.$exerciseList = this.gainsService.getExercises();
-  }
-
-  ngOnInit(): void {
-    this.getExercises();
   }
 }

@@ -1,7 +1,7 @@
-const mongooese = require('mongoose');
-const samplerConn = mongooese.createConnection('mongodb://127.0.0.1:27017/sampler');
+const mongoose = require('mongoose');
+const samplerConn = mongoose.createConnection('mongodb://127.0.0.1:27017/sampler');
 
-const profileSchema = new mongooese.Schema({
+const profileSchema = new mongoose.Schema({
     first_name: { type: String, required: true },
     last_name: { type: String, required: true },
     age: String,
@@ -14,7 +14,7 @@ const profileSchema = new mongooese.Schema({
     fat_free_mass_index: String
 }, { collection: 'profiles' });
 
-const exerciseSchema = new mongooese.Schema({
+const exerciseSchema = new mongoose.Schema({
     name: String,
     movements: { type: [String], enum: ['Isometric', 'Concentric', 'Eccentric'] },
     muscle_group: { type: String, enum: ['Chest', 'Back', 'Core', 'Legs', 'Sub'] }
@@ -22,7 +22,7 @@ const exerciseSchema = new mongooese.Schema({
     collection: 'exercises'
 });
 
-const exerciseLogSchema = new mongooese.Schema({
+const exerciseLogSchema = new mongoose.Schema({
     exercise_id: String,
     profile_id: String,
     set_for_session: Number,

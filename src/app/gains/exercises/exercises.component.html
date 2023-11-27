@@ -1,5 +1,5 @@
 <div class="exercises">
-    <div class="exercise-details" *ngFor="let exercise of $exerciseList | async">
+    <div class="exercise-details" *ngFor="let exercise of gainsService.loadExercises()| async">
         <i class="fa fa-pencil"></i>
         <i class="fa fa-trash"></i>
         <h5>{{exercise.name}}</h5>

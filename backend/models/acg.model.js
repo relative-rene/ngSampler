@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-const novelBinCon = mongoose.connection.useDb('novelBin');
+const novelBinCon = mongoose.createConnection('mongodb://127.0.0.1:27017/novelBin');
+
 
 const novelSchema = new mongoose.Schema({
   title: { type: String, required: true },

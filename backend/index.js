@@ -1,18 +1,18 @@
 const express = require('express')
 const path = require('path')
-const mongoose = require('mongoose')
+// const mongoose = require('mongoose')
 const cors = require('cors')
 const bodyParser = require('body-parser')
 
 // Connecting with mongo db
-mongoose
-  .connect('mongodb://127.0.0.1:27017/sampler', { useNewUrlParser: true, useUnifiedTopology: true })
-  .then((x) => {
-    console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
-  })
-  .catch((err) => {
-    console.error('Error connecting to mongo', err.reason)
-  })
+// mongoose
+//   .connect('mongodb://127.0.0.1:27017/sampler', { useNewUrlParser: true, useUnifiedTopology: true })
+//   .then((x) => {
+//     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
+//   })
+//   .catch((err) => {
+//     console.error('Error connecting to mongo', err.reason)
+//   })
 // Setting up port with express js
 const gainsRoute = require('../backend/routes/gains')
 const acgRoute = require('../backend/routes/acg')

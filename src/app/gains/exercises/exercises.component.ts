@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { GainsService } from '../services/gains.service';
-import { Observable } from 'rxjs';
-import { IexerciseCollection } from '../annotations/gains.interface';
 
 @Component({
   selector: 'exercises',
@@ -9,10 +7,6 @@ import { IexerciseCollection } from '../annotations/gains.interface';
   styleUrls: ['./exercises.component.scss']
 })
 export class ExercisesComponent {
-  public $exerciseList!: Observable<IexerciseCollection[]>;
-  constructor(private gainsService: GainsService) { }
+  constructor(public gainsService: GainsService) { }
 
-  ngOnInit() {
-    this.$exerciseList = this.gainsService.getExercises();
-  }
 }

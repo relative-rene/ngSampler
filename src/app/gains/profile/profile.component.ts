@@ -13,7 +13,6 @@ import { Observable } from 'rxjs';
 export class ProfileComponent {
   @Input() profile!: IprofileCollection;
   public $currentList!: Observable<any[]>;
-  public $exerciseList!: Observable<any[]>;
   public selectdExercises!: string[];
   public editUser: IprofileCollection | undefined;
 
@@ -22,10 +21,6 @@ export class ProfileComponent {
   constructor(
     public gainsService: GainsService,
     public modalService: ModalService) { }
-
-  ngOnInit() {
-    this.$exerciseList = this.gainsService.getExercises();
-  }
 
   addLog(profileId) {
     console.log(profileId)

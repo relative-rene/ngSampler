@@ -28,7 +28,7 @@
     <h1 class="modal-title">Add Exercises to Program</h1>
     <div class="modal-content">
         <ul class="exercise-list">
-            <li class="exercise" *ngFor="let exercise of $exerciseList| async"><i class="fa-solid fa-circle-plus fa-lg"
+            <li class="exercise" *ngFor="let exercise of gainsService.loadExercises()| async"><i class="fa-solid fa-circle-plus fa-lg"
                     (click)="updateUserProgram(exercise.name,false)"></i>{{exercise.name}}</li>
         </ul>
 
