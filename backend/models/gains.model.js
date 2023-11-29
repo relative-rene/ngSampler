@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const samplerConn = mongoose.createConnection('mongodb://127.0.0.1:27017/sampler');
+const samplerConn = mongoose.createConnection('mongodb://127.0.0.1:27017/sampler', { useNewUrlParser: true, useUnifiedTopology: true });
 
 const profileSchema = new mongoose.Schema({
     first_name: { type: String, required: true },

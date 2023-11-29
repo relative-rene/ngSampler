@@ -33,7 +33,7 @@ app.use('/api/acg', acgRoute);
 
 // Create port
 
-const server = app.listen(app.get('port'), app.get('host'), error => {
+app.listen(app.get('port'), app.get('host'), error => {
   if (error) {
     console.error(error);
   }

@@ -1,8 +1,25 @@
 <div class="main">
     <h1>ACG</h1>
     <div class="list">
+        Novels
         <ul>
-            <li *ngFor="let novel of $novels">{{novel.title}}</li>
+            <li *ngFor="let novel of acgService.loadAllNovels() | async">{{novel.title?novel.title:'No get request made'}}</li>
         </ul>
+    </div>
+    <div class="list">
+        Chapters
+        <div>
+                <div  *ngFor="let chap of acgService.loadChapters() | async">
+                    <h3>{{chap.description}}</h3>
+                    <br>
+                    <h5>{{chap.title}}</h5>
+                    <br>
+                    <p>{{chap.content}}</p>
+                    <br>
+                </div>
+
+            
+  
+        </div>
     </div>
 </div>

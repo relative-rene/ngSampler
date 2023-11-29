@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const novelBinCon = mongoose.createConnection('mongodb://127.0.0.1:27017/novelBin');
+const novelBinCon = mongoose.createConnection('mongodb://127.0.0.1:27017/novelBin', { useNewUrlParser: true, useUnifiedTopology: true });
 
 
 const novelSchema = new mongoose.Schema({

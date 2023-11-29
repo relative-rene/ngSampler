@@ -1,6 +1,5 @@
 import { ACGService } from './services/acg.service';
 import { Component } from '@angular/core';
-import { INovelCollection } from '../gains/annotations/acg.interface';
 
 @Component({
   selector: 'acg',
@@ -8,13 +7,11 @@ import { INovelCollection } from '../gains/annotations/acg.interface';
   styleUrls: ['./app.component.scss']
 })
 export class AcgComponent {
-  public $novels!: INovelCollection[];
 
-  constructor(private acgService: ACGService) {
-    this.acgService.getAllNovels()
-      .subscribe(res => this.$novels = res);
+  constructor(public acgService: ACGService) { 
+
+    // last update was chapter 565
+    // this.acgService.updateChapter("655d4893e832453ca4e1b192",data).subscribe(res=> console.log('we printed', res))
+ 
   }
-
-
-
 }

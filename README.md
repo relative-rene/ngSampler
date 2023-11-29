@@ -9,7 +9,13 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 Run `node backend/index.js` for express server to start running on `0.0.0.0:4000`
 
 Run `mongod` to confirm that instance of database is active.
-restart database by quiting with `kill <pid>` or `killall <pid>` then rerun mongod
+
+restart database
+run `pgrep mongo`
+copy pid
+run `kill <pid>`
+run `mongod`
+
 note it is also possible to shutdown server by using mongo shell. 
 1st run mongo
 2nd show dbs
