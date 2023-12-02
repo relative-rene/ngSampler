@@ -19,3 +19,24 @@ enum StatusEnum {
     InProgress = 'In Progress',
     OnHold = 'On Hold'
 }
+
+/** 
+function f(obj: Param){
+    return obj
+}
+f({name:"Kyle"})
+f(new Date())
+
+Don't do
+  because Obect are the base of everything the below code reads as : any
+  type Param = {} 
+  type Param = Object
+
+Do this instead
+    type Param = Record<string,unknown> // 
+    type Param = {
+        [index:string]:unknown
+    }
+
+
+

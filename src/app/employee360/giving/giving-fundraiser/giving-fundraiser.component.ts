@@ -48,7 +48,7 @@ export class GivingFundraiserComponent implements OnInit, AfterViewInit {
     private commentsService: CommentsService,
     private settingsService: SettingsService,
     private userService: UserService,
-    private toast: ToastComponent,
+    public toast: ToastComponent,
     private tranService: TransactionsService) { }
 
   ngOnInit() { }
