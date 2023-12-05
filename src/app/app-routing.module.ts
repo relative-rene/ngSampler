@@ -69,6 +69,14 @@ const routes: Routes = [
     path: 'acg',
     loadChildren: () => import('../../src/app/acg/app.module').then(x => x.AcgModule)
   },
+  // {
+  //   path: 'login',
+  //   loadChildren: () => import('../../src/app/login/app.module').then(x => x.LoginModule)
+  // },
+  {
+    path: 'counter',
+    loadChildren: () => import('../../src/app/counter/app.module').then(x => x.CounterModule)
+  },
 
 ];
 

@@ -27,7 +27,9 @@ export class MenuComponent {
     { name: 'Scroll Options', path: 'scroll_options' },
     { name: 'Shopping Cart', path: 'shopping_cart' },
     { name: 'TDD', path: 'tdd' },
-    { name: 'ACG', path:'acg'}
+    { name: 'ACG', path: 'acg' },
+    { name: 'Counter', path: 'counter' },
+    { name: 'Login', path: 'login' }
   ];
 
   navigateTo(path) {

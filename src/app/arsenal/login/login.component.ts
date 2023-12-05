@@ -5,8 +5,8 @@ import { contentHeaders } from '../common/headers';
 
 @Component({
   selector: 'login-comp',
-  template: './login.component.html',
-  styles: ["login.component.scss"]
+  templateUrl: './login.component.html',
+  styleUrls: ["login.component.scss"]
 })
 export class LoginComponent {
   constructor(private router: Router, private http: HttpClient) {
