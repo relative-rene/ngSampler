@@ -13,6 +13,7 @@ import { GuideComponent } from './guide/guide.component';
 import { FooterComponent } from './footer/footer.component';
 import { DlayoutComponent } from './dlayout/dlayout.component';
 import { CommonModule } from '@angular/common';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 @NgModule({
   declarations: [
@@ -25,10 +26,12 @@ import { CommonModule } from '@angular/common';
     GuideComponent,
     FooterComponent,
     DlayoutComponent,
+    ToolbarComponent,
   ],
   imports: [
     AppRoutingModule,
     FormsModule,
+    CommonModule,
     // ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: true })
   ],

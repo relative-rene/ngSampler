@@ -18,7 +18,7 @@ import { TracklistScrollService } from './tracklist-scroll-service';
       [media]="mediaQuery.matches$ | async"
       [player]="player.player$ | async"
       [times]="player.times$"
-      [tracklist]="tracklist.tracklist$ | async"
+      [tracklist]="(tracklist.tracklist$ | async)"
       [tracks]="tracklist.tracks$"
       (pause)="player.pause()"
       (play)="player.play()"

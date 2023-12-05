@@ -1,17 +1,16 @@
 import { Component, Input, ChangeDetectionStrategy} from '@angular/core';
-import { ContactStore, Contact as ContactModel} from './contact-store';
-import { removeContact, starContact } from './actions';
+import { ContactStore, Contact as ContactModel} from '../../store/store';
+import { removeContact, starContact } from '../../store/contact/contact.actions';
 
 @Component({
   selector: 'contact',
-  templateUrl: 'app/contact.html',
-  styleUrls: ['app/contact.css'],
+  templateUrl:'./contact.html',
+  styleUrls: ['contact.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export default class Contact {
-  @Input()
-  contact: ContactModel;
+export default class ContactComponent {
+  @Input() contact!: ContactModel;
 
   constructor(private store: ContactStore) { }
 

@@ -1,9 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import 'rxjs/add/operator/map';
-import { map } from 'rxjs';
-
 @Injectable()
 export class DataService {
 
@@ -13,7 +10,7 @@ export class DataService {
   constructor(private http: HttpClient) { }
 
   getCats() {
-    return this.http.get('/cats');
+    return this.http.get('/cats')
   }
 
   addCat(cat) {

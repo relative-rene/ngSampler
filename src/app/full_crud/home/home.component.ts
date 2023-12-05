@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { FormGroup, FormControl, Validators, FormBuilder }  from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 
 import { ToastComponent } from '../shared/toast/toast.component';
 
 import { DataService } from '../services/data.service';
 export interface Cat {
-  name?:string,
-  age?:number,
-  weight?:string
+  name?: string,
+  age?: number,
+  weight?: string,
+  _id?: string
 
 }
 @Component({
@@ -18,10 +19,10 @@ export interface Cat {
 })
 export class HomeComponent implements OnInit {
 
-  private cats = [];
+  public cats: Array<Cat> = [];
   public isLoading = true;
 
-  public cat:Cat = {};
+  public cat: Cat = {};
   public isEditing = false;
 
   public addCatForm!: FormGroup;
@@ -30,9 +31,9 @@ export class HomeComponent implements OnInit {
   private weight = new FormControl("", Validators.required);
 
   constructor(private http: HttpClient,
-              private dataService: DataService,
-              public toast: ToastComponent,
-              private formBuilder: FormBuilder) { }
+    private dataService: DataService,
+    public toast: ToastComponent,
+    private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.getCats();
@@ -46,9 +47,11 @@ export class HomeComponent implements OnInit {
 
   getCats() {
     this.dataService.getCats().subscribe(
-      data => this.cats = [data],
-      error => console.log(error),
-      () => this.isLoading = false
+      {
+      next: data=> this.cats = [data],
+      error: error => console.log(error),
+      complete: () => this.isLoading = false
+      }
     );
   }
 
@@ -88,16 +91,11 @@ export class HomeComponent implements OnInit {
   }
 
   deleteCat(cat) {
-    if(window.confirm("Are you sure you want to permanently delete this item?")) {
-      this.dataService.deleteCat(cat).subscribe(
-        res => {
-          var pos = this.cats.map(cat => { return cat._id }).indexOf(cat._id);
-          this.cats.splice(pos, 1);
-          this.toast.setMessage("item deleted successfully.", "success");
-        },
-        error => console.log(error)
-      );
+    if (window.confirm("Are you sure you want to permanently delete this item?")) {
+      var pos = this.cats.filter(cat => { return cat._id }).indexOf(cat._id);
+      this.cats.splice(pos, 1);
+      this.toast.setMessage("item deleted successfully.", "success");
     }
+    this.dataService.deleteCat(cat)
   }
-
 }

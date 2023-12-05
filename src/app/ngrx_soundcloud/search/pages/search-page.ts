@@ -1,7 +1,3 @@
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/pluck';
-import 'rxjs/add/operator/takeUntil';
-
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subject, map, takeUntil } from 'rxjs';

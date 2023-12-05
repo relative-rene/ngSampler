@@ -15,6 +15,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { AirlinesComponent } from './airlines/airlines.component';
 import { VirtualScrollComponent } from './virtual-scroll/virtual-scroll.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     ScrollOptionsComponent,
@@ -33,7 +34,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatMenuModule,
     MatProgressSpinnerModule,
     HttpClientModule,
-  ],
+    RouterModule
+    ],
   providers: [PassengerService, AirlinesService],
 })
 export class ScrollOptionsModule { }

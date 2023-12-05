@@ -31,10 +31,10 @@ import { Track } from '../models/track';
 })
 export class TracklistItemsComponent {
   @Input() layout!: string;
-  @Input() media!: MediaQueryResults;
-  @Input() player!: PlayerState;
+  @Input() media!: MediaQueryResults | null;
+  @Input() player!: PlayerState | null;;
   @Input() times!: Observable<TimesState>;
-  @Input() tracklist!: Tracklist;
+  @Input() tracklist!: Tracklist | null;
   @Input() tracks!: Observable<Array<Track>>;
 
   @Output() pause = new EventEmitter(false);

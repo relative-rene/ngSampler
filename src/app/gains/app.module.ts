@@ -10,7 +10,7 @@ import { FfmiComponent } from './ffmi/ffmi.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfilesComponent } from './profiles/profiles.component';
 import { ProfileComponent } from './profile/profile.component';
-import { UIModule } from '../ui/ui.module';
+import { UIModule } from '../application_components/ui/ui.module';
 import { GainsService } from './services/gains.service';
 import { AddExerciseFormComponent } from './add-exercise-form/add-exercise-form.component';
 import { AddUserFormComponent } from './add-user-form/add-user-form.component';

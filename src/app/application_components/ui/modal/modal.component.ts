@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation, ElementRef, Input, OnInit, OnDestroy } from '@angular/core';
 
-import { ModalService } from '../../application_services/modal.service';
+import { ModalService } from '../../../application_services/modal.service';
 import { transition, style, animate, trigger, state } from '@angular/animations';
 
 // const enterTransition = transition(':enter', [

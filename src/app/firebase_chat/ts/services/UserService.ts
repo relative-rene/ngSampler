@@ -1,6 +1,6 @@
-import {Injectable} from '@angular/core';
-import {Subject, BehaviorSubject} from 'rxjs';
-import {User} from '../models';
+import { Injectable } from '@angular/core';
+import { Subject, BehaviorSubject } from 'rxjs';
+import { User } from '../models';
 
 
 /**
@@ -9,11 +9,11 @@ import {User} from '../models';
 @Injectable()
 export class UserService {
   // `currentUser` contains the current user
-  currentUser: Subject<User> = new BehaviorSubject<User>(null);
+  currentUser: BehaviorSubject<User|null> = new BehaviorSubject<User|null>(null);
 
   public setCurrentUser(newUser: User): void {
     this.currentUser.next(newUser);
   }
 }
 
-export var userServiceInjectables: Array<any> = [ UserService ];
+export var userServiceInjectables: Array<any> = [UserService];

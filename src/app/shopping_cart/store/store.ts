@@ -1,6 +1,6 @@
 import { createStore } from 'redux';
-import { IContactAction } from './actions';
-import { reducer } from './reducer';
+import { IContactAction, init } from './contact/contact.actions';
+import { reducer } from './contact/contact.reducer';
 
 export class Contact {
   id?: number;
@@ -9,9 +9,9 @@ export class Contact {
 }
 
 export class ContactStore {
-  store = createStore(reducer, Array<Contact);
+  store = createStore(reducer([{}], init(0)));
 
-  get contacts(): Array<Contact> {
+  get contacts(): Array<Contact>| unknown {
     return this.store.getState();
   }
 

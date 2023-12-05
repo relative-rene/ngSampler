@@ -1,14 +1,5 @@
-import 'rxjs/add/observable/fromEvent';
-import 'rxjs/add/observable/never';
-import 'rxjs/add/operator/debounceTime';
-import 'rxjs/add/operator/filter';
-import 'rxjs/add/operator/let';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/switchMap';
-import 'rxjs/add/operator/takeUntil';
-
 import { Injectable, NgZone } from '@angular/core';
-import { Observable,Subscription, debounceTime, fromEvent, map, takeUntil } from 'rxjs';
+import { Observable,Subscription, debounceTime, filter, fromEvent, map, never, switchMap, takeUntil, tap } from 'rxjs';
 import { Selector } from '../../core';
 import { Tracklist } from '../models/tracklist';
 import { TracklistService } from '../tracklist-service';
@@ -33,35 +24,33 @@ export class TracklistScrollService {
       .debounceTime(100)
       .select(this.getScrollData());
 
-    const checkPosition$ = this.scrollData$
-      .filter((data: ScrollData) => {
+    const checkPosition$ = this.scrollData$.pipe(
+      filter((data: ScrollData) => {
         return data.windowInnerHeight + data.windowPageYOffset >= data.bodyScrollHeight - data.windowInnerHeight;
-      });
+      }))
 
-    const pause$ = Observable.never();
+    const pause$ = never();
 
-    this.infiniteScroll$ = tracklist.tracklist$
-      .map(({isPending, hasNextPage}: Tracklist) => isPending || !hasNextPage)
-      .switchMap(pause => pause ? pause$ : checkPosition$)
-      .do(() => this.zone.run(() => this.tracklist.loadNextTracks()));
+    this.infiniteScroll$ = tracklist.tracklist$.pipe(
+      map(({isPending, hasNextPage}: Tracklist) => isPending || !hasNextPage),
+      switchMap(pause => pause ? pause$ : checkPosition$))
+      tap(() => this.zone.run(() => this.tracklist.loadNextTracks()))
   }
 
 
-  infinite(cancel$?: Observable<any>): Subscription {
-    return this.infiniteScroll$
-      .takeUntil(cancel$)
-      .subscribe();
+  infinite(cancel$: Observable<any>): Subscription {
+    return this.infiniteScroll$.pipe(
+      takeUntil(cancel$))
   }
 
   private getScrollData(): Selector<UIEvent,ScrollData> {
-    return event$ => event$
-      .map(event => {
+    return event$ => event$.pipe(map(event => {
         const { body, defaultView } = event.target as HTMLDocument;
         return {
-          windowInnerHeight: defaultView.innerHeight,
-          windowPageYOffset: defaultView.pageYOffset,
+          windowInnerHeight: defaultView!.innerHeight,
+          windowPageYOffset: defaultView!.pageYOffset,
           bodyScrollHeight: body.scrollHeight
         };
-      });
+      }))
   }
 }

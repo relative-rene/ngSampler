@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { Router } from '@angular/router';
-import { DashboardService } from '../application_services/dashboard.service';
+import { DashboardService } from '../../application_services/dashboard.service';
 
 @Component({
   selector: 'app-menu',

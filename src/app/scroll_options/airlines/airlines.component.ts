@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { tap } from 'rxjs/operators';
 import { AirlinesService } from '../data-access/airlines.service';
 
 @Component({

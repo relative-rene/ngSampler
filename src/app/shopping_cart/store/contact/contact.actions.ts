@@ -1,5 +1,3 @@
-import { Contact as ContactModel} from './contact-store';
-
 export interface IContactAction {
   type: string;
   id: number;
@@ -24,6 +22,13 @@ export function removeContact(id: number): IContactAction {
 export function starContact(id: number): IContactAction {
   return {
     type: 'STAR',
+    id
+  };
+}
+
+export function init(id: number): IContactAction {
+  return {
+    type: 'INIT',
     id
   };
 }

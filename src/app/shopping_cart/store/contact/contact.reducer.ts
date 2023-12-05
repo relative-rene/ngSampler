@@ -1,5 +1,5 @@
-import { IContactAction } from './actions';
-import { Contact as ContactModel} from './contact-store';
+import { IContactAction } from './contact.actions';
+import { Contact as ContactModel} from '../store';
 
 export function reducer(state: Array<ContactModel> = Array<ContactModel>(), action: IContactAction) {
   switch (action.type) {
