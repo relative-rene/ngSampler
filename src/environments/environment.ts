@@ -11,6 +11,6 @@ export interface EnvironmentInterface {
 export const environment: EnvironmentInterface = {
   production: false,
   apiUrl: "localhost:3000",
-  realWorldApiUrl: 'https://api.realworld.io.api'
+  realWorldApiUrl: "https://api.realworld.io.api"
 
 };

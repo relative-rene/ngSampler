@@ -3,7 +3,7 @@ import { FormBuilder, ReactiveFormsModule, Validators } from "@angular/forms";
 import { authActions } from "../../../app/store/actions";
 import { Store } from "@ngrx/store";
 import { RegisterRequestInterface } from "../types/registerRequest.interface";
-import { selectIsSubmitting } from "src/app/store/selectors";
+import { selectIsSubmitting } from "src/app/store/reducers";
 import { AuthStateInterface } from "../types/authState.interface";
 import { CommonModule } from "@angular/common";
 import { RouterLink } from "@angular/router";
