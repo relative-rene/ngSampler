@@ -26,6 +26,7 @@
     "@ionic/angular": "7.3.1",
     "@ngrx/effects": "^16.2.0",
     "@ngrx/store": "^16.2.0",
+    "@ngrx/store-devtools": "^16.2.0",
     "axios": "^0.21.1",
     "base64id": "0.1.0",
     "core-js": "3.32.1",
