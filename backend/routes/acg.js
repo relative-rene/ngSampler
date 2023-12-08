@@ -5,8 +5,8 @@ const mongoose = require('mongoose');
 
 // create
 acgRouter.route('/novels/create').post((req, res, next) => {
+  if (error) return next(error)
   Novel.create(req.body, (error, data) => {
-    if (error) return next(error)
     res.json(data);
   });
 });
@@ -37,13 +37,6 @@ acgRouter.route('/novels/:id').put((req, res) => {
   });
 });
 
-// update user program or add exercise to list
-acgRouter.route('/novels/:id').put((req, res) => {
-  Novel.findOneAndUpdate({ _id: req.params.id }, req.body, function (err) {
-    if (err) return console.error(err);
-    res.sendStatus(200);
-  });
-});
 
 // delete by id
 acgRouter.route('/novels/delete/:id').delete((req, res, next) => {

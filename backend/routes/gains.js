@@ -42,13 +42,6 @@ gainsRouter.route('/profiles/:id').put((req, res) => {
     res.sendStatus(200);
   });
 });
-// update user program or add exercise to list
-gainsRouter.route('/profiles/:id').put((req, res) => {
-  Profile.findOneAndUpdate({ _id: req.params.id }, req.body, function (err) {
-    if (err) return console.error(err);
-    res.sendStatus(200);
-  });
-});
 
 // delete by id
 gainsRouter.route('/profiles/delete/:id').delete((req, res, next) => {
@@ -129,7 +122,7 @@ gainsRouter.get('profile/:id/logs/:id', function (req, res) {
 });
 
 // update by id
-gainsRouter.put('/profile/:id/logs/:id', function (req, res) {
+gainsRouter.put('/profile/:profileId/logs/:logId', function (req, res) {
   ExerciseLog.findOneAndUpdate({ _id: req.params.id }, req.body, function (err) {
     if (err) return console.error(err);
     res.sendStatus(200);
@@ -137,7 +130,7 @@ gainsRouter.put('/profile/:id/logs/:id', function (req, res) {
 });
 
 // delete by id
-gainsRouter.delete('/profile/:id/logs/:id', function (req, res) {
+gainsRouter.delete('/profile/:profileId/logs/:logId', function (req, res) {
   ExerciseLog.findOneAndRemove({ _id: req.params.id }, function (err) {
     if (err) return console.error(err);
     res.sendStatus(200);
