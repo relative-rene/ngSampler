@@ -29,7 +29,7 @@ export class MenuComponent {
     { name: 'TDD', path: 'tdd' },
     { name: 'ACG', path: 'acg' },
     { name: 'Counter', path: 'counter' },
-    { name: 'Login', path: 'login' }
+    { name: 'Register', path: 'register' }
   ];
 
   navigateTo(path) {

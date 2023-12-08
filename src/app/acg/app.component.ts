@@ -1,12 +1,16 @@
+import { CommonModule } from '@angular/common';
 import { ACGService } from './services/acg.service';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'acg',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  standalone:true,
+  imports:[CommonModule],
+  providers:[ACGService]
 })
-export class AcgComponent {
+export class ACGComponent {
 
   constructor(public acgService: ACGService) { 
 

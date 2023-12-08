@@ -1,22 +1,20 @@
 ﻿import { Injectable } from '@angular/core';
-import { Http, Response, Headers } from '@angular/common/http';
-import 'rxjs/add/operator/map';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Configuration } from '../app.constants';
-import { Router, ROUTER_DIRECTIVES } from '@angular/router';
-
+import { Router } from '@angular/router';
+import { map } from 'rxjs';
 @Injectable()
 export class SecurityService {
 
     private actionUrl: string;
-    private headers: Headers;
+    private headers: HttpHeaders;
     private storage: any;
 
-    constructor(private _http: Http, private _configuration: Configuration, private _router: Router) {
+    constructor(private _http: HttpClient, private _configuration: Configuration, private _router: Router) {
 
         this.actionUrl = _configuration.Server + 'api/DataEventRecords/';
 
-        this.headers = new Headers();
+        this.headers = new HttpHeaders();
         this.headers.append('Content-Type', 'application/json');
         this.headers.append('Accept', 'application/json');
         this.storage = localStorage;

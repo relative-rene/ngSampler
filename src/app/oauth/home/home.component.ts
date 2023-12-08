@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
     selector: 'forbidden',
     templateUrl: 'home.component.html',
+    standalone: true
 })
 
 export class HomeComponent implements OnInit {

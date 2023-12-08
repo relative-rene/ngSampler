@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AcgComponent } from './app.component';
+import { ACGComponent } from './app.component';
 
-describe('AcgComponent', () => {
-  let component: AcgComponent;
-  let fixture: ComponentFixture<AcgComponent>;
+describe('ACGComponent', () => {
+  let component: ACGComponent;
+  let fixture: ComponentFixture<ACGComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [AcgComponent]
+      declarations: [ACGComponent]
     });
-    fixture = TestBed.createComponent(AcgComponent);
+    fixture = TestBed.createComponent(ACGComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

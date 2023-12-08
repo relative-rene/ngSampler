@@ -1,9 +1,8 @@
-import { ScrollingModule } from '@angular/cdk/scrolling';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MenuComponent } from './application_components/menu/menu.component';
 
-const routes: Routes = [
+export const appRoutes: Routes = [
   { path: '', component: MenuComponent },
   {
     path: 'arsenal',
@@ -47,7 +46,7 @@ const routes: Routes = [
   // },
   {
     path: 'oauth',
-    loadChildren: () => import('../../src/app/oauth/app.module').then(x => x.OAuthModule)
+    loadChildren: () => import('../../src/app/oauth/app.routes').then(x => x.OauthRoutes)
   },
   // {
   //   path: 'restaurant',
@@ -63,11 +62,11 @@ const routes: Routes = [
   },
   {
     path: 'tdd',
-    loadChildren: () => import('../../src/app/tdd/app.module').then(x => x.TDDModule)
+    loadChildren: () => import('../../src/app/tdd/tdd.routes').then(x => x.tddRoutes)
   },
   {
     path: 'acg',
-    loadChildren: () => import('../../src/app/acg/app.module').then(x => x.AcgModule)
+    loadChildren: () => import('../../src/app/acg/acg.routes').then(x => x.acgRoutes)
   },
   // {
   //   path: 'login',
@@ -75,13 +74,18 @@ const routes: Routes = [
   // },
   {
     path: 'counter',
-    loadChildren: () => import('../../src/app/counter/app.module').then(x => x.CounterModule)
+    loadChildren: () => import('../../src/app/counter/counter.routes').then(x => x.counterRoutes)
   },
+  {
+    path: 'register',
+    loadChildren: () =>
+        import('src/app/application_components/auth/auth.routes').then(m => m.registerRoutes)
+}
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(appRoutes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
