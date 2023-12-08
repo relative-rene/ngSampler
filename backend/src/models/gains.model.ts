@@ -1,7 +1,8 @@
-const mongoose = require('mongoose');
-const samplerConn = mongoose.createConnection('mongodb://127.0.0.1:27017/sampler', { useNewUrlParser: true, useUnifiedTopology: true });
+import { createConnection, Schema } from 'mongoose';
 
-const profileSchema = new mongoose.Schema({
+const samplerConn = createConnection('mongodb://127.0.0.1:27017/sampler', { useNewUrlParser: true, useUnifiedTopology: true });
+
+const profileSchema = new Schema({
     first_name: { type: String, required: true },
     last_name: { type: String, required: true },
     age: String,
@@ -14,7 +15,7 @@ const profileSchema = new mongoose.Schema({
     fat_free_mass_index: String
 }, { collection: 'profiles' });
 
-const exerciseSchema = new mongoose.Schema({
+const exerciseSchema = new Schema({
     name: String,
     movements: { type: [String], enum: ['Isometric', 'Concentric', 'Eccentric'] },
     muscle_group: { type: String, enum: ['Chest', 'Back', 'Core', 'Legs', 'Sub'] }
@@ -22,7 +23,7 @@ const exerciseSchema = new mongoose.Schema({
     collection: 'exercises'
 });
 
-const exerciseLogSchema = new mongoose.Schema({
+const exerciseLogSchema = new Schema({
     exercise_id: String,
     profile_id: String,
     set_for_session: Number,
@@ -55,6 +56,6 @@ export const deleteOneById = (id: string) => ExerciseModel.findOneAndRemove({ _i
 // ExerciseLog Actions
 export const getAllExerciserLogs = () => ExerciseLogModel.find();
 export const createExerciseLog = (profileId: string, values: Record<string, any>) => values["profile_id"] = profileId && ExerciseLogModel.create(values);
-export const getExerciseLogById = (logId:string)=> ExerciseLogModel.findById({_id:logId})
+export const getExerciseLogById = (logId: string) => ExerciseLogModel.findById({ _id: logId })
 export const patchExerciseLogById = (id: string, values: Record<string, any>) => ExerciseLogModel.findOneAndUpdate({ _id: id, values });
 export const deleteExerciseLogById = (id: string) => ExerciseLogModel.findOneAndRemove({ _id: id });
