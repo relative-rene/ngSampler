@@ -13,34 +13,22 @@ import { FormatTimePipe } from './pipes/format-time';
 
 @NgModule({
   declarations: [
-    // components
     AudioTimelineComponent,
     ContentHeaderComponent,
     IconComponent,
     IconButtonComponent,
     LoadingIndicatorComponent,
-
-    // pipes
     FormatIntegerPipe,
     FormatTimePipe
   ],
   exports: [
-    // components
     AudioTimelineComponent,
     ContentHeaderComponent,
     IconComponent,
     IconButtonComponent,
     LoadingIndicatorComponent,
-
-    // modules
-    CommonModule,
-
-    // pipes
     FormatIntegerPipe,
     FormatTimePipe
-  ],
-  imports: [
-    CommonModule
   ]
 })
 export class SharedModule {}

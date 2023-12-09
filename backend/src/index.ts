@@ -17,10 +17,9 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 
 const server = http.createServer(app);
-server.listen(8080, ()=>{
-    console.log('Server running on http://localhost:8080/')
+server.listen(4000, ()=>{
+    console.log('Typescript Server running on http://localhost:4000/')
 })
-console.log("Hello!! Typescript")
 
 
 /**

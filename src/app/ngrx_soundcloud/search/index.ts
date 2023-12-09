@@ -12,7 +12,6 @@ import { SearchPageComponent } from './pages/search-page';
 import { SearchActions } from './search-actions';
 import { SearchEffects } from './search-effects';
 import { SearchService } from './search-service';
-import { CommonModule } from '@angular/common';
 
 
 export { SearchActions, SearchService };
@@ -40,7 +39,6 @@ const routes: Routes = [
     SharedModule,
     TracklistsModule,
     FormsModule,
-    CommonModule,
   ],
   providers: [
     SearchActions,

@@ -1,5 +1,14 @@
 import express from 'express';
-import { deleteNovelById, getAllChaptersByNovelId, getByNovelIdAndChapter, getNovelById, getNovels, saveNovel, Chapter, putChapter } from 'models/acg.model';
+import {
+    getAllChaptersByNovelId,
+    getByNovelIdAndChapter,
+    deleteNovelById,
+    getNovelById,
+    putChapter,
+    getNovels,
+    saveNovel,
+    Chapter,
+} from '../models/acg.model';
 
 export const getAllNovels = async (req: express.Request, res: express.Response) => {
     try {
@@ -15,7 +24,7 @@ export const getANovel = async (req: express.Request, res: express.Response) => 
     try {
         const { id } = req.params;
         const novel = await getNovelById(id);
-        if(!novel) res.sendStatus(404);
+        if (!novel) res.sendStatus(404);
 
         return res.sendStatus(200).json(novel).end();
     } catch (error) {

@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { GoogleMapsComponent } from './app.component';
 
@@ -7,7 +6,6 @@ import { GoogleMapsComponent } from './app.component';
 
 @NgModule({
   imports: [
-    CommonModule,
     FormsModule,
     // AgmCoreModule.forRoot({
     //   apiKey: "AIzaSyBWZSPWwSlUyymW8yy3zrrcemAUC6e2NrY"

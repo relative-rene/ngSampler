@@ -11,7 +11,6 @@ import { SlideComponent } from './cmpcarousel/slide/slide.component';
 
 @NgModule({
   imports:[
-    CommonModule,
     MenuRoutingModule
   ],
   declarations:[

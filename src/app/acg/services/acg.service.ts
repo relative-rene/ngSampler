@@ -13,10 +13,10 @@ export class ACGService {
   public $chaptersList = new BehaviorSubject<IChapterCollection[] | []>([])
   public $chapters = new BehaviorSubject<IChapterCollection[] | []>([]);
   constructor(private http: HttpClient) {
-    // this.getAllNovels();
-    this.getAllChaptersFromNovel("Super Gene")
+    this.getAllNovels();
+    // this.getAllChaptersFromNovel("Super Gene")
     // this.getChapter('Super Gene', 'Chapter 25').subscribe(res => this.$chapters.next(res));
-    this.sanitizeCode()
+    // this.sanitizeCode()
   }
 
   getAllNovels() {
@@ -50,16 +50,16 @@ export class ACGService {
     return this.http.put(`${ACGService.urlBase}/chapters/updateOne`, bodyData)
   }
 
-  async sanitizeCode() {
-    this.loadAllChaptersFromNovel().subscribe((res)=>{
-      for(let i = 0; i < res.length; i++){
-        setTimeout(() => {
-          let obj = textChapterCleanUp(res[i]);
-          console.log(obj);
-          this.updateChapter(obj._id, obj).subscribe(reres => reres)
-        },i * 5000);
-      }
+  // async sanitizeCode() {
+  //   this.loadAllChaptersFromNovel().subscribe((res)=>{
+  //     for(let i = 0; i < res.length; i++){
+  //       setTimeout(() => {
+  //         let obj = textChapterCleanUp(res[i]);
+  //         console.log(obj);
+  //         this.updateChapter(obj._id, obj).subscribe(reres => reres)
+  //       },i * 5000);
+  //     }
 
-    })
-  }
+  //   })
+  // }
 }

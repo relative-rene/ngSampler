@@ -1,0 +1,3 @@
+<div class="chapters-container" *ngFor="let chapter of acgService.loadAllChaptersFromNovel() | async">
+    <acg-chapter [chapter]="chapter"></acg-chapter>
+</div>

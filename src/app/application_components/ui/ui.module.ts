@@ -10,7 +10,7 @@ import { ModalService } from '../../application_services/modal.service';
   imports: [
     CommonModule,
   ],
-  providers:[ModalService],
-  exports:[ModalComponent]
+  providers: [ModalService],
+  exports: [ModalComponent]
 })
 export class UIModule { }

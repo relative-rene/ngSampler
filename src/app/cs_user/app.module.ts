@@ -5,7 +5,6 @@ import { AboutComponent } from './about/about.component';
 import { UserComponent } from './user/user.component';
 import { FormsModule } from '@angular/forms';
 import { PostService } from './services/post.service';
-import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -17,7 +16,6 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     AppRoutingModule,
     FormsModule,
-    CommonModule,
     HttpClientModule,
   ],
   providers: [PostService],

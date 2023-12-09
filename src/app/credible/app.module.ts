@@ -42,7 +42,6 @@ import { CommonModule } from '@angular/common';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    CommonModule
   ],
   providers: [GiphyClientService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

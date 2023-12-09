@@ -1,14 +1,14 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { SecurityService } from './services/SecurityService';
-import { CommonModule } from '@angular/common';
+import { AppModule } from '../app.module';
 
 @Component({
     selector: 'oauth',
     templateUrl: './app.component.html',
     standalone: true,
     providers: [SecurityService],
-    imports: [RouterModule, CommonModule]
+    imports: [RouterModule, AppModule]
 
 })
 

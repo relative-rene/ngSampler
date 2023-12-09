@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { GainsComponent } from './gains.component';
 import { AppRoutingModule } from '../gains/app-routing.module';
 import { AddExercisesPage } from './add-exercises/add-exercises.component';
@@ -36,7 +35,6 @@ import { AddTaskFormComponent } from './add-taskform/add-taskform.component';
     AddTaskFormComponent
   ],
   imports: [
-    CommonModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
