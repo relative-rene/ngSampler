@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+ import { Component } from "@angular/core";
 import { AcgNovel } from "../novel/novel";
 import { ACGService } from "../../services/acg.service";
 import { INovelCollection } from "src/app/gains/annotations/acg.interface";

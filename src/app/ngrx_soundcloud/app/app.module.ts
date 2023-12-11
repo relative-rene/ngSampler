@@ -1,5 +1,5 @@
 import { APP_BASE_HREF } from '@angular/common';
-import { NgModule } from '@angular/core';
+import { NO_ERRORS_SCHEMA, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
 import { CoreModule } from '../core';
@@ -40,6 +40,7 @@ export { AppState } from './interfaces';
     SoundCloudComponent,
     AppHeaderComponent
   ],
-  providers: [ {provide: APP_BASE_HREF, useValue: '/'}],
+  schemas:[NO_ERRORS_SCHEMA],
+  providers: [{provide: APP_BASE_HREF, useValue: '/'}],
 })
 export class SoundCloudModule {}

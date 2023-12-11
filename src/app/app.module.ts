@@ -12,6 +12,8 @@ import { AuthService } from './application_services/auth.service';
 import { ModalService } from './application_services/modal.service';
 import { DashboardService } from './application_services/dashboard.service';
 import { PersistanceService } from './application_services/persistance.service';
+import { ACGService } from './acg/services/acg.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,13 +28,15 @@ import { PersistanceService } from './application_services/persistance.service';
     FormsModule,
     CommonModule,
     AppRoutingModule,
+    HttpClientModule
   ],
   exports:[CommonModule],
   providers: [
     AuthService,
     DashboardService,
     ModalService,
-    PersistanceService
+    PersistanceService,
+    ACGService
   ],
   bootstrap: [AppComponent]
 })

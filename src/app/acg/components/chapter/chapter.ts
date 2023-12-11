@@ -1,15 +1,15 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 import { IChapterCollection } from "src/app/gains/annotations/acg.interface";
-import { ACGService } from "../../services/acg.service";
 
 @Component({
     selector: 'acg-chapter',
     templateUrl: './chapter.html',
-    standalone: true,
-    providers: [ACGService]
+    standalone: true
 })
+export class AcgChapter implements OnInit {
+    @Input() chapter!: IChapterCollection;
 
-export class AcgChapter {
-    @Input() chapter?: IChapterCollection;
-    constructor(public acgService: ACGService) { }
+    ngOnInit(){
+        console.log('chapter', this.chapter)
+    }
 }

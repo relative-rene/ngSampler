@@ -1,15 +1,4 @@
 <div class="main">
     <h1>ACG</h1>
     <acg-novels></acg-novels>
-    <div class="list">
-        Chapters
-        <div *ngFor="let chap of acgService.loadChapters() | async">
-            <h3>{{chap.description}}</h3>
-            <br>
-            <h5>{{chap.title}}</h5>
-            <br>
-            <p>{{chap.content}}</p>
-            <br>
-        </div>
-    </div>
 </div>
