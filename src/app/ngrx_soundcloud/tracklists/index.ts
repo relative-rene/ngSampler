@@ -13,6 +13,7 @@ import { WaveformTimelineComponent } from './components/waveform-timeline';
 import { TracklistActions } from './tracklist-actions';
 import { TracklistEffects } from './tracklist-effects';
 import { TracklistService } from './tracklist-service';
+import { CommonModule } from '@angular/common';
 
 
 export { TracklistActions, TracklistService };
@@ -36,6 +37,7 @@ export { getTracklistCursor, TracklistCursor } from './tracklist-cursor';
     TracklistComponent
   ],
   imports: [
+    CommonModule,
     RouterModule,
     SharedModule,
     EffectsModule.forRoot(TracklistEffects)

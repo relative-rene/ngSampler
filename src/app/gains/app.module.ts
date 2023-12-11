@@ -1,21 +1,23 @@
 import { NgModule } from '@angular/core';
-import { GainsComponent } from './gains.component';
-import { AppRoutingModule } from '../gains/app-routing.module';
-import { AddExercisesPage } from './add-exercises/add-exercises.component';
-import { ExercisesComponent } from './exercises/exercises.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AddExerciseLogComponent } from './add-exercise-log/add-exercise-log.component';
-import { FfmiComponent } from './ffmi/ffmi.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ProfilesComponent } from './profiles/profiles.component';
-import { ProfileComponent } from './profile/profile.component';
+import { AppRoutingModule } from '../gains/app-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UIModule } from '../application_components/ui/ui.module';
+
+import { GainsComponent } from './gains.component';
+import { FfmiComponent } from './ffmi/ffmi.component';
 import { GainsService } from './services/gains.service';
-import { AddExerciseFormComponent } from './add-exercise-form/add-exercise-form.component';
-import { AddUserFormComponent } from './add-user-form/add-user-form.component';
 import { AddUserPage } from './add-user/add-user.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ProfilesComponent } from './profiles/profiles.component';
 import { TasklistComponent } from './tasklist/tasklist.component';
+import { ExercisesComponent } from './exercises/exercises.component';
+import { AddExercisesPage } from './add-exercises/add-exercises.component';
 import { AddTaskFormComponent } from './add-taskform/add-taskform.component';
+import { AddUserFormComponent } from './add-user-form/add-user-form.component';
+import { AddExerciseLogComponent } from './add-exercise-log/add-exercise-log.component';
+import { AddExerciseFormComponent } from './add-exercise-form/add-exercise-form.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -35,10 +37,11 @@ import { AddTaskFormComponent } from './add-taskform/add-taskform.component';
     AddTaskFormComponent
   ],
   imports: [
-    AppRoutingModule,
-    ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    AppRoutingModule,
+    CommonModule,
     UIModule
   ],
   providers: [GainsService]

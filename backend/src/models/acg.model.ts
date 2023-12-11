@@ -29,6 +29,6 @@ export const getNovelById = (id: string) => Novel.findById({ _id: id });
 // export const patchOneNovel = (id: string, values: Record<string, any>) => Novel.findOneAndUpdate({ _id: id, values });
 export const deleteNovelById = (id: string) => Novel.findOneAndRemove({ _id: id });
 
-export const getAllChaptersByNovelId = (novelId: string) => Chapter.find({ novel_id: novelId });
+export const getAllChaptersByNovelId = (novelId: string) => Chapter.find({ novel_id: novelId }).limit(3)
 export const getByNovelIdAndChapter = (novelId: string, chapterNumber: string) => Chapter.find({ novel_id: novelId, description: chapterNumber })
 export const putChapter = (id: string, values: Record<string, any>) => Chapter.replaceOne({id, values});

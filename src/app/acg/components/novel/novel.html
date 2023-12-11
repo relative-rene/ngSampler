@@ -1,9 +1,15 @@
 <div class="novel-container">
-    <h5>title: </h5> <p>{{novel.title}}</p><br>
-    <h5>description: </h5> <p>{{novel.description}}</p><br>
-    <h5>author: </h5> <p>{{novel.author}}</p><br>
-    <h5>genre: </h5> <p>{{novel.genre}}</p><br>
-    <h5>source: </h5> <p>{{novel.source}}</p><br>
-    <h5>status: </h5> <p>{{novel.status}}</p><br>
-    <button>Start</button>
+    <h5>title: </h5>
+    <p>{{novel.title}}</p><br>
+    <h5>description: </h5>
+    <p>{{novel.description}}</p><br>
+    <h5>author: </h5>
+    <p>{{novel.author}}</p><br>
+    <h5>genre: </h5>
+    <p>{{novel.genre}}</p><br>
+    <h5>source: </h5>
+    <p>{{novel.source}}</p><br>
+    <h5>status: </h5>
+    <p>{{novel.status}}</p><br>
+    <button class="btn primary" (click)="navigateTo('chapters', novel.title)">Start</button>
 </div>

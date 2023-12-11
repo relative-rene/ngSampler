@@ -13,12 +13,14 @@ import { ContactUsComponent } from './cmpcontact-us/contact-us.component';
 import { MessageService } from './_services/message.service';
 import { DrinksService } from './_services/drinks.service';
 import { GOOGLE_MAP_KEY } from './constants/variables';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
   imports: [
     FormsModule,
     ReactiveFormsModule,
+    CommonModule,
     HttpClientModule,
     MenuModule,
     AppRoutingModule,

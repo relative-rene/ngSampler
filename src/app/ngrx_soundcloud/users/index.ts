@@ -11,6 +11,7 @@ import { UserPageComponent } from './pages/user-page';
 import { UserActions } from './user-actions';
 import { UserEffects } from './user-effects';
 import { UserService } from './user-service';
+import { CommonModule } from '@angular/common';
 
 
 export { UserActions, UserService };
@@ -32,7 +33,8 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     SharedModule,
     EffectsModule.forRoot(UserEffects),
-    TracklistsModule
+    TracklistsModule,
+    CommonModule
   ],
   providers: [
     UserActions,

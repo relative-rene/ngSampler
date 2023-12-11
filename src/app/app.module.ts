@@ -27,7 +27,7 @@ import { PersistanceService } from './application_services/persistance.service';
     CommonModule,
     AppRoutingModule,
   ],
-  exports:[CommonModule]
+  exports:[CommonModule],
   providers: [
     AuthService,
     DashboardService,

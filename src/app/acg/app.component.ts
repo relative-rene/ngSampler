@@ -3,14 +3,14 @@ import { Component } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AcgNovels } from './components/novels/novels';
 import { AcgNovel } from './components/novel/novel';
-import { AppModule } from '../app.module';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'acg',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   standalone: true,
-  imports: [AppModule, HttpClientModule, AcgNovels, AcgNovel],
+  imports: [CommonModule, HttpClientModule, AcgNovels, AcgNovel],
   providers: [ACGService]
 })
 export class ACGComponent {

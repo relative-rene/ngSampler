@@ -7,11 +7,11 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 
 export class RestaurantComponent implements OnInit {
+  public navIsFixed: boolean = false;
+  public googleLinkPath: string = '';
+  public temp:any
 
   constructor(
-    public navIsFixed: boolean = false,
-    public googleLinkPath: string,
-    public temp:any,
     private router: Router, private route: ActivatedRoute) { }
 
   /**
