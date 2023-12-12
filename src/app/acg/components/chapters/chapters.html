@@ -1,5 +1,5 @@
 <h1>Chapters</h1>
 <br>  
-<div *ngFor="let chapter of chapters$ | async" >
-    <acg-chapter [chapter]="chapter"></acg-chapter>
+<div infinite-scroll (scrolledToBottom)="loadMoreChapters()">
+    <acg-chapter *ngFor="let chapter of chapters$ | async" [chapter]="chapter"></acg-chapter>
 </div>    

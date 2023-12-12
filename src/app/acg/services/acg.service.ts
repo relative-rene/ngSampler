@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { IChapterCollection, INovelCollection } from 'src/app/gains/annotations/acg.interface';
-import { BehaviorSubject, Observable, shareReplay, tap } from 'rxjs';
-import { textChapterCleanUp } from '../helper/textSanitizer';
+import {  Observable, shareReplay, tap } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
 import { IselectOptions } from '../components/novel/novel';
 
@@ -43,7 +42,6 @@ export class ACGService {
   }
 
   getChapter(novelId, chapterNumber) {
-    // let params = { novel_id: novelId, description: chapterNumber }
     return this.http.get<IChapterCollection[]>(`${environment.apiACG}/${novelId}/${chapterNumber}`);
   }
   loadChapters() {

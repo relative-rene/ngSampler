@@ -53,10 +53,6 @@ export const appRoutes: Routes = [
   //   loadChildren: () => import('../../src/app/restaurant/app.module').then(x => x.RestaurantModule) Broken Need new carosel approach
   // },
   {
-    path: 'scroll_options',
-    loadChildren: () => import('../../src/app/scroll_options/app.module').then(x => x.ScrollOptionsModule)
-  },
-  {
     path: 'shopping_cart',
     loadChildren: () => import('../../src/app/shopping_cart/app.module').then(x => x.ShoppingCartModule)
   },

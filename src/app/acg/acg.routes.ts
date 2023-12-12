@@ -8,8 +8,8 @@ export const acgRoutes: Routes = [
     path: '', component: ACGComponent
   },
   {
-    path: ':novel_id/chapters', component: AcgChapters,
-    resolve: {
+    path: 'chapters/:novel_id', component: AcgChapters,
+  resolve: {
       data: allChaptersResolver
     }
   },
