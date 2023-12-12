@@ -4,6 +4,7 @@ import { IChapterCollection, INovelCollection } from 'src/app/gains/annotations/
 import { BehaviorSubject, Observable, shareReplay, tap } from 'rxjs';
 import { textChapterCleanUp } from '../helper/textSanitizer';
 import { environment } from 'src/environments/environment.development';
+import { IselectOptions } from '../components/novel/novel';
 
 @Injectable({providedIn:'root'})
 export class ACGService {
@@ -16,10 +17,6 @@ export class ACGService {
   // public $chaptersList = new BehaviorSubject<IChapterCollection[] | []>([]); BehaviorSubject approach
   // public $chapters = new BehaviorSubject<IChapterCollection[] | []>([]); BehaviorSubject approach
   constructor(public http: HttpClient) {
-    // this.getAllNovels();
-    // this.getAllChaptersFromNovel("Super Gene")
-    // this.getChapter('Super Gene', 'Chapter 25').subscribe(res => this.$chapters.next(res));
-    // this.sanitizeCode()
   }
 
   getAllNovels() {
@@ -37,7 +34,7 @@ export class ACGService {
 
   getAllChaptersFromNovel(novelId) {
     console.log('novelId', novelId)
-    return this.http.get<IChapterCollection[]>(`${environment.apiACG}/chapters/${novelId}`);
+    return this.http.get<IChapterCollection[]>(`${environment.apiACG}/${novelId}`);
   }
 
   loadAllChaptersFromNovel() {
@@ -47,7 +44,7 @@ export class ACGService {
 
   getChapter(novelId, chapterNumber) {
     // let params = { novel_id: novelId, description: chapterNumber }
-    return this.http.get<IChapterCollection[]>(`${environment.apiACG}/chapters/${novelId}/chapter/${chapterNumber}`);
+    return this.http.get<IChapterCollection[]>(`${environment.apiACG}/${novelId}/${chapterNumber}`);
   }
   loadChapters() {
     return this.$chapters;
@@ -56,6 +53,9 @@ export class ACGService {
   updateChapter(objStringId, data) {
     let bodyData = { _id: objStringId, "newObj": data }
     return this.http.put(`${environment.apiACG}/chapters/updateOne`, bodyData)
+  }
+  getChaptersList(novel_id:string):Observable<IselectOptions[]>{
+    return this.http.get<IselectOptions[]>(`${environment.apiACG}/${novel_id}/table`)
   }
 
   // async sanitizeCode() {

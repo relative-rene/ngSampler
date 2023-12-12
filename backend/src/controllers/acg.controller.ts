@@ -8,6 +8,7 @@ import {
     getNovels,
     saveNovel,
     Chapter,
+    gettingTableOfContents,
 } from '../models/acg.model';
 
 export const getAllNovels = async (req: express.Request, res: express.Response) => {
@@ -99,10 +100,10 @@ export const getAllChapters = async (req: express.Request, res: express.Response
 export const getAChapter = async (req: express.Request, res: express.Response) => {
     try {
         const { novel_id, description } = req.params;
-        if (novel_id && description) return res.sendStatus(406)
-        const chapters = await getByNovelIdAndChapter(novel_id, description);
-        const specificChapter = chapters.filter((chapter: Record<string, any>) => chapter.description === description);
-        return res.status(200).json(specificChapter)
+        console.log('novel_id', novel_id, 'description',description, req.params)
+        if (!novel_id && !description) return res.sendStatus(406)
+        const chapter = await getByNovelIdAndChapter(novel_id, description);
+        return res.status(200).json(chapter)
     } catch (error) {
         console.log(error);
         return res.sendStatus(400)
@@ -110,7 +111,7 @@ export const getAChapter = async (req: express.Request, res: express.Response) =
 }
 export const updateChapter = async (req: express.Request, res: express.Response) => {
     try {
-        if (req.body) return res.sendStatus(406);
+        if (!req.body) return res.sendStatus(406);
 
         const chapter = req.body;
         const { title, description, content } = chapter;
@@ -122,5 +123,20 @@ export const updateChapter = async (req: express.Request, res: express.Response)
     } catch (error) {
         console.log(error);
         return res.sendStatus(400)
+    }
+}
+
+export const getTableOfContent = async (req: express.Request, res: express.Response) => {
+    
+    try {
+        const { novel_id } = req.params
+        console.log('getTableOfContent', novel_id)
+        if (!novel_id) return res.sendStatus(406);
+        const tableOfContents = await gettingTableOfContents(novel_id);
+        console.log('tableOfContents', tableOfContents)
+        return res.status(200).json(tableOfContents);
+    } catch (error) {
+        console.log(error);
+        return res.sendStatus(400);
     }
 }
