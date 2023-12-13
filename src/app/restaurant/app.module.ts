@@ -12,7 +12,6 @@ import { MapComponent } from './cmpmap/map.component';
 import { ContactUsComponent } from './cmpcontact-us/contact-us.component';
 import { MessageService } from './_services/message.service';
 import { DrinksService } from './_services/drinks.service';
-import { GOOGLE_MAP_KEY } from './constants/variables';
 import { CommonModule } from '@angular/common';
 
 
@@ -25,7 +24,7 @@ import { CommonModule } from '@angular/common';
     MenuModule,
     AppRoutingModule,
     // AgmCoreModule.forRoot({
-    //   apiKey: GOOGLE_MAP_KEY
+    //   apiKey: process.env.GOOGLE_MAP
     // })
   ],
   declarations: [

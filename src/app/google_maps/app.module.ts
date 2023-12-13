@@ -8,7 +8,7 @@ import { GoogleMapsComponent } from './app.component';
   imports: [
     FormsModule,
     // AgmCoreModule.forRoot({
-    //   apiKey: "AIzaSyBWZSPWwSlUyymW8yy3zrrcemAUC6e2NrY"
+    //   apiKey: process.env.GOOGLE_MAP
     // })
   ],
   providers: [],

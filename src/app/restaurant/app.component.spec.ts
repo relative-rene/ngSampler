@@ -24,9 +24,6 @@ describe('RestaurantComponent', () => {
                 HttpClientModule,
                 MenuModule,
                 AppRoutingModule
-                // AgmCoreModule.forRoot({
-                //     apiKey: 'AIzaSyBWZSPWwSlUyymW8yy3zrrcemAUC6e2NrY'
-                // })
             ],
             declarations: [RestaurantComponent,
                 InfoComponent,
