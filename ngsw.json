@@ -1,0 +1,105 @@
+{
+  "configVersion": 1,
+  "timestamp": 1702502103251,
+  "index": "https:https://relative-rene.github.io/ngSampler/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "https:https://relative-rene.github.io/ngSampler/146.a20bbf8eeb5a7f9c.js",
+        "https:https://relative-rene.github.io/ngSampler/234.283ae12c005dd0a5.js",
+        "https:https://relative-rene.github.io/ngSampler/286.fc65c07ce12f1e17.js",
+        "https:https://relative-rene.github.io/ngSampler/413.41c5e17425530afd.js",
+        "https:https://relative-rene.github.io/ngSampler/446.7732b0cb55de503d.js",
+        "https:https://relative-rene.github.io/ngSampler/607.d1fa792ff483b94c.js",
+        "https:https://relative-rene.github.io/ngSampler/719.bd7e3b8a9dd6f823.js",
+        "https:https://relative-rene.github.io/ngSampler/738.b145bdc1ea566c6d.js",
+        "https:https://relative-rene.github.io/ngSampler/800.6d0d2c9496972064.js",
+        "https:https://relative-rene.github.io/ngSampler/863.3c3b72ca14b49b14.js",
+        "https:https://relative-rene.github.io/ngSampler/893.e7d9eb8cd3e3851d.js",
+        "https:https://relative-rene.github.io/ngSampler/favicon.ico",
+        "https:https://relative-rene.github.io/ngSampler/index.html",
+        "https:https://relative-rene.github.io/ngSampler/main.95339d99a52748d1.js",
+        "https:https://relative-rene.github.io/ngSampler/manifest.webmanifest",
+        "https:https://relative-rene.github.io/ngSampler/polyfills.12ef8ed410fe429e.js",
+        "https:https://relative-rene.github.io/ngSampler/runtime.eff9dbd63e1a64fc.js",
+        "https:https://relative-rene.github.io/ngSampler/styles.d0cb6a9dbf6294be.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "https:https://relative-rene.github.io/ngSampler/assets/config.dev.js",
+        "https:https://relative-rene.github.io/ngSampler/assets/icons/icon-128x128.png",
+        "https:https://relative-rene.github.io/ngSampler/assets/icons/icon-144x144.png",
+        "https:https://relative-rene.github.io/ngSampler/assets/icons/icon-152x152.png",
+        "https:https://relative-rene.github.io/ngSampler/assets/icons/icon-192x192.png",
+        "https:https://relative-rene.github.io/ngSampler/assets/icons/icon-384x384.png",
+        "https:https://relative-rene.github.io/ngSampler/assets/icons/icon-512x512.png",
+        "https:https://relative-rene.github.io/ngSampler/assets/icons/icon-72x72.png",
+        "https:https://relative-rene.github.io/ngSampler/assets/icons/icon-96x96.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "https:https://relative-rene.github.io/ngSampler/146.a20bbf8eeb5a7f9c.js": "3379ef8fe9271cb08a2a0878f054d2cacce802a5",
+    "https:https://relative-rene.github.io/ngSampler/234.283ae12c005dd0a5.js": "513c445cddb708baea96109db1eff483ea24e33b",
+    "https:https://relative-rene.github.io/ngSampler/286.fc65c07ce12f1e17.js": "665d88b6faa8c02ffc316aebb09c7f86bad02734",
+    "https:https://relative-rene.github.io/ngSampler/413.41c5e17425530afd.js": "2699faa8dd81acb9eef73eb6057e2a1454c6a7c7",
+    "https:https://relative-rene.github.io/ngSampler/446.7732b0cb55de503d.js": "1f641c51c89f523f7bcc05e78d460e7719a592f9",
+    "https:https://relative-rene.github.io/ngSampler/607.d1fa792ff483b94c.js": "98c4995de28379fe09c7ed943b758f3b81ff1b68",
+    "https:https://relative-rene.github.io/ngSampler/719.bd7e3b8a9dd6f823.js": "2f31d260231e3f8da081a15d7e39c9800e9f1b6c",
+    "https:https://relative-rene.github.io/ngSampler/738.b145bdc1ea566c6d.js": "3012d60c2aa9b3467e624f388ec0b7d41b1bb862",
+    "https:https://relative-rene.github.io/ngSampler/800.6d0d2c9496972064.js": "d5d4116a30d0fc53c6b113d7f4353fd9bd6fa28c",
+    "https:https://relative-rene.github.io/ngSampler/863.3c3b72ca14b49b14.js": "becffe113cd5257f254815f6bab7155f29f4af26",
+    "https:https://relative-rene.github.io/ngSampler/893.e7d9eb8cd3e3851d.js": "f1e2298d8aa29093310f3af02d4aa818ae72d848",
+    "https:https://relative-rene.github.io/ngSampler/assets/config.dev.js": "803ffdf35e963ed4eec013b6bbd1169cde276d64",
+    "https:https://relative-rene.github.io/ngSampler/assets/icons/icon-128x128.png": "b1f06c7d714abb4a0cc4d1f7c954feb26826e4c4",
+    "https:https://relative-rene.github.io/ngSampler/assets/icons/icon-144x144.png": "96a0d629765c1bc85d9263c6bc83094ca776d267",
+    "https:https://relative-rene.github.io/ngSampler/assets/icons/icon-152x152.png": "b1fbbee3902eb96a7658e3bb006f31f78ca5a44c",
+    "https:https://relative-rene.github.io/ngSampler/assets/icons/icon-192x192.png": "e4211163bf0911688fbfb80278d8ff4d2f77691d",
+    "https:https://relative-rene.github.io/ngSampler/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "https:https://relative-rene.github.io/ngSampler/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "https:https://relative-rene.github.io/ngSampler/assets/icons/icon-72x72.png": "279825a1ac4377032ae996a1832c641e33ccf1b6",
+    "https:https://relative-rene.github.io/ngSampler/assets/icons/icon-96x96.png": "592885efcbfee27e5e20be4fa3043589390d2740",
+    "https:https://relative-rene.github.io/ngSampler/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "https:https://relative-rene.github.io/ngSampler/index.html": "42899f5233fc4733f99a24d7c56c531a4840c886",
+    "https:https://relative-rene.github.io/ngSampler/main.95339d99a52748d1.js": "8da52f9d3bda33e7351b6c1ea9506563717496da",
+    "https:https://relative-rene.github.io/ngSampler/manifest.webmanifest": "60329e726c877f8dc72986caf7bd2553aef6d586",
+    "https:https://relative-rene.github.io/ngSampler/polyfills.12ef8ed410fe429e.js": "59bdc3726359c0b2fc5df0dd7b0b4a9ec503ec4b",
+    "https:https://relative-rene.github.io/ngSampler/runtime.eff9dbd63e1a64fc.js": "f0e0e0168c6e9f3dabadc9508d298c20bc695a47",
+    "https:https://relative-rene.github.io/ngSampler/styles.d0cb6a9dbf6294be.css": "cadd6aed9e34697e81a1c8f3247b8a7a6cff8485"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}

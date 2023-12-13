@@ -1,9 +1,0 @@
-<h2>Recent Projects</h2>
-<br>
-<h4 *ngIf="this.dashboardService.getHistory().size ===0;else elseBlock">
-     No Projects visited</h4>
-<ng-template #elseBlock>
-    <ul>
-        <li *ngFor="let previousProject of dashboardService.getHistory()" routerLink="/{{previousProject}}">{{previousProject}}</li>
-    </ul>
-</ng-template>
