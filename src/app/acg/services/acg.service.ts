@@ -37,7 +37,6 @@ export class ACGService {
   }
 
   loadAllChaptersFromNovel() {
-    console.log('loadAllChaptersFromNovel')
     return this.$chaptersList;
   }
 

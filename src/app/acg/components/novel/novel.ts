@@ -23,7 +23,7 @@ export class AcgNovel {
         private route: ActivatedRoute) { }
 
     navigateTo(novel_id: string) {
-        let path = 'chapters'+"/"+novel_id
+        let path = 'chapters' + "/" + novel_id
         this.router.navigate([path], { relativeTo: this.route })
     }
 

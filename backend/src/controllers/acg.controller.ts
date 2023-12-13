@@ -16,7 +16,7 @@ export const getAllNovels = async (req: express.Request, res: express.Response) 
         const novels = await getNovels();
         return res.status(200).json(novels)
     } catch (error) {
-        console.log(error);
+        console.error(error);
         return res.sendStatus(400)
     }
 }
@@ -29,7 +29,7 @@ export const getANovel = async (req: express.Request, res: express.Response) => 
 
         return res.sendStatus(200).json(novel).end();
     } catch (error) {
-        console.log(error);
+        console.error(error);
         return res.sendStatus(400)
     }
 }
@@ -40,7 +40,7 @@ export const deleteNovel = async (req: express.Request, res: express.Response) =
 
         return res.json(deletedNovel)
     } catch (error) {
-        console.log(error);
+        console.error(error);
         return res.sendStatus(400)
     }
 }
@@ -63,7 +63,7 @@ export const updateNovel = async (req: express.Request, res: express.Response) =
         await novel.save();
         return res.status(200).json(novel).end();
     } catch (error) {
-        console.log(error);
+        console.error(error);
         return res.sendStatus(400);
     }
 }
@@ -77,7 +77,7 @@ export const createNovel = async (req: express.Request, res: express.Response) =
         const novel = await saveNovel(req.body);
         return res.status(200).json(novel)
     } catch (error) {
-        console.log(error);
+        console.error(error);
         return res.sendStatus(400)
     }
 }
@@ -93,7 +93,7 @@ export const getAllChapters = async (req: express.Request, res: express.Response
         }
         return res.status(200).json(chapters)
     } catch (error) {
-        console.log(error);
+        console.error(error);
         return res.sendStatus(400)
     }
 }
@@ -105,7 +105,7 @@ export const getAChapter = async (req: express.Request, res: express.Response) =
         const chapter = await getByNovelIdAndChapter(novel_id, description);
         return res.status(200).json(chapter)
     } catch (error) {
-        console.log(error);
+        console.error(error);
         return res.sendStatus(400)
     }
 }
@@ -121,7 +121,7 @@ export const updateChapter = async (req: express.Request, res: express.Response)
         chapter.save()
         return res.status(200).json(chapter)
     } catch (error) {
-        console.log(error);
+        console.error(error);
         return res.sendStatus(400)
     }
 }
@@ -136,7 +136,7 @@ export const getTableOfContent = async (req: express.Request, res: express.Respo
         console.log('tableOfContents', tableOfContents)
         return res.status(200).json(tableOfContents);
     } catch (error) {
-        console.log(error);
+        console.error(error);
         return res.sendStatus(400);
     }
 }

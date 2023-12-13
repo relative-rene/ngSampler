@@ -35,7 +35,6 @@ export class GainsService {
   // Profile Collection
   addProfile(data) {
     const profile = Object.assign({}, { ...data, exercise_list: [], exercise_log: [] })
-    console.log('profile', profile)
     return this.httpClient
       .post(`${GainsService.urlBase}/profiles/create`, profile)
       .pipe(catchError(this.errorMgmt))
@@ -113,7 +112,6 @@ export class GainsService {
       // Get server-side error
       errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
-    console.log(errorMessage);
     return throwError(() => {
       return errorMessage;
     });
